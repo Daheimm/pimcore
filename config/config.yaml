@@ -134,3 +134,11 @@ framework:
 #         name: ''
 #         email: ''
 
+monolog:
+    handlers:
+        custom_handler:
+            level:    debug
+            type:     stream
+            path:     '%kernel.logs_dir%/custom.log'
+            channels: [custom_log]
+    channels: [custom_log, some_other_channel]

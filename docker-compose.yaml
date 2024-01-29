@@ -1,19 +1,29 @@
+version: '2.4'
+
+networks:
+    default:
+        # pimcorenet:
+        driver: bridge
+
 services:
     redis:
         image: redis:alpine
-        command: [ redis-server, --maxmemory 128mb, --maxmemory-policy volatile-lru, --save "" ]
+        restart: always
+        command: [ redis-server, --maxmemory, 128mb, --maxmemory-policy, volatile-lru, --save, '""' ]
 
     db:
         image: mariadb:10.11
         working_dir: /application
+        restart: always
         command: [ mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --innodb-file-per-table=1 ]
         volumes:
-            - pimcore-database:/var/lib/mysql
+            - ${HOME}/data/pimcore-gw-dev/mysql:/var/lib/mysql:delegated
+            # - pimcore-demo-database:/var/lib/mysql
         environment:
-            - MYSQL_ROOT_PASSWORD=ROOT
-            - MYSQL_DATABASE=pimcore
-            - MYSQL_USER=pimcore
-            - MYSQL_PASSWORD=pimcore
+            MYSQL_ROOT_PASSWORD: ROOT
+            MYSQL_DATABASE: pimcore
+            MYSQL_USER: pimcore
+            MYSQL_PASSWORD: pimcore
         healthcheck:
             # The service is considered healthy when:
             # - connection to pimcore db can be established, and
@@ -23,20 +33,36 @@ services:
             retries: 6
             start_period: 1m
             timeout: 3s
+        ports:
+            - 3002:3306
 
     nginx:
         image: nginx:stable-alpine
+        restart: always
         ports:
-            - "80:80"
+            - "8073:80"
         volumes:
             - .:/var/www/html:ro
             - ./.docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
         depends_on:
             - php
+        extra_hosts:
+            - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
     php:
-        #user: '1000:1000' # set to your uid:gid
-        image: pimcore/pimcore:php8.2-debug-latest
+        user: '1000:1000' # set to your uid:gid
+        # image: pimcore/pimcore:php8.2-debug-latest
+        image: ${COMPOSE_PROJECT_NAME}:${TAG:-latest}
+        build:
+            context: ${BASE_ENV_DIR}/docker
+            # target: app-dev
+            # args:
+            #   # To authenticate to private registry either use username / password, or Oauth key/secret / etc
+            #   # Please add Composer Auth JSON Object
+            #   COMPOSER_AUTH: "{}"
+            #   NEW_UID: ${NEW_UID:-1000}
+            #   COMPOSER_VERSION: ${COMPOSER_VERSION:-2.0}
+        restart: always
         environment:
             COMPOSER_HOME: /var/www/html
             PHP_IDE_CONFIG: serverName=localhost
@@ -48,48 +74,71 @@ services:
             PIMCORE_INSTALL_MYSQL_HOST_SOCKET: db
             PIMCORE_INSTALL_MYSQL_DATABASE: pimcore
         depends_on:
+            # - db
             db:
                 condition: service_healthy
         volumes:
-            - .:/var/www/html
+            - .:/var/www/html:delegated
+        extra_hosts:
+            - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
     supervisord:
-        #user: '1000:1000' # set to your uid:gid
+        user: '1000:1000' # set to your uid:gid
+        restart: always
         image: pimcore/pimcore:php8.2-supervisord-latest
         depends_on:
+            # - db
             db:
                 condition: service_healthy
         volumes:
             - .:/var/www/html
             - ./.docker/supervisord.conf:/etc/supervisor/conf.d/pimcore.conf:ro
+        extra_hosts:
+            - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
-    # The following two services are used for testing.
-    # We restrict these services to the test profile only, so we don't spin them up with every `docker compose up`.
-    # See: https://docs.docker.com/compose/profiles/
-    test-db:
-        profiles: [ 'test' ]
-        extends: db
-        volumes:
-            - pimcore-test-database:/var/lib/mysql
+    chrome:
+        image: browserless/chrome
+        restart: always
+        extra_hosts:
+            - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
-    test-php:
-        profiles: [ 'test' ]
-        extends: php
+    gotenberg:
+        image: gotenberg/gotenberg:7
+        restart: always
+        extra_hosts:
+            - "pimcore-gw-dev.iwis.io:192.168.166.62"
+
+    rabbitmq:
+        image: rabbitmq:3.8.2-management
+        hostname: rabbitmq
+        ports:
+            - "15672:15672"
+            - "5672:5672"
         environment:
-            APP_ENV: test
-            PIMCORE_TEST_DB_DSN: ${PIMCORE_TEST_DB_DSN:-mysql://pimcore:pimcore@test-db/pimcore}
-            PIMCORE_INSTALL_ADMIN_USERNAME: pimcore
-            PIMCORE_INSTALL_ADMIN_PASSWORD: pimcore
-            PIMCORE_INSTALL_MYSQL_HOST_SOCKET: test-db
-        depends_on:
-            test-db:
-                condition: service_healthy
-        volumes:
-            - pimcore-test-var:/var/www/html/var
-            - pimcore-test-public-var:/var/www/html/public/var
+            RABBITMQ_DEFAULT_USER: "guest"
+            RABBITMQ_DEFAULT_PASS: "guest"
+            RABBITMQ_DEFAULT_VHOST: "/"
 
-volumes:
-    pimcore-database:
-    pimcore-test-database:
-    pimcore-test-var:
-    pimcore-test-public-var:
+    # db-backup:
+    #   image: alpine
+    #   restart: "no"
+    #   tty: false
+    #   environment:
+    #     - TARGET=dbdata
+    #   volumes:
+    #     - ${HOME}/backup:/backup
+    #     - pimcore-demo-database:/volume
+    #   command: sh -c "tar -cjf /backup/$${TARGET}.tar.bz2 -C /volume ./"
+
+    # db-restore:
+    #   image: alpine
+    #   restart: "no"
+    #   environment:
+    #     - SOURCE=dbdata
+    #   volumes:
+    #     - ${HOME}/backup:/backup
+    #     - pimcore-demo-database:/volume
+    #   command: sh -c "rm -rf /volume/* /volume/..?* /volume/.[!.]* ; tar -C /volume/ -xjf /backup/$${SOURCE}.tar.bz2"
+
+# volumes:
+#   pimcore-demo-database:

@@ -36,9 +36,9 @@ services:
         autowire: true
         # automatically registers your services as commands, event subscribers, etc.
         autoconfigure: true
-        # this means you cannot fetch services directly from the container via $container->get()
-        # if you need to do this, you can override this setting on individual services
-        public: false
+
+    App\:
+        resource: '../src/'
     #
     # CONTROLLERS
     #
@@ -59,7 +59,11 @@ services:
         resource: '../src/Command/*'
         tags: [ 'console.command' ]
 
-
+    App\Shared\Infrastructure\EventListener\RecordListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.asset.postUpdate, method: onPostUpdate }
+            - { name: kernel.event_listener, event: pimcore.document.postUpdate, method: onPostUpdate }
+            - { name: kernel.event_listener, event: pimcore.dataobject.postUpdate, method: onPostUpdate }
 
     # Example custom templating helper
     # App\Templating\Helper\Example:

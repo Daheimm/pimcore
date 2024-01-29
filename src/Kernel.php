@@ -30,5 +30,8 @@ class Kernel extends PimcoreKernel
     public function registerBundlesToCollection(BundleCollection $collection): void
     {
         $collection->addBundle(new PimcoreAdminBundle(), 60);
+//	if (class_exists('\\Divante\\MagentoIntegrationBundle\\DivanteMagentoIntegrationBundle')) {
+//    	    $collection->addBundle(new \Divante\MagentoIntegrationBundle\DivanteMagentoIntegrationBundle);
+//	}
     }
 }
