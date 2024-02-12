@@ -4,38 +4,38 @@ namespace App\PimCore\Products\Application\Dto;
 
 class Category
 {
-    private ?string $rootCategory;
-    private ?string $category;
-    private ?string $variant;
+    private ?array $rootCategory;
+    private ?array $category;
+    private ?array $variant;
 
-    public function getRootCategory(): string
+    public function getRootCategory(): array
     {
         return $this->rootCategory;
     }
 
-    public function setRootCategory(?string $rootCategory): Category
+    public function setRootCategory(?array $rootCategory): Category
     {
         $this->rootCategory = $rootCategory;
         return $this;
     }
 
-    public function getCategory(): ?string
+    public function getCategory(): ?array
     {
         return $this->category;
     }
 
-    public function setCategory(?string $category): Category
+    public function setCategory(?array $category): Category
     {
         $this->category = $category;
         return $this;
     }
 
-    public function getVariant(): ?string
+    public function getVariant(): ?array
     {
         return $this->variant;
     }
 
-    public function setVariant(?string $variant): Category
+    public function setVariant(?array $variant): Category
     {
         $this->variant = $variant;
         return $this;

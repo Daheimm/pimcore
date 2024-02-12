@@ -1,12 +1,10 @@
 <?php
 
-namespace App\PimCore\Products\Application\Messages;
+namespace App\PimCore\Products\Application\Messages\Exports;
 
-use App\PimCore\Products\Application\Dto\ProductPrepareForMagentoDto;
-
-final class ProductCreateMessage
+class ProductExportsMessage
 {
-    public const ROUTING_KEY = 'products.update';
+    public const ROUTING_KEY = 'products.import.all';
 
     public function __construct(private array $products)
     {
