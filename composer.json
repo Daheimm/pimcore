@@ -12,6 +12,7 @@
   },
   "prefer-stable": true,
   "require": {
+    "monolog/monolog": "*",
     "php-amqplib/rabbitmq-bundle": "^2.13",
     "pimcore/admin-ui-classic-bundle": "^1.1",
     "pimcore/customer-management-framework-bundle": "^4.0",
@@ -24,6 +25,7 @@
     "symfony/amqp-messenger": "^7.0",
     "symfony/dotenv": "^6.2",
     "symfony/messenger": "^6.4",
+    "symfony/monolog-bridge": "^7.0",
     "symfony/runtime": "^6.2"
   },
   "require-dev": {
