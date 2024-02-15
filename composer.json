@@ -12,9 +12,10 @@
   },
   "prefer-stable": true,
   "require": {
+    "doctrine/doctrine-migrations-bundle": "^3.3",
     "monolog/monolog": "*",
     "php-amqplib/rabbitmq-bundle": "^2.13",
-    "pimcore/admin-ui-classic-bundle": "^1.1",
+    "pimcore/admin-ui-classic-bundle": "^1.3",
     "pimcore/customer-management-framework-bundle": "^4.0",
     "pimcore/data-hub": "^1.6",
     "pimcore/data-importer": "^1.8",
@@ -26,11 +27,13 @@
     "symfony/dotenv": "^6.2",
     "symfony/messenger": "^6.4",
     "symfony/monolog-bridge": "^7.0",
+    "symfony/orm-pack": "^2.4",
     "symfony/runtime": "^6.2"
   },
   "require-dev": {
     "codeception/codeception": "^5.0.3",
-    "codeception/module-symfony": "^3.1.0"
+    "codeception/module-symfony": "^3.1.0",
+    "symfony/maker-bundle": "^1.54"
   },
   "suggest": {
     "pimcore/data-hub": "Universal data interface for GraphQL, CSV and other formats"
