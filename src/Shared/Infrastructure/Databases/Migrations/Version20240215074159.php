@@ -24,6 +24,7 @@ final class Version20240215074159 extends AbstractMigration
         id SERIAL NOT NULL,
         type VARCHAR(255) NOT NULL,
         query TEXT NOT NULL,
+        x_api_key VARCHAR(255) NOT NULL
         PRIMARY KEY(id)
     )");
     }

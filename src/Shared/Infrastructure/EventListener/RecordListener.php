@@ -19,7 +19,7 @@ class RecordListener
     {
         try {
             if ($event instanceof DataObjectEvent) {
-                //$this->dataProcessingLayersInterfaces->createHandler($event->getObject()::class, $event->getObject());
+                $this->dataProcessingLayersInterfaces->createHandler($event->getObject()::class, $event->getObject());
             }
         } catch (Exception $e) {
             $this->logger->critical($e->getMessage());

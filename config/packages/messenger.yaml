@@ -28,8 +28,19 @@ framework:
                         pimCore.products.imports:
                             binding_keys:
                                 - 'products.import.*'
+            pimCore.products.event.recipe:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: pimcore.products
+                    queues:
+                        pimCore.products.event.recipe:
+                            binding_keys:
+                                - 'products.event.recipe.*'
         routing:
             # Route your messages to the transports
             'App\MessageHandler\SampleMessage': async
             'App\PimCore\Products\Application\Messages\ProductCreateMessage': pimCore.products
             'App\PimCore\Products\Application\Messages\Exports\ProductExportsMessage': pimCore.products.import
+            'App\PimCore\Receipts\Application\Messages\GraphQl\RecipeUpdateMessage': pimCore.products.event.recipe
