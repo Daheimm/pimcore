@@ -13,8 +13,13 @@ class RecipeProcessingService implements RecipeProcessingServiceInterface
     {
     }
 
-    public function processingUpdate(Recipe $recipe): void
+    public function processing(Recipe $recipe, string $eventName): void
     {
-        $this->eventUpdateRecipeService->handler($recipe);
+        match ($eventName) {
+            "postUpdate" => $this->eventUpdateRecipeService->update($recipe),
+            "postDelete" =>  $this->eventUpdateRecipeService->delete($recipe),
+            default => [],
+        };
+
     }
 }

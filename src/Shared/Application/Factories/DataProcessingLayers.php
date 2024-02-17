@@ -15,11 +15,11 @@ final class DataProcessingLayers implements DataProcessingLayersInterfaces
     {
     }
 
-    public function createHandler(string $type, object $object): void
+    public function createHandler(string $type, object $object, string $eventName): void
     {
         match ($type) {
             //Product::class => $this->productProcessing->processingUpdate($object),
-            Recipe::class => $this->recipeProcessingService->processingUpdate($object),
+            Recipe::class => $this->recipeProcessingService->processing($object, $eventName),
             default => []
         };
     }

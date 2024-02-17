@@ -2,32 +2,32 @@
 
 namespace App\PimCore\Receipts\Application\Services;
 
-use App\PimCore\Receipts\Application\Messages\GraphQl\RecipeUpdateMessage;
+use App\PimCore\Receipts\Application\Messages\GraphQl\RecipeDeleteMessage;
+use App\PimCore\Receipts\Application\Messages\GraphQl\RecipeInformationMessage;
 use App\PimCore\Receipts\Application\Services\Interfaces\EventUpdateRecipeServiceInterface;
-use App\Shared\Application\Serivces\GraphQl\Interfaces\GraphqlRequestsPimcoreServiceInterface;
 use Pimcore\Model\DataObject\Recipe;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpStamp;
 use Symfony\Component\Messenger\MessageBusInterface;
 
 class EventUpdateRecipeService implements EventUpdateRecipeServiceInterface
 {
-    const TYPE = "Recipe";
-
     public function __construct(
-        private readonly GraphqlRequestsPimcoreServiceInterface $graphqlRequestsPimcoreService,
-        private readonly MessageBusInterface                    $bus)
+        private readonly MessageBusInterface $bus)
     {
 
     }
 
-    public function handler(Recipe $recipe): void
+    public function update(Recipe $recipe): void
     {
-        $graphQl = $this->graphqlRequestsPimcoreService->getGraphQl(self::TYPE);
+        $this->bus->dispatch(new RecipeInformationMessage($recipe->getId()), [
+            new AmqpStamp(RecipeInformationMessage::ROUTING_KEY),
+        ]);
+    }
 
-        //$graphQl = $this->graphQL->executeQuery("pimcore-graphql-webservices/receipt", $graphQl->getQuery());
-
-        $this->bus->dispatch(new RecipeUpdateMessage($recipe->getId(), $graphQl), [
-            new AmqpStamp(RecipeUpdateMessage::ROUTING_KEY),
+    public function delete(Recipe $recipe): void
+    {
+        $this->bus->dispatch(new RecipeDeleteMessage($recipe->getId()), [
+            new AmqpStamp(RecipeDeleteMessage::ROUTING_KEY),
         ]);
     }
 }

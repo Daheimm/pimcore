@@ -3,6 +3,7 @@
 namespace App\Shared\Infrastructure\EventListener;
 
 use App\Shared\Application\Factories\DataProcessingLayersInterfaces;
+use Exception;
 use Pimcore\Event\Model\DataObjectEvent;
 use Pimcore\Event\Model\ElementEventInterface;
 use Psr\Log\LoggerInterface;
@@ -19,7 +20,7 @@ class RecordListener
     {
         try {
             if ($event instanceof DataObjectEvent) {
-                $this->dataProcessingLayersInterfaces->createHandler($event->getObject()::class, $event->getObject());
+                $this->dataProcessingLayersInterfaces->createHandler($event->getObject()::class, $event->getObject(), "postUpdate");
             }
         } catch (Exception $e) {
             $this->logger->critical($e->getMessage());

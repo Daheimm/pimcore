@@ -2,6 +2,8 @@
 
 namespace App\Shared\Application\Serivces\Http\GraphQL;
 
+use PHPUnit\Logging\Exception;
+use Psr\Log\LoggerInterface;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
@@ -11,13 +13,16 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class GraphQL implements GraphQLInterface
 {
-    public function __construct(private readonly HttpClientInterface $pimCore)
+    public function __construct(
+        private readonly HttpClientInterface $pimCore,
+        private readonly LoggerInterface     $logger)
     {
     }
 
     /**
      * @param string $endpoint
      * @param string $query
+     * @param string $xApiKey
      * @return array
      * @throws ClientExceptionInterface
      * @throws DecodingExceptionInterface
@@ -25,7 +30,7 @@ class GraphQL implements GraphQLInterface
      * @throws ServerExceptionInterface
      * @throws TransportExceptionInterface
      */
-    public function executeQuery(string $endpoint, string $query): array
+    public function executeQuery(string $endpoint, string $query, string $xApiKey): array
     {
 
         try {
@@ -37,13 +42,13 @@ class GraphQL implements GraphQLInterface
                     'query' => $query,
                 ],
                 'headers' => [
-                    'X-API-Key' => 'cc80d5ae912b8e6c2d9ecfd0033f4556'
+                    'X-API-Key' => $xApiKey
                 ]
             ]);
-
-            $content = $response->toArray(); // Перетворює JSON відповідь на масив
+            $content = $response->toArray();
         } catch (\Throwable $e) {
-            dd($e);
+            $this->logger->error($e);
+            throw new Exception($e);
         }
 
         return $content;

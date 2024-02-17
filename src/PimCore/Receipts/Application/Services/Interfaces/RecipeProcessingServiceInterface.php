@@ -6,5 +6,5 @@ use Pimcore\Model\DataObject\Recipe;
 
 interface RecipeProcessingServiceInterface
 {
-    public function processingUpdate(Recipe $recipe): void;
+    public function processing(Recipe $recipe, string $eventName): void;
 }

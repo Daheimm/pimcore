@@ -96,7 +96,8 @@ services:
     supervisord:
         user: '1000:1000' # set to your uid:gid
         restart: always
-        image: pimcore/pimcore:php8.2-supervisord-latest
+        build:
+            context: ${BASE_ENV_DIR}/docker/supervisord
         depends_on:
             # - db
             db:

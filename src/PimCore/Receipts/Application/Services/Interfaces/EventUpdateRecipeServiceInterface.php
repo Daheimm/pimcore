@@ -6,5 +6,7 @@ use Pimcore\Model\DataObject\Recipe;
 
 interface EventUpdateRecipeServiceInterface
 {
-    public function handler(Recipe $recipe): void;
+    public function update(Recipe $recipe): void;
+
+    public function delete(Recipe $recipe): void;
 }
