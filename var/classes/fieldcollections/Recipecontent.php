@@ -4,7 +4,8 @@
  * Fields Summary:
  * - stepimage [image]
  * - stepnumber [numeric]
- * - steptext [textarea]
+ * - localizedfields [localizedfields]
+ * -- steptext [textarea]
  */
 
 return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
@@ -96,29 +97,67 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           2 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
-             'name' => 'steptext',
-             'title' => 'Опис',
-             'tooltip' => '',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
+             'name' => 'localizedfields',
+             'title' => '',
+             'tooltip' => NULL,
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
              'locked' => false,
-             'style' => '',
+             'style' => NULL,
              'permissions' => NULL,
              'fieldtype' => '',
              'relationType' => false,
              'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
+             'visibleGridView' => true,
+             'visibleSearch' => true,
              'blockedVarsForExport' => 
             array (
             ),
-             'maxLength' => NULL,
-             'showCharCount' => false,
-             'excludeFromSearchIndex' => false,
-             'height' => 150,
-             'width' => 450,
+             'children' => 
+            array (
+              0 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
+                 'name' => 'steptext',
+                 'title' => 'Опис',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float: left;',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'maxLength' => NULL,
+                 'showCharCount' => false,
+                 'excludeFromSearchIndex' => false,
+                 'height' => 100,
+                 'width' => 450,
+              )),
+            ),
+             'region' => NULL,
+             'layout' => NULL,
+             'maxTabs' => NULL,
+             'border' => false,
+             'provideSplitView' => false,
+             'tabPosition' => 'top',
+             'hideLabelsWhenTabsReached' => NULL,
+             'referencedFields' => 
+            array (
+            ),
+             'permissionView' => NULL,
+             'permissionEdit' => NULL,
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
+             'fieldDefinitionsCache' => NULL,
           )),
         ),
          'locked' => false,

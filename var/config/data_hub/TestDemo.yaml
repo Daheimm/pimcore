@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 sqlObjectCondition: ''
-                modificationDate: 1707829234
+                modificationDate: 1705667371
                 path: null
                 createDate: 1705667314
             schema:
