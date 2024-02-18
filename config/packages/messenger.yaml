@@ -38,9 +38,32 @@ framework:
                         pimCore.products.event.recipe:
                             binding_keys:
                                 - 'products.event.recipe.*'
+            local.products.event.recipe:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: local.recipe.information
+                    queues:
+                        local.recipe.information:
+                            binding_keys:
+                                - 'products.event.recipe.*'
+            pimCore.recipe.imports:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: pimCore.recipe
+                    queues:
+                        pimCore.products.event.recipe:
+                            binding_keys:
+                                - 'products.recipe.exports.*'
         routing:
             # Route your messages to the transports
             'App\MessageHandler\SampleMessage': async
             'App\PimCore\Products\Application\Messages\ProductCreateMessage': pimCore.products
             'App\PimCore\Products\Application\Messages\Exports\ProductExportsMessage': pimCore.products.import
             'App\PimCore\Receipts\Application\Messages\GraphQl\RecipeUpdateMessage': pimCore.products.event.recipe
+            'App\PimCore\Receipts\Application\Messages\GraphQl\RecipeInformationMessage': local.products.event.recipe
+            'App\PimCore\Receipts\Application\Messages\Exports': pimCore.recipe.imports
+
