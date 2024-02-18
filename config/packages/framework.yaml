@@ -1,0 +1,7 @@
+framework:
+    http_client:
+        scoped_clients:
+            pimCore:
+                base_uri: 'http://127.0.0.1'
+                headers:
+                    Accept: 'application/json'
