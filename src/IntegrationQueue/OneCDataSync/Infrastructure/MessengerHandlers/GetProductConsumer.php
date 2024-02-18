@@ -59,11 +59,14 @@ use Pimcore\Model\DataObject\WineJoin;
 use Pimcore\Model\Version;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
-#[AsMessageHandler]
+
 class GetProductConsumer
 {
-
-    public function execute(AMQPMessage $msg)
+    public function __invoke()
+    {
+        // TODO: Implement __invoke() method.
+    }
+    /*public function execute(AMQPMessage $msg)
     {
         $startTime = -microtime(true);
 
@@ -845,26 +848,26 @@ class GetProductConsumer
      * @param int $index
      * @throws \Exception
      */
-    protected function handleNomObject($value, $objectToCheck, int $index)
-    {
-        echo 'start search nom #' . $index . PHP_EOL;
-        $parent = $_ENV['PRODUCT_NOM_' . $index];
-        if (!empty($value) && $value !== $_ENV['EMPTY_REF']) {
-            $nom = $objectToCheck::getByCode($value, ['limit' => 1]);
-            if (empty($nom)) {
-                echo 'Create new nom ' . $index . ' when handle product: ' . $value . PHP_EOL;
-                $nomParent = new $objectToCheck();
-                $nomParent
-                    ->setParentId($parent)
-                    ->setKey($value)
-                    ->setCode($value)
-                    ->setPublished(true);
-                if ($nomParent->save()) {
-                    echo 'Saved new nom' . $index . ' when handle product ' . $value . PHP_EOL;
-                }
-            } else {
-                echo 'Found nom ' . $index . ' when handle product : ' . $value . PHP_EOL;
-            }
-        }
-    }
+    /* protected function handleNomObject($value, $objectToCheck, int $index)
+     {
+         echo 'start search nom #' . $index . PHP_EOL;
+         $parent = $_ENV['PRODUCT_NOM_' . $index];
+         if (!empty($value) && $value !== $_ENV['EMPTY_REF']) {
+             $nom = $objectToCheck::getByCode($value, ['limit' => 1]);
+             if (empty($nom)) {
+                 echo 'Create new nom ' . $index . ' when handle product: ' . $value . PHP_EOL;
+                 $nomParent = new $objectToCheck();
+                 $nomParent
+                     ->setParentId($parent)
+                     ->setKey($value)
+                     ->setCode($value)
+                     ->setPublished(true);
+                 if ($nomParent->save()) {
+                     echo 'Saved new nom' . $index . ' when handle product ' . $value . PHP_EOL;
+                 }
+             } else {
+                 echo 'Found nom ' . $index . ' when handle product : ' . $value . PHP_EOL;
+             }
+         }
+     }*/
 }

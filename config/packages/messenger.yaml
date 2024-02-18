@@ -65,5 +65,5 @@ framework:
             'App\PimCore\Products\Application\Messages\Exports\ProductExportsMessage': pimCore.products.import
             'App\PimCore\Receipts\Application\Messages\GraphQl\RecipeUpdateMessage': pimCore.products.event.recipe
             'App\PimCore\Receipts\Application\Messages\GraphQl\RecipeInformationMessage': local.products.event.recipe
-            'App\PimCore\Receipts\Application\Messages\Exports': pimCore.recipe.imports
+            'App\PimCore\Receipts\Application\Messages\Exports\RecipeExportMessage': pimCore.recipe.imports
 
