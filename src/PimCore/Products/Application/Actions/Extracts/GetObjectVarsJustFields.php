@@ -3,7 +3,6 @@
 namespace App\PimCore\Products\Application\Actions\Extracts;
 
 use App\PimCore\Products\Application\Actions\Reflactions\GetNamePropertiesClassAction;
-use Pimcore\Model\DataObject\Recipe;
 
 
 class GetObjectVarsJustFields

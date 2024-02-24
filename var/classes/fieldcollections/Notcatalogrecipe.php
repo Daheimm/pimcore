@@ -2,7 +2,8 @@
 
 /**
  * Fields Summary:
- * - notcatalogproduct [input]
+ * - localizedfields [localizedfields]
+ * -- notcatalogproduct [input]
  * - notcatalogquantity [numeric]
  * - notcataloguom [manyToOneRelation]
  */
@@ -43,15 +44,15 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'children' => 
         array (
           0 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'notcatalogproduct',
-             'title' => 'Продукт',
-             'tooltip' => '',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
+             'name' => 'localizedfields',
+             'title' => '',
+             'tooltip' => NULL,
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
              'locked' => false,
-             'style' => 'float:left; margin-right:20px;',
+             'style' => NULL,
              'permissions' => NULL,
              'fieldtype' => '',
              'relationType' => false,
@@ -61,16 +62,54 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
+             'children' => 
+            array (
+              0 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                 'name' => 'notcatalogproduct',
+                 'title' => 'Продукт',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float:left; margin-right:20px;',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => true,
+                 'visibleSearch' => true,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'defaultValue' => NULL,
+                 'columnLength' => 190,
+                 'regex' => '',
+                 'regexFlags' => 
+                array (
+                ),
+                 'unique' => false,
+                 'showCharCount' => false,
+                 'width' => 500,
+                 'defaultValueGenerator' => '',
+              )),
+            ),
+             'region' => NULL,
+             'layout' => NULL,
+             'maxTabs' => NULL,
+             'border' => false,
+             'provideSplitView' => false,
+             'tabPosition' => 'top',
+             'hideLabelsWhenTabsReached' => NULL,
+             'referencedFields' => 
             array (
             ),
-             'unique' => false,
-             'showCharCount' => false,
-             'width' => 500,
-             'defaultValueGenerator' => '',
+             'permissionView' => NULL,
+             'permissionEdit' => NULL,
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
+             'fieldDefinitionsCache' => NULL,
           )),
           1 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(

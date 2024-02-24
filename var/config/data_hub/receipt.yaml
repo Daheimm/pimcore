@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 sqlObjectCondition: ''
-                modificationDate: 1707920522
+                modificationDate: 1708263526
                 path: null
                 createDate: 1707915056
             schema:
@@ -535,6 +535,7 @@ pimcore_data_hub:
                 apikey:
                     - ecab270597c7ce1a65188bc74243d198
                     - cc80d5ae912b8e6c2d9ecfd0033f4556
+                    - 785e4021a0b118ca740451cfb5e2ce58
                 skipPermissionCheck: true
                 disableIntrospection: false
             workspaces:
