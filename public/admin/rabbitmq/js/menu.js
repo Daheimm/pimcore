@@ -11,7 +11,7 @@ pimcore.plugin.CustomMenu = Class.create({
 
         // the property name is used as id with the prefix pimcore_menu_ in the html markup e.g. pimcore_menu_mybundle
         menu.custommenu = {
-            label: t('Custom Settings'), // set your label here, will be shown as tooltip
+            label: t('Settings Queries'), // set your label here, will be shown as tooltip
             iconCls: 'pimcore_nav_icon_properties', // set full icon name here
             priority: 42, // define the position where you menu should be shown. Core menu items will leave a gap of 10 custom main menu items
             items: [], //if your main menu has subitems please see Adding Custom Submenus To ExistingNavigation Items
@@ -22,10 +22,13 @@ pimcore.plugin.CustomMenu = Class.create({
         };
     },
 
-    openCustomMenu: function(element) {
+    openCustomMenu: function (element) {
         try {
             pimcore.globalmanager.get("plugin_pimcore_custommenu").activate();
+
         } catch (e) {
+            console.log(pimcore.globalmanager.get());
+            console.log(e);
             pimcore.globalmanager.add("plugin_pimcore_custommenu", new pimcore.plugin.CustomMenu.settings());
         }
     }

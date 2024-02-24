@@ -13,6 +13,7 @@ class PimcoreAdminListener
                 $event->getPaths(),
                 [
                     '/admin/rabbitmq/js/menu.js',
+                    '/admin/rabbitmq/js/createNewRouteController.js',
                     '/admin/rabbitmq/js/settings.js',
                 ]
             )

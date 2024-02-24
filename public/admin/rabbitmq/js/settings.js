@@ -2,6 +2,13 @@ pimcore.registerNS("pimcore.plugin.CustomMenu.settings");
 
 pimcore.plugin.CustomMenu.settings = Class.create({
 
+    importRoute: "/admin/pimcoredatahub/config/import",
+    exportRoute: "/admin/pimcoredatahub/config/export",
+
+    initialize: function () {
+        this.getTabPanel();
+    },
+
     activate: function () {
         var tabPanel = Ext.getCmp('pimcore_panel_tabs');
 
@@ -12,157 +19,249 @@ pimcore.plugin.CustomMenu.settings = Class.create({
         }
     },
 
-    initialize: function () {
-        this.getData();
-    },
 
-    getData: function () {
-        Ext.Ajax.request({
-            url: '/admin/setting-queries',
-            success: function (response) {
-                this.data = Ext.decode(response.responseText).data;
-                this.getTabPanel();
-            }.bind(this)
+    createRow: function () {
+        var win = Ext.getCmp('create-new-row');
+
+        if (win !== undefined) {
+            win.destroy();
+        }
+
+        win = new Ext.Window({
+            modal: false,
+            title: t("Create New Row"),
+            id: 'create-new-row',
+            layout: 'fit',
+            width: "30%",
+            height: "200px",
+            closeAction: 'close',
+            buttonAlign: 'center',
+            overflowY: 'auto',
+            autoscroll: true,
+            minimizable: false,
+            animShow: function () {
+                this.el.slideIn('t', {
+                    duration: 1, callback: function () {
+                        this.afterShow(true);
+                    }, scope: this
+                });
+            },
+            listeners: {
+                minimize: function (win, obj) {
+                    if (win.collapsed === false) {
+                        win.collapse();
+                    } else {
+                        win.expand();
+                    }
+                }
+            },
+            items: [
+                {
+                    xtype: 'form',
+                    controller: 'createnewrow-controller',
+                    bodyPadding: 5,
+                    flex: 1,
+                    items: [
+                        {
+                            xtype: 'numberfield',
+                            name: 'mm2',
+                            id: 'mm2',
+                            fieldLabel: 'Mm2'
+                        },
+                        {
+                            xtype: 'textfield',
+                            name: "awg",
+                            id: "awg",
+                            fieldLabel: 'Awg'
+                        }
+                    ],
+                    buttons: [
+                        {
+                            text: t('Confirm'),
+                            id: 'confirmBtn',
+                            name: "confirmBtn",
+                            handler: 'onConfirm',
+                            object: this,
+                        }
+                    ]
+                }
+            ],
         });
+        win.show(Ext.getBody());
     },
 
     getTabPanel: function () {
         if (!this.panel) {
-            var self = this;
-
-            this.panel = Ext.create('Ext.panel.Panel', {
+            this.panel = new Ext.Panel({
                 id: 'custommenu_settings',
                 title: t('Custom Settings'),
                 iconCls: 'pimcore_icon_system',
                 border: false,
-                layout: 'fit',
-                closable: true
+                layout: "border",
+                closable: true,
+                items: [this.getTree(), this.getEditPanel()]
             });
 
-            var tabPanel = Ext.getCmp('pimcore_panel_tabs');
+            var tabPanel = Ext.getCmp("pimcore_panel_tabs");
             tabPanel.add(this.panel);
-            tabPanel.setActiveItem('custommenu_settings');
+            tabPanel.setActiveItem("pimcore_plugin_datahub_config_tab");
 
-            var mm2AwgModel = Ext.create('Ext.data.Model', {
-                fields: [
-                    {name: 'mm2', type: 'string'},
-                    {name: 'awg', type: 'string'},
-                ]
-            });
-
-            var mm2AwgValues = new Ext.create('Ext.data.Store', {
-                id: 'storeId',
-                model: mm2AwgModel,
-                data: this.data.mm2AwgValues
-            });
-
-            var mm2AwgGrid = Ext.create('Ext.grid.Panel', {
-                store: mm2AwgValues,
-                id: 'mm2AwgGrid',
-                actions: {
-                    delete: {
-                        iconCls: 'pimcore_icon_delete',
-                        tooltip: "Delete",
-                        handler: function (obj, row, rowIndex) {
-                            self.deleteRow(rowIndex);
-                        }.bind(self, this)
-                    }
-                },
-                columns: [
-                    {
-                        text: 'Mm2',
-                        dataIndex: 'mm2',
-                        xtype: 'gridcolumn',
-                        editor: {
-                            xtype: 'numberfield'
-                        }
-                    },
-                    {
-                        text: 'Awg',
-                        dataIndex: 'awg',
-                        xtype: 'gridcolumn',
-                        editor: {
-                            xtype: 'textfield'
-                        }
-                    },
-                    {
-                        width: 70,
-                        sortable: false,
-                        menuDisabled: true,
-                        xtype: 'actioncolumn',
-                        items: ['@delete']
-                    }
-                ],
-                height: 800,
-                width: 500,
-                selModel: 'cellmodel',
-                plugins: {
-                    ptype: 'cellediting',
-                    clicksToEdit: 1
-                },
-                renderTo: Ext.getBody()
-            });
-
-            var mm2AwgPanel = Ext.create('Ext.form.Panel', {
-                title: t('MM2-AWG Conversion'),
-                autoScroll: true,
-                forceLayout: true,
-                defaults: {
-                    forceLayout: true,
-                    listeners: {
-                        render: function (el) {
-                            me.checkForInheritance(el);
-                        }
-                    }
-                },
-                fieldDefaults: {
-                    labelWidth: 250
-                },
-                items: []
-            });
-
-            var button = Ext.create('Ext.Button', {
-                text: 'Create Row',
-                renderTo: Ext.getBody(),
-                handler: function (obj) {
-                    self.createRow(this);
-                    grid.reconfigure(store)
-                }.bind(self, this)
-            });
-
-            mm2AwgPanel.items.add(mm2AwgGrid);
-            mm2AwgPanel.items.add(button);
-
-            this.layout = Ext.create('Ext.tab.Panel', {
-                bodyStyle: 'padding:20px 5px 20px 5px;',
-                border: true,
-                autoScroll: true,
-                forceLayout: true,
-                defaults: {
-                    forceLayout: true
-                },
-                fieldDefaults: {
-                    labelWidth: 500
-                },
-                buttons: [
-                    {
-                        text: t('save'),
-                        handler: this.save.bind(this),
-                        iconCls: 'pimcore_icon_apply'
-                    }
-                ]
-            });
-
-
-            self.mm2AwgGrid = mm2AwgGrid;
-            this.layout.add(mm2AwgPanel);
-
-            this.panel.add(this.layout);
-            this.layout.setActiveItem(0);
+            this.panel.on("destroy", function () {
+                pimcore.globalmanager.remove("plugin_pimcore_datahub_config");
+            }.bind(this));
 
             pimcore.layout.refresh();
         }
 
         return this.panel;
+    },
+
+    userIsAllowedToCreate: function (adapter) {
+        let user = pimcore.globalmanager.get("user");
+
+        //everything is allowed for admins
+        if (user.admin || user.isAllowed('plugin_datahub_admin')) {
+            return true;
+        }
+
+        return user.isAllowed("plugin_datahub_adapter_" + adapter);
+    },
+
+    getTree: function () {
+        if (!this.tree) {
+
+            var store = Ext.create('Ext.data.TreeStore', {
+                autoLoad: false,
+                autoSync: true,
+                proxy: {
+                    type: 'ajax',
+                    url: '/admin/pimcoredatahub/config/list',
+                    reader: {
+                        type: 'json'
+                    }
+                }
+            });
+
+
+            let firstHandler = function() {
+                this.createRow(); // Виклик функції createRow обгорнуто у анонімну функцію
+            };
+
+
+            var addConfigButton = new Ext.SplitButton({
+                text: t("plugin_pimcore_datahub_configpanel_add"),
+                iconCls: "pimcore_icon_add",
+                handler: firstHandler.bind(this),
+                disabled: !firstHandler,
+            });
+
+            this.tree = new Ext.tree.TreePanel({
+                store: store,
+                region: "west",
+                autoScroll: true,
+                animate: true,
+                containerScroll: true,
+                border: true,
+                width: 230,
+                split: true,
+                root: {
+                    id: '0',
+                    expanded: true,
+                    iconCls: "pimcore_icon_thumbnails"
+                },
+                rootVisible: false,
+                tbar: {
+                    items: [
+                        addConfigButton
+                    ]
+                },
+                listeners: {
+                    itemclick: this.onTreeNodeClick.bind(this),
+                    itemcontextmenu: this.onTreeNodeContextmenu.bind(this),
+                    render: function () {
+                        this.getRootNode().expand()
+                    }
+                }
+            });
+        }
+
+        return this.tree;
+    },
+
+    getEditPanel: function () {
+        if (!this.editPanel) {
+            this.editPanel = new Ext.TabPanel({
+                region: "center"
+            });
+        }
+
+        return this.editPanel;
+    },
+
+
+    onTreeNodeClick: function (tree, record, item, index, e, eOpts) {
+        if (!record.isLeaf()) {
+            return;
+        }
+
+        let adapterType = record.data.adapter;
+        let adapterImpl = new pimcore.plugin.datahub.adapter[adapterType](this);
+        adapterImpl.openConfiguration(record.id);
+    },
+
+
+    onTreeNodeContextmenu: function (tree, record, item, index, e, eOpts) {
+        if (!record.isLeaf()) {
+            return;
+        }
+
+        e.stopEvent();
+
+        tree.select();
+
+        var menu = new Ext.menu.Menu();
+        menu.add(new Ext.menu.Item({
+            text: t('delete'),
+            iconCls: "pimcore_icon_delete",
+            disabled: !record.data['writeable'] || (!record.data.permissions.delete),
+            handler: this.deleteConfiguration.bind(this, tree, record)
+        }));
+
+        menu.add(new Ext.menu.Item({
+            text: t('clone'),
+            iconCls: "pimcore_icon_clone",
+            disabled: !record.data['writeable'] || !this.userIsAllowedToCreate(record.data.adapter),
+            handler: this.cloneConfiguration.bind(this, tree, record)
+        }));
+
+        menu.add(new Ext.menu.Item({
+            text: t('plugin_pimcore_datahub_export'),
+            iconCls: 'pimcore_icon_download',
+            handler: function () {
+                const recordName = record.data.id;
+                pimcore.helpers.download(this.exportRoute + '?name=' + recordName);
+            }.bind(this, tree, record)
+        }));
+
+        menu.showAt(e.pageX, e.pageY);
+    },
+
+    cloneConfiguration: function (tree, record) {
+        let adapterType = record.data.adapter;
+        let adapterImpl = new pimcore.plugin.datahub.adapter[adapterType](this);
+        adapterImpl.cloneConfiguration(tree, record);
+    },
+
+    deleteConfiguration: function (tree, record) {
+        let adapterType = record.data.adapter;
+        let adapterImpl = new pimcore.plugin.datahub.adapter[adapterType](this);
+        adapterImpl.deleteConfiguration(tree, record);
+    },
+
+    refreshTree: function () {
+        this.tree.getStore().load({
+            node: this.tree.getRootNode()
+        });
     }
+
 });

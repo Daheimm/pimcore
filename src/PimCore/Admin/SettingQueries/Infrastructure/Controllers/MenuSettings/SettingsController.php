@@ -4,10 +4,10 @@ namespace App\PimCore\Admin\SettingQueries\Infrastructure\Controllers\MenuSettin
 
 use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\SettingQueriesServiceInterface;
 use App\PimCore\Admin\SettingQueries\Infrastructure\Controllers\Controller;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/setting-queries', name: 'setting-queries')]
+#[Route('/admin-custom/setting-queries', name: 'setting-queries')]
 class SettingsController extends Controller
 {
     public function __construct(private readonly SettingQueriesServiceInterface $queriesService)
@@ -15,7 +15,7 @@ class SettingsController extends Controller
     }
 
     #[Route('/', name: 'setting-queries', methods: 'GET')]
-    public function index(): Response
+    public function index(): JsonResponse
     {
         return $this->response($this->queriesService->getAll());
     }

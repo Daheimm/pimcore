@@ -3,6 +3,7 @@
 namespace App\PimCore\Admin\SettingQueries\Infrastructure\Controllers;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Contracts\Service\Attribute\Required;
@@ -13,12 +14,17 @@ abstract class Controller extends AbstractController
 
     /**
      * @param array|object $body
-     * @return Response
+     * @return JsonResponse
      */
-    public function response(array|object $body): Response
+    public function response(array|object $body): JsonResponse
     {
+        $json = $this->serializer->serialize([
+            'success' => true,
+            'message' => '',
+            'data' => $body,
+        ], 'json');
 
-        return new Response($this->serializer->serialize($body, 'json'));
+        return new JsonResponse($json, Response::HTTP_OK, [], true);
     }
 
     #[Required]
