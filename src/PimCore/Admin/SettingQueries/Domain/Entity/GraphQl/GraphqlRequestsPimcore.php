@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Shared\Domain\Entity\GraphQl;
+namespace App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl;
 
-use App\Shared\Infrastructure\Repositories\GraphQl\GraphqlRequestsPimcoreRepository;
+use App\PimCore\Admin\SettingQueries\Infrastructure\Repositories\GraphQl\GraphqlRequestsPimcoreRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: GraphqlRequestsPimcoreRepository::class)]
