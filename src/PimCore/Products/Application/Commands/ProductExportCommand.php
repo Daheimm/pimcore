@@ -34,7 +34,7 @@ class ProductExportCommand extends AbstractCommand
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $batchSize = 5;
+        $batchSize = 40;
         $offset = 0;
         $products = Product::getList();
         try {
@@ -45,8 +45,9 @@ class ProductExportCommand extends AbstractCommand
                     break;
                 }
 
-                $productsPrepared = $this->infoProcessorService->extract($batchItems);
 
+
+                $productsPrepared = $this->infoProcessorService->extract($batchItems);
 
                 $this->bus->dispatch(new ProductExportsMessage($productsPrepared), [
                     new AmqpStamp(ProductExportsMessage::ROUTING_KEY),

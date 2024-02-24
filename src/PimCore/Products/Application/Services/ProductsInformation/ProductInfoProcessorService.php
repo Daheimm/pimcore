@@ -39,6 +39,7 @@ class ProductInfoProcessorService implements ProductInfoProcessorServiceInterfac
             $fieldsName = GetNamePropertiesClassAction::run($product);
             $temporaryArray = [];
 
+           // dd($product->get('recipescollection'));
 
             foreach ($fieldsName as $field) {
                 $temporaryArray[$field] = match ($field) {
@@ -62,6 +63,7 @@ class ProductInfoProcessorService implements ProductInfoProcessorServiceInterfac
                     default => (new UnknownModule())->proccess($product, $field),
                 };
             }
+
 
             $temporaryArray["localizedfields"] = $product->getLocalizedfields()->getItems();
 

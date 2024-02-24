@@ -1,0 +1,69 @@
+framework:
+    messenger:
+        serializer:
+            default_serializer: messenger.transport.symfony_serializer
+            symfony_serializer:
+                format: json
+                context: { }
+        transports:
+            # https://symfony.com/doc/current/messenger.html#transport-configuration
+            async: '%env(RABBITMQ_URL)%'
+            pimCore.products:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: pimcore.products
+                    queues:
+                        pimCore.products.events:
+                            binding_keys:
+                                - 'products.*'
+            pimCore.products.import:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: pimcore.products
+                    queues:
+                        pimCore.products.imports:
+                            binding_keys:
+                                - 'products.import.*'
+            pimCore.products.event.recipe:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: pimcore.products
+                    queues:
+                        pimCore.products.event.recipe:
+                            binding_keys:
+                                - 'products.event.recipe.*'
+            local.products.event.recipe:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: local.recipe.information
+                    queues:
+                        local.recipe.information:
+                            binding_keys:
+                                - 'products.event.recipe.*'
+            pimCore.recipe.imports:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: pimCore.recipe
+                    queues:
+                        pimCore.products.event.recipe:
+                            binding_keys:
+                                - 'products.recipe.exports.*'
+        routing:
+            # Route your messages to the transports
+            'App\MessageHandler\SampleMessage': async
+            'App\PimCore\Products\Application\Messages\ProductCreateMessage': pimCore.products
+            'App\PimCore\Products\Application\Messages\Exports\ProductExportsMessage': pimCore.products.import
+            'App\PimCore\Receipts\Application\Messages\GraphQl\RecipeUpdateMessage': pimCore.products.event.recipe
+            'App\PimCore\Receipts\Application\Messages\GraphQl\RecipeInformationMessage': local.products.event.recipe
+            'App\PimCore\Receipts\Application\Messages\Exports\RecipeExportMessage': pimCore.recipe.imports
+
