@@ -27,11 +27,11 @@ pimcore.plugin.CustomMenu.settings = Class.create({
 
         win = new Ext.Window({
             modal: false,
-            title: t("Create New Row"),
+            title: t("Create New Type"),
             id: 'create-new-row',
             layout: 'fit',
-            width: "30%",
-            height: "200px",
+            width: "25%",
+            height: "150px",
             closeAction: 'close',
             buttonAlign: 'center',
             overflowY: 'auto',
@@ -61,16 +61,10 @@ pimcore.plugin.CustomMenu.settings = Class.create({
                     flex: 1,
                     items: [
                         {
-                            xtype: 'numberfield',
-                            name: 'mm2',
-                            id: 'mm2',
-                            fieldLabel: 'Mm2'
-                        },
-                        {
                             xtype: 'textfield',
-                            name: "awg",
-                            id: "awg",
-                            fieldLabel: 'Awg'
+                            name: "Name Type",
+                            id: "TypeIdCustom",
+                            fieldLabel: 'Type'
                         }
                     ],
                     buttons: [
@@ -208,7 +202,6 @@ pimcore.plugin.CustomMenu.settings = Class.create({
 
         let adapterType = record.data.adapter;
         let adapterImpl = new pimcore.plugin.queue_custom.adapter[adapterType](this);
-        console.log(adapterImpl);
         adapterImpl.openConfiguration(record.id);
     },
 
@@ -226,24 +219,7 @@ pimcore.plugin.CustomMenu.settings = Class.create({
         menu.add(new Ext.menu.Item({
             text: t('delete'),
             iconCls: "pimcore_icon_delete",
-            disabled: !record.data['writeable'] || (!record.data.permissions.delete),
             handler: this.deleteConfiguration.bind(this, tree, record)
-        }));
-
-        menu.add(new Ext.menu.Item({
-            text: t('clone'),
-            iconCls: "pimcore_icon_clone",
-            disabled: !record.data['writeable'] || !this.userIsAllowedToCreate(record.data.adapter),
-            handler: this.cloneConfiguration.bind(this, tree, record)
-        }));
-
-        menu.add(new Ext.menu.Item({
-            text: t('plugin_pimcore_datahub_export'),
-            iconCls: 'pimcore_icon_download',
-            handler: function () {
-                const recordName = record.data.id;
-                pimcore.helpers.download(this.exportRoute + '?name=' + recordName);
-            }.bind(this, tree, record)
         }));
 
         menu.showAt(e.pageX, e.pageY);
@@ -251,13 +227,13 @@ pimcore.plugin.CustomMenu.settings = Class.create({
 
     cloneConfiguration: function (tree, record) {
         let adapterType = record.data.adapter;
-        let adapterImpl = new pimcore.plugin.datahub.adapter[adapterType](this);
+        let adapterImpl = new pimcore.plugin.queue_custom.adapter[adapterType](this);
         adapterImpl.cloneConfiguration(tree, record);
     },
 
     deleteConfiguration: function (tree, record) {
         let adapterType = record.data.adapter;
-        let adapterImpl = new pimcore.plugin.datahub.adapter[adapterType](this);
+        let adapterImpl = new pimcore.plugin.queue_custom.adapter[adapterType](this);
         adapterImpl.deleteConfiguration(tree, record);
     },
 
