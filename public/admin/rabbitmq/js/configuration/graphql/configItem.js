@@ -12,11 +12,13 @@
  */
 
 pimcore.registerNS("pimcore.plugin.queue_custom.configuration.graphql.configItem");
+
 pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimcore.element.abstract, {
 
     saveUrl: "/admin/pimcoredatahub/config/save",
 
     initialize: function (data, parent) {
+        console.log(parent);
         this.parent = parent;
         this.data = data;
         this.modificationDate = data.modificationDate;
@@ -27,10 +29,10 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
             closable: true,
             deferredRender: false,
             forceLayout: true,
-            iconCls: "plugin_pimcore_datahub_icon_" + this.data.type,
-            id: "plugin_pimcore_datahub_configpanel_panel_" + data.type,
+            iconCls: "plugin_pimcore_queue_custom_icon_" + this.data.type,
+            id: "plugin_pimcore_queue_custom_configpanel_panel_" + this.data.id,
             buttons: {
-                componentCls: 'plugin_pimcore_datahub_statusbar',
+                componentCls: 'plugin_pimcore_queue_custom_statusbar',
                 itemId: 'footer'
             },
             defaults: {
@@ -64,7 +66,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                 width: 600
             },
             border: false,
-            title: t("plugin_pimcore_datahub_configpanel_item_general"),
+            title: t("Settings Queue"),
             items: [
                 {
                     xtype: "textfield",
@@ -164,7 +166,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
             node: this.parent.configPanel.tree.getRootNode()
         });
 
-        pimcore.helpers.showNotification(t("success"), t("plugin_pimcore_datahub_configpanel_item_save_success"), "success");
+        pimcore.helpers.showNotification(t("success"), t("plugin_pimcore_queue_custom_configpanel_item_save_success"), "success");
 
         this.resetChanges();
     },

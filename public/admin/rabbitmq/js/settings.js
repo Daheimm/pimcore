@@ -96,10 +96,10 @@ pimcore.plugin.CustomMenu.settings = Class.create({
 
             var tabPanel = Ext.getCmp("pimcore_panel_tabs");
             tabPanel.add(this.panel);
-            tabPanel.setActiveItem("pimcore_plugin_datahub_config_tab");
+            tabPanel.setActiveItem("pimcore_plugin_queue_custom_config_tab");
 
             this.panel.on("destroy", function () {
-                pimcore.globalmanager.remove("plugin_pimcore_datahub_config");
+                pimcore.globalmanager.remove("plugin_pimcore_queue_custom_config");
             }.bind(this));
 
             pimcore.layout.refresh();
@@ -112,11 +112,11 @@ pimcore.plugin.CustomMenu.settings = Class.create({
         let user = pimcore.globalmanager.get("user");
 
         //everything is allowed for admins
-        if (user.admin || user.isAllowed('plugin_datahub_admin')) {
+        if (user.admin || user.isAllowed('plugin_queue_custom_admin')) {
             return true;
         }
 
-        return user.isAllowed("plugin_datahub_adapter_" + adapter);
+        return user.isAllowed("plugin_queue_custom_adapter_" + adapter);
     },
 
 
@@ -144,7 +144,7 @@ pimcore.plugin.CustomMenu.settings = Class.create({
 
 
             var addConfigButton = new Ext.SplitButton({
-                text: t("plugin_pimcore_datahub_configpanel_add"),
+                text: t("Create"),
                 iconCls: "pimcore_icon_add",
                 handler: firstHandler.bind(this),
                 disabled: !firstHandler,

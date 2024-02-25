@@ -19,7 +19,7 @@ pimcore.plugin.queue_custom.adapter.graphql = Class.create({
     },
 
     addConfiguration: function (type) {
-        Ext.MessageBox.prompt(t('plugin_pimcore_datahub_configpanel_enterkey_title'), t('plugin_pimcore_datahub_configpanel_enterkey_prompt'), this.addConfigurationComplete.bind(this, type), null, null, "");
+        Ext.MessageBox.prompt(t('plugin_pimcore_queue_custom_configpanel_enterkey_title'), t('plugin_pimcore_queue_custom_configpanel_enterkey_prompt'), this.addConfigurationComplete.bind(this, type), null, null, "");
     },
 
     addConfigurationComplete: function (type, button, value, object) {
@@ -36,7 +36,7 @@ pimcore.plugin.queue_custom.adapter.graphql = Class.create({
                     this.configPanel.refreshTree();
 
                     if (!data || !data.success) {
-                        pimcore.helpers.showNotification(t("error"), t("plugin_pimcore_datahub_configpanel_error_adding_config") + ': <br/>' + data.message, "error");
+                        pimcore.helpers.showNotification(t("error"), t("plugin_pimcore_queue_custom_configpanel_error_adding_config") + ': <br/>' + data.message, "error");
                     } else {
                         this.openConfiguration(data.name);
                     }
@@ -46,12 +46,13 @@ pimcore.plugin.queue_custom.adapter.graphql = Class.create({
         } else if (button == "cancel") {
             return;
         } else {
-            Ext.Msg.alert(t("plugin_pimcore_datahub_configpanel"), value.length <= 80 ? t("plugin_pimcore_datahub_configpanel_invalid_name") : t("plugin_pimcore_datahub_configpanel_invalid_length"));
+            Ext.Msg.alert(t("plugin_pimcore_queue_custom_configpanel"), value.length <= 80 ? t("plugin_pimcore_queue_custom_configpanel_invalid_name") : t("plugin_pimcore_queue_custom_configpanel_invalid_length"));
         }
     },
 
     openConfiguration: function (id) {
-        var existingPanel = Ext.getCmp("id" + id);
+        var existingPanel = Ext.getCmp("plugin_pimcore_queue_custom_configpanel_panel_" + id);
+console.log(existingPanel);
         if (existingPanel) {
             this.configPanel.editPanel.setActiveTab(existingPanel);
             return;
@@ -73,7 +74,7 @@ pimcore.plugin.queue_custom.adapter.graphql = Class.create({
     },
 
     cloneConfiguration: function (tree, record) {
-        Ext.MessageBox.prompt(t('plugin_pimcore_datahub_configpanel_enterclonekey_title'), t('plugin_pimcore_datahub_configpanel_enterclonekey_enterclonekey_prompt'),
+        Ext.MessageBox.prompt(t('plugin_pimcore_queue_custom_configpanel_enterclonekey_title'), t('plugin_pimcore_queue_custom_configpanel_enterclonekey_enterclonekey_prompt'),
             this.cloneConfigurationComplete.bind(this, tree, record), null, null, "");
     },
 
@@ -93,7 +94,7 @@ pimcore.plugin.queue_custom.adapter.graphql = Class.create({
                     this.configPanel.refreshTree();
 
                     if (!data || !data.success) {
-                        pimcore.helpers.showNotification(t("error"), t("plugin_pimcore_datahub_configpanel_error_cloning_config") + ': <br/>' + data.message, "error");
+                        pimcore.helpers.showNotification(t("error"), t("plugin_pimcore_queue_custom_configpanel_error_cloning_config") + ': <br/>' + data.message, "error");
                     } else {
                         this.openConfiguration(data.name, tree, record);
                     }
@@ -103,7 +104,7 @@ pimcore.plugin.queue_custom.adapter.graphql = Class.create({
         } else if (button == "cancel") {
             return;
         } else {
-            Ext.Msg.alert(t("plugin_pimcore_datahub_configpanel"), value.length <= 80 ? t("plugin_pimcore_datahub_configpanel_invalid_name") : t("plugin_pimcore_datahub_configpanel_invalid_length"));
+            Ext.Msg.alert(t("plugin_pimcore_queue_custom_configpanel"), value.length <= 80 ? t("plugin_pimcore_queue_custom_configpanel_invalid_name") : t("plugin_pimcore_queue_custom_configpanel_invalid_length"));
         }
     },
 
