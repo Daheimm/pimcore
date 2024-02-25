@@ -10,4 +10,8 @@ interface GraphqlRequestsPimcoreRepositoryInterface
     public function getGraphQl(string $type): ?GraphqlRequestsPimcore;
 
     public function getAll(): array;
+
+    public function getTree(): array;
+
+    public function getById(int $id): GraphqlRequestsPimcore;
 }

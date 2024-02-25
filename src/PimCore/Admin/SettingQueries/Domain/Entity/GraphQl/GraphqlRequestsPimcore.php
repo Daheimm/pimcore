@@ -21,7 +21,41 @@ class GraphqlRequestsPimcore
     #[ORM\Column(type: 'string')]
     private string $xApiKey;
     #[ORM\Column(type: 'string')]
-    private string $name;
+    private string $text;
+
+    private $leaf = true;
+
+    private $adapter = 'graphql';
+
+    public function getAdapter(): string
+    {
+        return $this->adapter;
+    }
+
+    public function setAdapter(string $adapter): void
+    {
+        $this->adapter = $adapter;
+    }
+
+    public function isLeaf(): bool
+    {
+        return $this->leaf;
+    }
+
+    public function setLeaf(bool $leaf): void
+    {
+        $this->leaf = $leaf;
+    }
+
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    public function setText(string $text): void
+    {
+        $this->text = $text;
+    }
 
     public function getXApiKey(): string
     {

@@ -27,6 +27,13 @@ abstract class Controller extends AbstractController
         return new JsonResponse($json, Response::HTTP_OK, [], true);
     }
 
+    public function responseJustStruct(array|object $body): JsonResponse
+    {
+        $json = $this->serializer->serialize($body, 'json');
+
+        return new JsonResponse($json, Response::HTTP_OK, [], true);
+    }
+
     #[Required]
     public function setSerializer(SerializerInterface $serializer): void
     {

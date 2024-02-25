@@ -2,8 +2,6 @@ pimcore.registerNS("pimcore.plugin.CustomMenu.settings");
 
 pimcore.plugin.CustomMenu.settings = Class.create({
 
-    importRoute: "/admin/pimcoredatahub/config/import",
-    exportRoute: "/admin/pimcoredatahub/config/export",
 
     initialize: function () {
         this.getTabPanel();
@@ -127,23 +125,26 @@ pimcore.plugin.CustomMenu.settings = Class.create({
         return user.isAllowed("plugin_datahub_adapter_" + adapter);
     },
 
+
     getTree: function () {
         if (!this.tree) {
+
 
             var store = Ext.create('Ext.data.TreeStore', {
                 autoLoad: false,
                 autoSync: true,
                 proxy: {
                     type: 'ajax',
-                    url: '/admin/pimcoredatahub/config/list',
+                    url: '/admin-custom/tree-list',
                     reader: {
-                        type: 'json'
-                    }
-                }
+                        type: 'json',
+                        rootProperty: 'data',
+                    },
+                },
             });
 
 
-            let firstHandler = function() {
+            let firstHandler = function () {
                 this.createRow(); // Виклик функції createRow обгорнуто у анонімну функцію
             };
 
@@ -155,6 +156,7 @@ pimcore.plugin.CustomMenu.settings = Class.create({
                 disabled: !firstHandler,
             });
 
+
             this.tree = new Ext.tree.TreePanel({
                 store: store,
                 region: "west",
@@ -162,7 +164,7 @@ pimcore.plugin.CustomMenu.settings = Class.create({
                 animate: true,
                 containerScroll: true,
                 border: true,
-                width: 230,
+                width: 200,
                 split: true,
                 root: {
                     id: '0',
@@ -181,7 +183,7 @@ pimcore.plugin.CustomMenu.settings = Class.create({
                     render: function () {
                         this.getRootNode().expand()
                     }
-                }
+                },
             });
         }
 
@@ -205,7 +207,8 @@ pimcore.plugin.CustomMenu.settings = Class.create({
         }
 
         let adapterType = record.data.adapter;
-        let adapterImpl = new pimcore.plugin.datahub.adapter[adapterType](this);
+        let adapterImpl = new pimcore.plugin.queue_custom.adapter[adapterType](this);
+        console.log(adapterImpl);
         adapterImpl.openConfiguration(record.id);
     },
 

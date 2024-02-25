@@ -12,6 +12,8 @@ class PimcoreAdminListener
             array_merge(
                 $event->getPaths(),
                 [
+                    '/admin/rabbitmq/js/configuration/graphql/configItem.js',
+                    '/admin/rabbitmq/js/adapter/graphql.js',
                     '/admin/rabbitmq/js/menu.js',
                     '/admin/rabbitmq/js/createNewRouteController.js',
                     '/admin/rabbitmq/js/settings.js',
