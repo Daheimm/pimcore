@@ -1,6 +1,7 @@
 <?php
 
 namespace App\PimCore\Admin\SettingQueries\Application\Dto\Settings;
+
 use Symfony\Component\Validator\Constraints as Assert;
 
 class SettingsRequestDto
@@ -16,6 +17,18 @@ class SettingsRequestDto
 
     #[Assert\NotBlank]
     private string $type;
+    #[Assert\NotBlank]
+    private string $endpoint;
+
+    public function getEndpoint(): string
+    {
+        return $this->endpoint;
+    }
+
+    public function setEndpoint(string $endpoint): void
+    {
+        $this->endpoint = $endpoint;
+    }
 
     public function getType(): string
     {
@@ -66,5 +79,4 @@ class SettingsRequestDto
     {
         $this->text = $text;
     }
-
 }

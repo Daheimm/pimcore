@@ -2,8 +2,8 @@
 
 namespace App\PimCore\Admin\SettingQueries\Application\Services;
 
-
 use App\PimCore\Admin\SettingQueries\Application\Dto\Settings\SettingsRequestDto;
+use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\ClassesPimCoreServiceInterface;
 use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\SettingQueriesServiceInterface;
 use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
 use App\PimCore\Admin\SettingQueries\Domain\Reposutories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
@@ -11,7 +11,9 @@ use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 
 class SettingQueriesService implements SettingQueriesServiceInterface
 {
-    public function __construct(private readonly GraphqlRequestsPimcoreRepositoryInterface $graphqlRequestsPimcoreRepository)
+    public function __construct(
+        private readonly GraphqlRequestsPimcoreRepositoryInterface $graphqlRequestsPimcoreRepository,
+        private readonly ClassesPimCoreServiceInterface            $classesPimCoreService)
     {
     }
 
@@ -25,7 +27,9 @@ class SettingQueriesService implements SettingQueriesServiceInterface
 
     public function getById(int $id): GraphqlRequestsPimcore
     {
-        return $this->graphqlRequestsPimcoreRepository->getById($id);
+        $entity = $this->graphqlRequestsPimcoreRepository->getById($id);
+
+        return $entity;
     }
 
     public function update(SettingsRequestDto $settingsRequestDto): GraphqlRequestsPimcore
@@ -39,7 +43,8 @@ class SettingQueriesService implements SettingQueriesServiceInterface
         $entity->setQuery($settingsRequestDto->getQuery())
             ->setText($settingsRequestDto->getText())
             ->setXApiKey($settingsRequestDto->getXApiKey())
-            ->setType($settingsRequestDto->getType());
+            ->setType($settingsRequestDto->getType())
+            ->setEndpoint($settingsRequestDto->getEndpoint());
 
         return $this->graphqlRequestsPimcoreRepository->update($entity);
 

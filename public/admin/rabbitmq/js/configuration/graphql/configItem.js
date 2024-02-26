@@ -80,6 +80,14 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                 },
                 {
                     xtype: "textfield",
+                    fieldLabel: t("Endpoint"),
+                    name: "endpoint",
+                    maxLength: 200,
+                    allowBlank: false,
+                    value: this.data.endpoint
+                },
+                {
+                    xtype: "textfield",
                     fieldLabel: t("xApiKey"),
                     name: "xApiKey",
                     maxLength: 100,
@@ -117,9 +125,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
         let checkButtonConfig = {
             text: t("check"),
             iconCls: "pimcore_icon_inspect",
-            handler: function() {
-                this.checkData();
-            }.bind(this) // Пам'ятайте правильно зв'язати контекст `this`
+            handler: this.checkData.bind(this)
         };
 
         footer.add(checkButtonConfig);
@@ -164,14 +170,14 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
         var form = this.generalForm.getForm(); // Отримуємо форму
         if (!form.isValid()) { // Перевіряємо валідність
             var errors = [];
-            form.getFields().each(function(field) {
+            form.getFields().each(function (field) {
                 if (!field.isValid()) { // Якщо поле не валідне
                     errors.push(field.getFieldLabel() + ": " + field.getErrors().join(", ")); // Збираємо інформацію про помилки
                 }
             });
 
             // Показуємо повідомлення з переліком помилок
-            pimcore.helpers.showNotification(t("error"),  errors.join("; "), "error");
+            pimcore.helpers.showNotification(t("error"), errors.join("; "), "error");
             return;
         }
 
@@ -190,6 +196,37 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     this.saveOnComplete();
                 }
             }.bind(this)
+        });
+    },
+
+    checkData: function () {
+        var form = this.generalForm.getForm();
+        if (!form.isValid()) {
+            var errors = [];
+            form.getFields().each(function (field) {
+                if (!field.isValid()) {
+                    errors.push(field.getFieldLabel() + ": " + field.getErrors().join(", ")); // Збираємо інформацію про помилки
+                }
+            });
+
+            // Показуємо повідомлення з переліком помилок
+            pimcore.helpers.showNotification(t("error"), errors.join("; "), "error");
+            return;
+        }
+        const saveData = this.getSaveData();
+        Ext.Ajax.request({
+            url: '/admin-custom/inspect-queries',
+            params: {
+                data: saveData,
+                modificationDate: this.modificationDate
+            },
+            method: "POST",
+            success: function (response) {
+                const rdata = Ext.decode(response.responseText);
+                if (rdata && rdata.success) {
+                    pimcore.helpers.showNotification(t("success"), t("check is success"), "success");
+                }
+            }.bind(this),
         });
     },
 

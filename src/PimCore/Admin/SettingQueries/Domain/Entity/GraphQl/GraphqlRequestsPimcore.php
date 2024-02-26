@@ -23,6 +23,19 @@ class GraphqlRequestsPimcore
     #[ORM\Column(type: 'string')]
     private string $text;
 
+    #[ORM\Column(type: 'string')]
+    private string $endpoint;
+
+    public function getEndpoint(): string
+    {
+        return $this->endpoint;
+    }
+
+    public function setEndpoint(string $endpoint): void
+    {
+        $this->endpoint = $endpoint;
+    }
+
     private $leaf = true;
 
     public function isLeaf(): bool
@@ -72,9 +85,10 @@ class GraphqlRequestsPimcore
         return $this->type;
     }
 
-    public function setType(string $type): void
+    public function setType(string $type): self
     {
         $this->type = $type;
+        return $this;
     }
 
     public function getQuery(): string
