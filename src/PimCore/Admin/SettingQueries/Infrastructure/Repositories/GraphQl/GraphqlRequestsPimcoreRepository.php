@@ -11,9 +11,9 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implements GraphqlRequestsPimcoreRepositoryInterface
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(private ManagerRegistry $registry)
     {
-        parent::__construct($registry, GraphqlRequestsPimcore::class);
+        parent::__construct($this->registry, GraphqlRequestsPimcore::class);
     }
 
     public function getGraphQl(string $type): ?GraphqlRequestsPimcore
@@ -34,5 +34,19 @@ class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implement
     public function getById(int $id): GraphqlRequestsPimcore
     {
       return $this->find($id);
+    }
+
+    public function save(GraphqlRequestsPimcore $graphqlRequestsPimcore): GraphqlRequestsPimcore
+    {
+        $this->_em->persist($graphqlRequestsPimcore);
+        $this->_em->flush();
+        return $graphqlRequestsPimcore;
+    }
+
+    public function remove(int $id): void
+    {
+        $query = $this->_em->createQuery('DELETE FROM App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore g WHERE g.id = :id');
+        $query->setParameter('id', $id);
+        $query->execute();
     }
 }

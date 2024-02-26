@@ -4,6 +4,7 @@ pimcore.plugin.CustomMenu.settings = Class.create({
 
 
     initialize: function () {
+        this.adapterImpl = new pimcore.plugin.queue_custom.adapter['graphql'](this);
         this.getTabPanel();
     },
 
@@ -15,71 +16,6 @@ pimcore.plugin.CustomMenu.settings = Class.create({
         } else {
             throw "need to reload";
         }
-    },
-
-
-    createRow: function () {
-        var win = Ext.getCmp('create-new-row');
-
-        if (win !== undefined) {
-            win.destroy();
-        }
-
-        win = new Ext.Window({
-            modal: false,
-            title: t("Create New Type"),
-            id: 'create-new-row',
-            layout: 'fit',
-            width: "25%",
-            height: "150px",
-            closeAction: 'close',
-            buttonAlign: 'center',
-            overflowY: 'auto',
-            autoscroll: true,
-            minimizable: false,
-            animShow: function () {
-                this.el.slideIn('t', {
-                    duration: 1, callback: function () {
-                        this.afterShow(true);
-                    }, scope: this
-                });
-            },
-            listeners: {
-                minimize: function (win, obj) {
-                    if (win.collapsed === false) {
-                        win.collapse();
-                    } else {
-                        win.expand();
-                    }
-                }
-            },
-            items: [
-                {
-                    xtype: 'form',
-                    controller: 'createnewrow-controller',
-                    bodyPadding: 5,
-                    flex: 1,
-                    items: [
-                        {
-                            xtype: 'textfield',
-                            name: "Name Type",
-                            id: "TypeIdCustom",
-                            fieldLabel: 'Type'
-                        }
-                    ],
-                    buttons: [
-                        {
-                            text: t('Confirm'),
-                            id: 'confirmBtn',
-                            name: "confirmBtn",
-                            handler: 'onConfirm',
-                            object: this,
-                        }
-                    ]
-                }
-            ],
-        });
-        win.show(Ext.getBody());
     },
 
     getTabPanel: function () {
@@ -129,7 +65,7 @@ pimcore.plugin.CustomMenu.settings = Class.create({
                 autoSync: true,
                 proxy: {
                     type: 'ajax',
-                    url: '/admin-custom/tree-list',
+                    url: '/admin-custom/tree',
                     reader: {
                         type: 'json',
                         rootProperty: 'data',
@@ -139,7 +75,13 @@ pimcore.plugin.CustomMenu.settings = Class.create({
 
 
             let firstHandler = function () {
-                this.createRow(); // Виклик функції createRow обгорнуто у анонімну функцію
+                let fieldPanel = new pimcore.plugin.queue_custom.modals.type();
+                fieldPanel.createRow((id) => {
+                    this.refreshTree();
+                    this.adapterImpl.setContext(this);
+                    this.adapterImpl.openConfiguration(id);
+
+                });
             };
 
 
@@ -200,9 +142,8 @@ pimcore.plugin.CustomMenu.settings = Class.create({
             return;
         }
 
-        let adapterType = record.data.adapter;
-        let adapterImpl = new pimcore.plugin.queue_custom.adapter[adapterType](this);
-        adapterImpl.openConfiguration(record.id);
+        this.adapterImpl.setContext(this);
+        this.adapterImpl.openConfiguration(record.id);
     },
 
 
@@ -216,6 +157,7 @@ pimcore.plugin.CustomMenu.settings = Class.create({
         tree.select();
 
         var menu = new Ext.menu.Menu();
+
         menu.add(new Ext.menu.Item({
             text: t('delete'),
             iconCls: "pimcore_icon_delete",
@@ -232,9 +174,8 @@ pimcore.plugin.CustomMenu.settings = Class.create({
     },
 
     deleteConfiguration: function (tree, record) {
-        let adapterType = record.data.adapter;
-        let adapterImpl = new pimcore.plugin.queue_custom.adapter[adapterType](this);
-        adapterImpl.deleteConfiguration(tree, record);
+        this.adapterImpl.setContext(this);
+        this.adapterImpl.deleteConfiguration(tree, record)
     },
 
     refreshTree: function () {

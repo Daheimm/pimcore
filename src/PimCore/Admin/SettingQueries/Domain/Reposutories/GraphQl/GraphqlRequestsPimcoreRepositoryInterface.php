@@ -14,4 +14,8 @@ interface GraphqlRequestsPimcoreRepositoryInterface
     public function getTree(): array;
 
     public function getById(int $id): GraphqlRequestsPimcore;
+
+    public function save(GraphqlRequestsPimcore $graphqlRequestsPimcore): GraphqlRequestsPimcore;
+
+    public function remove(int $id): void;
 }

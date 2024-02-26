@@ -13,6 +13,8 @@ class PimcoreAdminListener
                 $event->getPaths(),
                 [
                     '/admin/rabbitmq/js/configuration/graphql/configItem.js',
+                    '/admin/rabbitmq/js/handlers/action.js',
+                    '/admin/rabbitmq/js/modals/createType.js',
                     '/admin/rabbitmq/js/adapter/graphql.js',
                     '/admin/rabbitmq/js/menu.js',
                     '/admin/rabbitmq/js/createNewRouteController.js',
