@@ -5,37 +5,6 @@ pimcore.plugin.queue_custom.adapter.graphql = Class.create({
         this.configPanel = configPanel;
     },
 
-    addConfiguration: function (type) {
-        Ext.MessageBox.prompt(t('plugin_pimcore_queue_custom_configpanel_enterkey_title'), t('plugin_pimcore_queue_custom_configpanel_enterkey_prompt'), this.addConfigurationComplete.bind(this, type), null, null, "");
-    },
-
-    addConfigurationComplete: function (type, button, value, object) {
-        var regresult = value.match(/[a-zA-Z0-9_\-]+/);
-        if (button == "ok" && value.length > 2 && value.length <= 80 && regresult == value) {
-            Ext.Ajax.request({
-                url: "/admin/pimcoredatahub/config/add",
-                params: {
-                    name: value,
-                    type: type
-                },
-                success: function (response) {
-                    var data = Ext.decode(response.responseText);
-                    this.configPanel.refreshTree();
-
-                    if (!data || !data.success) {
-                        pimcore.helpers.showNotification(t("error"), t("plugin_pimcore_queue_custom_configpanel_error_adding_config") + ': <br/>' + data.message, "error");
-                    } else {
-                        this.openConfiguration(data.name);
-                    }
-
-                }.bind(this)
-            });
-        } else if (button == "cancel") {
-            return;
-        } else {
-            Ext.Msg.alert(t("plugin_pimcore_queue_custom_configpanel"), value.length <= 80 ? t("plugin_pimcore_queue_custom_configpanel_invalid_name") : t("plugin_pimcore_queue_custom_configpanel_invalid_length"));
-        }
-    },
     setContext: function (context) {
         this.configPanel = context;
     },

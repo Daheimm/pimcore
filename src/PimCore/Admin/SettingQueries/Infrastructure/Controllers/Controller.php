@@ -6,11 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Validator\Exception\ValidationFailedException;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Contracts\Service\Attribute\Required;
 
 abstract class Controller extends AbstractController
 {
-    private SerializerInterface $serializer;
+    protected SerializerInterface $serializer;
+    protected ValidatorInterface $validator;
 
     /**
      * @param array|object $body
@@ -34,9 +37,28 @@ abstract class Controller extends AbstractController
         return new JsonResponse($json, Response::HTTP_OK, [], true);
     }
 
+    /**
+     * @param object $object
+     * @return void
+     */
+    protected function validation(object $object): void
+    {
+        $errors = $this->validator->validate($object);
+
+        if (count($errors) > 0) {
+            throw new ValidationFailedException($errors);
+        }
+    }
+
     #[Required]
     public function setSerializer(SerializerInterface $serializer): void
     {
         $this->serializer = $serializer;
+    }
+
+    #[Required]
+    public function setValidator(ValidatorInterface $validator)
+    {
+        $this->validator = $validator;
     }
 }

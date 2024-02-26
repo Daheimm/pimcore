@@ -17,5 +17,7 @@ interface GraphqlRequestsPimcoreRepositoryInterface
 
     public function save(GraphqlRequestsPimcore $graphqlRequestsPimcore): GraphqlRequestsPimcore;
 
+    public function update(GraphqlRequestsPimcore $graphqlRequestsPimcore): GraphqlRequestsPimcore;
+
     public function remove(int $id): void;
 }

@@ -33,7 +33,7 @@ class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implement
 
     public function getById(int $id): GraphqlRequestsPimcore
     {
-      return $this->find($id);
+        return $this->find($id);
     }
 
     public function save(GraphqlRequestsPimcore $graphqlRequestsPimcore): GraphqlRequestsPimcore
@@ -48,5 +48,12 @@ class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implement
         $query = $this->_em->createQuery('DELETE FROM App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore g WHERE g.id = :id');
         $query->setParameter('id', $id);
         $query->execute();
+    }
+
+    public function update(GraphqlRequestsPimcore $graphqlRequestsPimcore): GraphqlRequestsPimcore
+    {
+        $this->_em->flush($graphqlRequestsPimcore);
+        $this->_em->flush();
+        return $graphqlRequestsPimcore;
     }
 }

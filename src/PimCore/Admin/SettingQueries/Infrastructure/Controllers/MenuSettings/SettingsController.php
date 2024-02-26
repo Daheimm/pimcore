@@ -2,9 +2,9 @@
 
 namespace App\PimCore\Admin\SettingQueries\Infrastructure\Controllers\MenuSettings;
 
+use App\PimCore\Admin\SettingQueries\Application\Dto\Settings\SettingsRequestDto;
 use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\SettingQueriesServiceInterface;
 use App\PimCore\Admin\SettingQueries\Infrastructure\Controllers\Controller;
-use Psr\Container\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,14 +16,26 @@ class SettingsController extends Controller
     {
     }
 
-    #[Route('/', name: 'setting-queries', methods: 'GET')]
+    #[Route('/', name: 'setting-queries_get', methods: 'GET')]
     public function index(): JsonResponse
     {
         return $this->response($this->queriesService->getAll());
     }
-    #[Route('/show', name: 'setting-queries', methods: 'GET')]
+
+    #[Route('/show', name: 'setting-queries_get_by_id', methods: 'GET')]
     public function show(Request $request)
     {
         return $this->response($this->queriesService->getById($request->get('id')));
+    }
+
+    #[Route('', name: 'setting-queries_save', methods: 'PUT')]
+    public function update(Request $request)
+    {
+        $request = $this->serializer->deserialize($request->get('data'), SettingsRequestDto::class, 'json');
+
+        $this->validation($request);
+
+        return $this->response($this->queriesService->update($request));
+
     }
 }

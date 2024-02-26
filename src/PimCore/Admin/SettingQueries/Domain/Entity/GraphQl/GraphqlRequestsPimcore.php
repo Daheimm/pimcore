@@ -25,18 +25,6 @@ class GraphqlRequestsPimcore
 
     private $leaf = true;
 
-    private $adapter = 'graphql';
-
-    public function getAdapter(): string
-    {
-        return $this->adapter;
-    }
-
-    public function setAdapter(string $adapter): void
-    {
-        $this->adapter = $adapter;
-    }
-
     public function isLeaf(): bool
     {
         return $this->leaf;
@@ -63,9 +51,10 @@ class GraphqlRequestsPimcore
         return $this->xApiKey;
     }
 
-    public function setXApiKey(string $xApiKey): void
+    public function setXApiKey(string $xApiKey): self
     {
         $this->xApiKey = $xApiKey;
+        return $this;
     }
 
     public function getId(): int
@@ -93,9 +82,10 @@ class GraphqlRequestsPimcore
         return $this->query;
     }
 
-    public function setQuery(string $query): void
+    public function setQuery(string $query): self
     {
         $this->query = $query;
+        return $this;
     }
 
 }

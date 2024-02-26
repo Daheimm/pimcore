@@ -27,8 +27,6 @@ pimcore.plugin.CustomMenu = Class.create({
             pimcore.globalmanager.get("plugin_pimcore_custommenu").activate();
 
         } catch (e) {
-            console.log(pimcore.globalmanager.get());
-            console.log(e);
             pimcore.globalmanager.add("plugin_pimcore_custommenu", new pimcore.plugin.CustomMenu.settings());
         }
     }

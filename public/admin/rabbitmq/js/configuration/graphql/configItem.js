@@ -2,7 +2,7 @@ pimcore.registerNS("pimcore.plugin.queue_custom.configuration.graphql.configItem
 
 pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimcore.element.abstract, {
 
-    saveUrl: "/admin/pimcoredatahub/config/save",
+    saveUrl: "/admin-custom/setting-queries",
 
     initialize: function (data, parent) {
         console.log(parent);
@@ -56,22 +56,42 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
             title: t("Settings Queue"),
             items: [
                 {
+                    xtype: "numberfield",
+                    fieldLabel: t("id"),
+                    name: "id",
+                    readOnly: true,
+                    value: this.data.id
+                },
+                {
                     xtype: "textfield",
                     fieldLabel: t("name"),
                     name: "text",
+                    maxLength: 100,
+                    allowBlank: false,
                     value: this.data.text
                 },
                 {
                     xtype: "textfield",
-                    fieldLabel: t("key"),
-                    name: "query",
+                    fieldLabel: t("Type"),
+                    name: "type",
+                    maxLength: 100,
+                    allowBlank: false,
+                    value: this.data.type
+                },
+                {
+                    xtype: "textfield",
+                    fieldLabel: t("xApiKey"),
+                    name: "xApiKey",
+                    maxLength: 100,
+                    allowBlank: false,
                     value: this.data.xApiKey,
                 },
                 {
                     name: "query",
-                    fieldLabel: t("query"),
-                    xtype: "textfield",
+                    fieldLabel: t("GraphQL"),
+                    xtype: "textarea",
                     height: 100,
+                    allowBlank: false,
                     value: this.data.query
                 },
             ]
@@ -79,7 +99,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
 
         return this.generalForm;
     },
-    getItems: function() {
+    getItems: function () {
         return [this.getGeneral()];
     },
     showInfo: function () {
@@ -93,6 +113,16 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
             iconCls: "pimcore_icon_apply",
             handler: this.save.bind(this)
         };
+
+        let checkButtonConfig = {
+            text: t("check"),
+            iconCls: "pimcore_icon_inspect",
+            handler: function() {
+                this.checkData();
+            }.bind(this) // Пам'ятайте правильно зв'язати контекст `this`
+        };
+
+        footer.add(checkButtonConfig);
         footer.add(saveButtonConfig);
     },
 
@@ -106,7 +136,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
 
     getSaveDataArray: function () {
         var saveData = {};
-        saveData["general"] = this.generalForm.getForm().getFieldValues(false, false);
+        saveData = this.generalForm.getForm().getFieldValues(false, false);
         return saveData;
     },
 
@@ -130,6 +160,21 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
     },
 
     save: function () {
+
+        var form = this.generalForm.getForm(); // Отримуємо форму
+        if (!form.isValid()) { // Перевіряємо валідність
+            var errors = [];
+            form.getFields().each(function(field) {
+                if (!field.isValid()) { // Якщо поле не валідне
+                    errors.push(field.getFieldLabel() + ": " + field.getErrors().join(", ")); // Збираємо інформацію про помилки
+                }
+            });
+
+            // Показуємо повідомлення з переліком помилок
+            pimcore.helpers.showNotification(t("error"),  errors.join("; "), "error");
+            return;
+        }
+
         const saveData = this.getSaveData();
         Ext.Ajax.request({
             url: this.saveUrl,
@@ -137,7 +182,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                 data: saveData,
                 modificationDate: this.modificationDate
             },
-            method: "post",
+            method: "PUT",
             success: function (response) {
                 const rdata = Ext.decode(response.responseText);
                 if (rdata && rdata.success) {
@@ -153,7 +198,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
             node: this.parent.configPanel.tree.getRootNode()
         });
 
-        pimcore.helpers.showNotification(t("success"), t("plugin_pimcore_queue_custom_configpanel_item_save_success"), "success");
+        pimcore.helpers.showNotification(t("success"), t("saved"), "success");
 
         this.resetChanges();
     },
