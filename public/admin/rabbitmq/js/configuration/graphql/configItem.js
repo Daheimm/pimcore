@@ -60,7 +60,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     fieldLabel: t("id"),
                     name: "id",
                     readOnly: true,
-                    value: this.data.id
+                    value: this.data.id,
                 },
                 {
                     xtype: "textfield",
@@ -68,7 +68,18 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     name: "text",
                     maxLength: 100,
                     allowBlank: false,
-                    value: this.data.text
+                    value: this.data.text,
+                    listeners: {
+                        afterrender: function (field) {
+                            Ext.tip.QuickTipManager.register({
+                                target: field.getId(), // Використовуємо ID поля як ціль для вспливаючої підказки
+                                text: 'Буде відображатися в черзі як поле name:{}' // Текст вспливаючої підказки
+                            });
+                        },
+                        destroy: function (field) {
+                            Ext.tip.QuickTipManager.unregister(field.getId()); // Прибираємо вспливаючу підказку при знищенні поля
+                        }
+                    }
                 },
                 {
                     xtype: 'combobox',
@@ -76,7 +87,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     name: 'type',
                     store: Ext.create('Ext.data.Store', {
                         fields: ['id', 'name', 'active'],
-                        data : this.data.type // Тут передаємо дані отримані з API
+                        data: this.data.type // Тут передаємо дані отримані з API
                     }),
                     displayField: 'name',
                     valueField: 'id',
@@ -85,11 +96,20 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     allowBlank: false,
                     forceSelection: true,
                     listeners: {
-                        beforerender: function(combo) {
+                        beforerender: function (combo) {
                             var activeItem = combo.getStore().findRecord('active', true);
-                            if(activeItem) {
+                            if (activeItem) {
                                 combo.setValue(activeItem.get('id'));
                             }
+                        },
+                        afterrender: function (field) {
+                            Ext.tip.QuickTipManager.register({
+                                target: field.getId(), // Використовуємо ID поля як ціль для вспливаючої підказки
+                                text: 'Вибираєте обьект, на котрий буде виконан запит до графа при зміни,створенні,видалені.' // Текст вспливаючої підказки
+                            });
+                        },
+                        destroy: function (field) {
+                            Ext.tip.QuickTipManager.unregister(field.getId()); // Прибираємо вспливаючу підказку при знищенні поля
                         }
                     }
                 },
@@ -99,7 +119,18 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     name: "endpoint",
                     maxLength: 200,
                     allowBlank: false,
-                    value: this.data.endpoint
+                    value: this.data.endpoint,
+                    listeners: {
+                        afterrender: function (field) {
+                            Ext.tip.QuickTipManager.register({
+                                target: field.getId(), // Використовуємо ID поля як ціль для вспливаючої підказки
+                                text: 'При створенні доступів в DataHub вам буде надано url, повнустю вставте його в цек поле, а нього будуть йти запити графа.' // Текст вспливаючої підказки
+                            });
+                        },
+                        destroy: function (field) {
+                            Ext.tip.QuickTipManager.unregister(field.getId()); // Прибираємо вспливаючу підказку при знищенні поля
+                        }
+                    }
                 },
                 {
                     xtype: "textfield",
@@ -108,6 +139,17 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     maxLength: 100,
                     allowBlank: false,
                     value: this.data.xApiKey,
+                    listeners: {
+                        afterrender: function (field) {
+                            Ext.tip.QuickTipManager.register({
+                                target: field.getId(), // Використовуємо ID поля як ціль для вспливаючої підказки
+                                text: 'Ключ доступу до графа повинен мати всі права' // Текст вспливаючої підказки
+                            });
+                        },
+                        destroy: function (field) {
+                            Ext.tip.QuickTipManager.unregister(field.getId()); // Прибираємо вспливаючу підказку при знищенні поля
+                        }
+                    }
                 },
                 {
                     name: "query",
@@ -115,7 +157,18 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     xtype: "textarea",
                     height: 100,
                     allowBlank: false,
-                    value: this.data.query
+                    value: this.data.query,
+                    listeners: {
+                        afterrender: function (field) {
+                            Ext.tip.QuickTipManager.register({
+                                target: field.getId(), // Використовуємо ID поля як ціль для вспливаючої підказки
+                                text: 'Перед вставкою в граф,перевірте його через постман або datahub,якщо ви використовуєте ідентифікатор для отримання, позначьте його як параметр $$id' // Текст вспливаючої підказки
+                            });
+                        },
+                        destroy: function (field) {
+                            Ext.tip.QuickTipManager.unregister(field.getId()); // Прибираємо вспливаючу підказку при знищенні поля
+                        }
+                    }
                 },
             ]
         });
