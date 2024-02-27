@@ -71,12 +71,27 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     value: this.data.text
                 },
                 {
-                    xtype: "textfield",
+                    xtype: 'combobox',
                     fieldLabel: t("Type"),
-                    name: "type",
-                    maxLength: 100,
+                    name: 'type',
+                    store: Ext.create('Ext.data.Store', {
+                        fields: ['id', 'name', 'active'],
+                        data : this.data.type // Тут передаємо дані отримані з API
+                    }),
+                    displayField: 'name',
+                    valueField: 'id',
+                    queryMode: 'local',
+                    typeAhead: true,
                     allowBlank: false,
-                    value: this.data.type
+                    forceSelection: true,
+                    listeners: {
+                        beforerender: function(combo) {
+                            var activeItem = combo.getStore().findRecord('active', true);
+                            if(activeItem) {
+                                combo.setValue(activeItem.get('id'));
+                            }
+                        }
+                    }
                 },
                 {
                     xtype: "textfield",

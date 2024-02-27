@@ -25,7 +25,7 @@ class SettingsController extends Controller
     #[Route('/show', name: 'setting-queries_get_by_id', methods: 'GET')]
     public function show(Request $request)
     {
-        return $this->response($this->queriesService->getById($request->get('id')));
+        return $this->response($this->queriesService->showById($request->get('id')));
     }
 
     #[Route('', name: 'setting-queries_save', methods: 'PUT')]

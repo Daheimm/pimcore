@@ -10,6 +10,8 @@ interface SettingQueriesServiceInterface
 {
     public function getAll(): array;
 
+    public function showById(int $id): GraphQLPimCoreResponse;
+
     public function getById(int $id): GraphqlRequestsPimcore;
 
     public function update(SettingsRequestDto $settingsRequestDto): GraphqlRequestsPimcore;

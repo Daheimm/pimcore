@@ -13,8 +13,8 @@ class GraphqlRequestsPimcore
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private int $id;
-    #[ORM\Column(type: 'string')]
-    private string $type;
+    #[ORM\Column(type: 'integer')]
+    private int $typeId;
     #[ORM\Column(type: 'string')]
     private string $query;
 
@@ -80,14 +80,14 @@ class GraphqlRequestsPimcore
         $this->id = $id;
     }
 
-    public function getType(): string
+    public function getTypeId(): int
     {
-        return $this->type;
+        return $this->typeId;
     }
 
-    public function setType(string $type): self
+    public function setTypeId(int $typeId): self
     {
-        $this->type = $type;
+        $this->typeId = $typeId;
         return $this;
     }
 

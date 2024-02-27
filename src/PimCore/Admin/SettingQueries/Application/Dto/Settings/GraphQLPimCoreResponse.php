@@ -18,6 +18,20 @@ class GraphQLPimCoreResponse
 
     private $leaf = true;
 
+    private string $endpoint;
+
+    public function getEndpoint(): string
+    {
+        return $this->endpoint;
+    }
+
+    public function setEndpoint(string $endpoint): self
+    {
+        $this->endpoint = $endpoint;
+        return $this;
+    }
+
+
     public function getId(): int
     {
         return $this->id;

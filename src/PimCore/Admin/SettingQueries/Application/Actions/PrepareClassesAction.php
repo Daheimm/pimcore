@@ -22,9 +22,10 @@ class PrepareClassesAction
         foreach ($arrays as $item) {
             $prepareClass = (new PimCoreClassesDto())
                 ->setId($item->getId())
-                ->setName($item->getName());
+                ->setName($item->getName())
+                ->setActive(false);
 
-            if ($idIsActive === $item->getId()) {
+            if ($idIsActive == $item->getId()) {
                 $prepareClass->setActive(true);
             }
 
