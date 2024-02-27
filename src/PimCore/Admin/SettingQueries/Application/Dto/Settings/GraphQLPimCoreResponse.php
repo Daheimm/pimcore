@@ -9,35 +9,35 @@ class GraphQLPimCoreResponse
 
     private array $type;
 
-    private string $query;
+    private ?string $query;
 
 
-    private string $xApiKey;
+    private ?string $xApiKey;
 
-    private string $text;
+    private ?string $text;
 
     private $leaf = true;
 
-    private string $endpoint;
+    private ?string $endpoint;
 
-    public function getEndpoint(): string
+    public function getEndpoint(): ?string
     {
         return $this->endpoint;
     }
 
-    public function setEndpoint(string $endpoint): self
+    public function setEndpoint(?string $endpoint): self
     {
         $this->endpoint = $endpoint;
         return $this;
     }
 
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function setId(int $id): self
+    public function setId(?int $id): self
     {
         $this->id = $id;
         return $this;
@@ -54,34 +54,34 @@ class GraphQLPimCoreResponse
         return $this;
     }
 
-    public function getQuery(): string
+    public function getQuery(): ?string
     {
         return $this->query;
     }
 
-    public function setQuery(string $query): self
+    public function setQuery(?string $query): self
     {
         $this->query = $query;
         return $this;
     }
 
-    public function getXApiKey(): string
+    public function getXApiKey(): ?string
     {
         return $this->xApiKey;
     }
 
-    public function setXApiKey(string $xApiKey): self
+    public function setXApiKey(?string $xApiKey): self
     {
         $this->xApiKey = $xApiKey;
         return $this;
     }
 
-    public function getText(): string
+    public function getText(): ?string
     {
         return $this->text;
     }
 
-    public function setText(string $text): self
+    public function setText(?string $text): self
     {
         $this->text = $text;
         return $this;
