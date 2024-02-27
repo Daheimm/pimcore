@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Shared\Infrastructure\Databases\Migrations;
+namespace App\PimCore\Admin\SettingQueries\Infrastructure\Databases\Migrations;
 
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;
@@ -22,6 +22,7 @@ final class Version20240215074159 extends AbstractMigration
         // Створення таблиці 'graphql_requests'
         $this->addSql("CREATE TABLE graphql_requests_pimcore (
         id SERIAL NOT NULL,
+        name VARCHAR(255) NOT NULL
         type VARCHAR(255) NOT NULL,
         query TEXT NOT NULL,
         x_api_key VARCHAR(255) NOT NULL
