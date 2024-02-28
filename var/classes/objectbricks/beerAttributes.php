@@ -2,29 +2,33 @@
 
 /**
  * Fields Summary:
- * - segmentgroup [manyToManyObjectRelation]
- * - texturerelation [manyToManyObjectRelation]
- * - usezonerelation [manyToManyObjectRelation]
- * - flavorrelation [manyToManyObjectRelation]
- * - activecomponents [manyToManyObjectRelation]
- * - effectsrelation [manyToManyObjectRelation]
- * - relationskintype [manyToManyObjectRelation]
- * - conditionrelation [manyToManyObjectRelation]
- * - relationhairtype [manyToManyObjectRelation]
- * - haireffectsrelation [manyToManyObjectRelation]
- * - quantity [numeric]
+ * - newbeer [checkbox]
+ * - wildbeer [checkbox]
+ * - draftbeer [checkbox]
+ * - filtration [select]
+ * - pasteurization [select]
+ * - untappd [numeric]
+ * - traditionalname [manyToOneRelation]
+ * - craftname [manyToOneRelation]
+ * - beerbrandrelation [manyToOneRelation]
+ * - relationcolor [manyToManyObjectRelation]
+ * - beerstylerelation [manyToManyObjectRelation]
+ * - bitterness [slider]
+ * - densityplato [slider]
+ * - saturation [slider]
  * - localizedfields [localizedfields]
- * -- application [wysiwyg]
- * -- preference [wysiwyg]
+ * -- taste [input]
+ * -- particularities [input]
+ * -- serving [textarea]
  */
 
 return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'dao' => NULL,
-   'key' => 'cosmetic',
+   'key' => 'beerAttributes',
    'parentClass' => '',
    'implementsInterfaces' => '',
-   'title' => 'Косметика - Кастомні атрибути',
-   'group' => 'Косметика',
+   'title' => 'Пиво',
+   'group' => 'Кастомні (Алкоголь)',
    'layoutDefinitions' => 
   \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'name' => NULL,
@@ -58,7 +62,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
              'region' => NULL,
-             'title' => 'Загальні атрибути',
+             'title' => 'Кастомні (пиво)',
              'width' => '',
              'height' => '',
              'collapsible' => false,
@@ -68,89 +72,351 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'children' => 
             array (
               0 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'segmentgroup',
-                 'title' => 'Сегментна група',
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+                 'name' => 'newbeer',
+                 'title' => 'Новинка',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
                  'locked' => false,
-                 'style' => 'float:right; margin-right:1px; ',
+                 'style' => 'float: left; margin: 0 60px 0 0;',
                  'permissions' => NULL,
                  'fieldtype' => '',
-                 'relationType' => true,
+                 'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
-                 'visibleSearch' => true,
+                 'visibleSearch' => false,
                  'blockedVarsForExport' => 
                 array (
                 ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'TypeProduct',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'key',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
+                 'defaultValue' => 0,
+                 'defaultValueGenerator' => '',
               )),
               1 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'texturerelation',
-                 'title' => 'Текстура',
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+                 'name' => 'wildbeer',
+                 'title' => 'Дике пиво',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
                  'locked' => false,
-                 'style' => 'float:right; margin-right:1px; ',
+                 'style' => 'float: left; margin: 0 60px 0 0;',
                  'permissions' => NULL,
                  'fieldtype' => '',
-                 'relationType' => true,
+                 'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
-                 'visibleSearch' => true,
+                 'visibleSearch' => false,
                  'blockedVarsForExport' => 
                 array (
                 ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Texture',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'key',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
+                 'defaultValue' => 0,
+                 'defaultValueGenerator' => '',
               )),
               2 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+                 'name' => 'draftbeer',
+                 'title' => 'Бочкове пиво',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float: left; margin: 0 60px 0 0;',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'defaultValue' => 0,
+                 'defaultValueGenerator' => '',
+              )),
+              3 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+                 'name' => 'filtration',
+                 'title' => 'Фільтрація',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'options' => 
+                array (
+                  0 => 
+                  array (
+                    'key' => 'фільтроване',
+                    'value' => 'filtered',
+                  ),
+                  1 => 
+                  array (
+                    'key' => 'нефільтроване',
+                    'value' => 'unfiltered',
+                  ),
+                ),
+                 'defaultValue' => '',
+                 'optionsProviderClass' => '',
+                 'optionsProviderData' => '',
+                 'columnLength' => 190,
+                 'dynamicOptions' => false,
+                 'defaultValueGenerator' => '',
+                 'width' => '',
+              )),
+              4 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+                 'name' => 'pasteurization',
+                 'title' => 'Пастеризація',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'options' => 
+                array (
+                  0 => 
+                  array (
+                    'key' => 'пастеризоване',
+                    'value' => 'pasteurized',
+                  ),
+                  1 => 
+                  array (
+                    'key' => 'не пастеризоване',
+                    'value' => 'not pasteurized',
+                  ),
+                ),
+                 'defaultValue' => '',
+                 'optionsProviderClass' => '',
+                 'optionsProviderData' => '',
+                 'columnLength' => 190,
+                 'dynamicOptions' => false,
+                 'defaultValueGenerator' => '',
+                 'width' => '',
+              )),
+              5 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+                 'name' => 'untappd',
+                 'title' => 'Рейтинг Untappd',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float: left; margin: 0 60px 0 0;',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'defaultValue' => NULL,
+                 'integer' => false,
+                 'unsigned' => false,
+                 'minValue' => 0.01,
+                 'maxValue' => 5.0,
+                 'unique' => false,
+                 'decimalSize' => NULL,
+                 'decimalPrecision' => 2,
+                 'width' => '',
+                 'defaultValueGenerator' => '',
+              )),
+              6 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+                 'name' => 'traditionalname',
+                 'title' => 'Традиційне пиво - країна (фільтр)',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float: left; margin: 0 60px 0 0;',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                  0 => 
+                  array (
+                    'classes' => 'Traditionalbeer',
+                  ),
+                ),
+                 'displayMode' => 'grid',
+                 'pathFormatterClass' => '',
+                 'assetInlineDownloadAllowed' => false,
+                 'assetUploadPath' => '',
+                 'allowToClearRelation' => true,
+                 'objectsAllowed' => true,
+                 'assetsAllowed' => false,
+                 'assetTypes' => 
+                array (
+                ),
+                 'documentsAllowed' => false,
+                 'documentTypes' => 
+                array (
+                ),
+                 'width' => 500,
+              )),
+              7 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+                 'name' => 'craftname',
+                 'title' => 'Крафтове пиво - країна (фільтр)',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float: left; margin: 0 60px 0 0;',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                  0 => 
+                  array (
+                    'classes' => 'Craftbeer',
+                  ),
+                ),
+                 'displayMode' => 'grid',
+                 'pathFormatterClass' => '',
+                 'assetInlineDownloadAllowed' => false,
+                 'assetUploadPath' => '',
+                 'allowToClearRelation' => true,
+                 'objectsAllowed' => true,
+                 'assetsAllowed' => false,
+                 'assetTypes' => 
+                array (
+                ),
+                 'documentsAllowed' => false,
+                 'documentTypes' => 
+                array (
+                ),
+                 'width' => 500,
+              )),
+              8 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+                 'name' => 'beerbrandrelation',
+                 'title' => 'ТОП-Бренд (фільтр)',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float: left; margin: 0 60px 0 0;',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                  0 => 
+                  array (
+                    'classes' => 'Beerbrand',
+                  ),
+                ),
+                 'displayMode' => 'grid',
+                 'pathFormatterClass' => '',
+                 'assetInlineDownloadAllowed' => false,
+                 'assetUploadPath' => '',
+                 'allowToClearRelation' => true,
+                 'objectsAllowed' => true,
+                 'assetsAllowed' => false,
+                 'assetTypes' => 
+                array (
+                ),
+                 'documentsAllowed' => false,
+                 'documentTypes' => 
+                array (
+                ),
+                 'width' => 500,
+              )),
+              9 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'usezonerelation',
-                 'title' => 'Зона використання',
+                 'name' => 'relationcolor',
+                 'title' => 'Колір пива',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                  0 => 
+                  array (
+                    'classes' => 'Beercolor',
+                  ),
+                ),
+                 'displayMode' => 'combo',
+                 'pathFormatterClass' => '',
+                 'maxItems' => 1,
+                 'visibleFields' => 'key',
+                 'allowToCreateNewObject' => false,
+                 'allowToClearRelation' => true,
+                 'optimizedAdminLoading' => false,
+                 'enableTextSelection' => false,
+                 'visibleFieldDefinitions' => 
+                array (
+                ),
+                 'width' => 500,
+                 'height' => '',
+              )),
+              10 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
+                 'name' => 'beerstylerelation',
+                 'title' => 'Стиль пива (фільтр)',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -162,7 +428,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'relationType' => true,
                  'invisible' => false,
                  'visibleGridView' => false,
-                 'visibleSearch' => true,
+                 'visibleSearch' => false,
                  'blockedVarsForExport' => 
                 array (
                 ),
@@ -170,7 +436,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                 array (
                   0 => 
                   array (
-                    'classes' => 'VariantTypeProduct',
+                    'classes' => 'Beerstyle',
                   ),
                 ),
                  'displayMode' => 'combo',
@@ -187,45 +453,86 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => '',
                  'height' => '',
               )),
-              3 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'flavorrelation',
-                 'title' => 'Аромат',
+              11 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Slider::__set_state(array(
+                 'name' => 'bitterness',
+                 'title' => 'Гіркота IBU',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
                  'locked' => false,
-                 'style' => 'float:right; margin-right:1px; ',
+                 'style' => 'float: left; margin: 0 60px 0 0;',
                  'permissions' => NULL,
                  'fieldtype' => '',
-                 'relationType' => true,
+                 'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
-                 'visibleSearch' => true,
+                 'visibleSearch' => false,
                  'blockedVarsForExport' => 
                 array (
                 ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Flavor',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'key',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
+                 'minValue' => 1.0,
+                 'maxValue' => 5.0,
+                 'vertical' => false,
+                 'increment' => NULL,
+                 'decimalPrecision' => NULL,
                  'height' => '',
+                 'width' => '',
+              )),
+              12 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Slider::__set_state(array(
+                 'name' => 'densityplato',
+                 'title' => 'Щільність plato',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float: left; margin: 0 60px 0 0;',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'minValue' => 1.0,
+                 'maxValue' => 5.0,
+                 'vertical' => false,
+                 'increment' => NULL,
+                 'decimalPrecision' => NULL,
+                 'height' => '',
+                 'width' => '',
+              )),
+              13 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Slider::__set_state(array(
+                 'name' => 'saturation',
+                 'title' => 'Насиченість',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float: left; margin: 0 60px 0 0;',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'minValue' => 1.0,
+                 'maxValue' => 5.0,
+                 'vertical' => false,
+                 'increment' => NULL,
+                 'decimalPrecision' => NULL,
+                 'height' => '',
+                 'width' => '',
               )),
             ),
              'locked' => false,
@@ -241,7 +548,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
              'region' => NULL,
-             'title' => 'Для обличчя',
+             'title' => 'Текстовий контент',
              'width' => '',
              'height' => '',
              'collapsible' => false,
@@ -251,322 +558,6 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'children' => 
             array (
               0 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'activecomponents',
-                 'title' => 'Ключовий інгредієнт (обличчя)',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => 'float:right; margin-right:1px; ',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Components',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'key',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
-              )),
-              1 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'effectsrelation',
-                 'title' => 'Проблеми та Ефекти (обличчя)',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Effects',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'key',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
-              )),
-              2 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'relationskintype',
-                 'title' => 'Тип шкіри',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Skintype',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'key',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
-              )),
-              3 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'conditionrelation',
-                 'title' => 'Стан шкіри',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Skincondition',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'key',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
-              )),
-            ),
-             'locked' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'fieldtype' => 'fieldset',
-             'labelWidth' => 100,
-             'labelAlign' => 'left',
-          )),
-          2 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
-             'name' => 'Layout',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => 'Для волосся',
-             'width' => '',
-             'height' => '',
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'children' => 
-            array (
-              0 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'relationhairtype',
-                 'title' => 'Тип волосся',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Hairtype',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'key',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
-              )),
-              1 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'haireffectsrelation',
-                 'title' => 'Проблеми та Ефекти (волосся)',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'Effectshair',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'key',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
-              )),
-            ),
-             'locked' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'fieldtype' => 'fieldset',
-             'labelWidth' => 100,
-             'labelAlign' => 'left',
-          )),
-          3 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
-             'name' => 'Layout',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => 'Текстове наповнення',
-             'width' => '',
-             'height' => '',
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'children' => 
-            array (
-              0 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-                 'name' => 'quantity',
-                 'title' => 'Кількість в уп., шт',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'defaultValue' => NULL,
-                 'integer' => true,
-                 'unsigned' => false,
-                 'minValue' => 1.0,
-                 'maxValue' => NULL,
-                 'unique' => false,
-                 'decimalSize' => NULL,
-                 'decimalPrecision' => NULL,
-                 'width' => 110,
-                 'defaultValueGenerator' => '',
-              )),
-              1 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
                  'name' => 'localizedfields',
                  'title' => '',
@@ -588,15 +579,15 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'children' => 
                 array (
                   0 => 
-                  \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
-                     'name' => 'application',
-                     'title' => 'Спосіб застосування',
+                  \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                     'name' => 'taste',
+                     'title' => 'Смак',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
                      'index' => false,
                      'locked' => false,
-                     'style' => 'float:left; margin-right:20px;',
+                     'style' => '',
                      'permissions' => NULL,
                      'fieldtype' => '',
                      'relationType' => false,
@@ -606,22 +597,27 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                      'blockedVarsForExport' => 
                     array (
                     ),
-                     'toolbarConfig' => '',
-                     'excludeFromSearchIndex' => false,
-                     'maxCharacters' => '',
-                     'height' => 150,
-                     'width' => 450,
+                     'defaultValue' => NULL,
+                     'columnLength' => 600,
+                     'regex' => '',
+                     'regexFlags' => 
+                    array (
+                    ),
+                     'unique' => false,
+                     'showCharCount' => false,
+                     'width' => 600,
+                     'defaultValueGenerator' => '',
                   )),
                   1 => 
-                  \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
-                     'name' => 'preference',
-                     'title' => 'Переваги',
+                  \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                     'name' => 'particularities',
+                     'title' => 'Особливості стилю',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
                      'index' => false,
                      'locked' => false,
-                     'style' => 'float:left; margin-right:20px;',
+                     'style' => '',
                      'permissions' => NULL,
                      'fieldtype' => '',
                      'relationType' => false,
@@ -631,11 +627,41 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                      'blockedVarsForExport' => 
                     array (
                     ),
-                     'toolbarConfig' => '',
+                     'defaultValue' => NULL,
+                     'columnLength' => 600,
+                     'regex' => '',
+                     'regexFlags' => 
+                    array (
+                    ),
+                     'unique' => false,
+                     'showCharCount' => false,
+                     'width' => 600,
+                     'defaultValueGenerator' => '',
+                  )),
+                  2 => 
+                  \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
+                     'name' => 'serving',
+                     'title' => 'Як подавати',
+                     'tooltip' => '',
+                     'mandatory' => false,
+                     'noteditable' => false,
+                     'index' => false,
+                     'locked' => false,
+                     'style' => '',
+                     'permissions' => NULL,
+                     'fieldtype' => '',
+                     'relationType' => false,
+                     'invisible' => false,
+                     'visibleGridView' => false,
+                     'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'maxLength' => NULL,
+                     'showCharCount' => false,
                      'excludeFromSearchIndex' => false,
-                     'maxCharacters' => '',
-                     'height' => 150,
-                     'width' => 450,
+                     'height' => 90,
+                     'width' => 600,
                   )),
                 ),
                  'region' => NULL,
@@ -693,7 +719,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
     0 => 
     array (
       'classname' => 'Product',
-      'fieldname' => 'customfeatures',
+      'fieldname' => 'alcoholcustomization',
     ),
   ),
 ));

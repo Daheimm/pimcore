@@ -146,7 +146,7 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'region' => NULL,
              'layout' => NULL,
              'maxTabs' => NULL,
-             'border' => false,
+             'border' => true,
              'provideSplitView' => false,
              'tabPosition' => 'top',
              'hideLabelsWhenTabsReached' => NULL,

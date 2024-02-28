@@ -2,20 +2,19 @@
 
 /**
  * Fields Summary:
- * - ruletype [select]
- * - priority [numeric]
- * - webtrue [checkbox]
- * - mobiletrue [checkbox]
- * - limitactiveoutput [numeric]
+ * - sort [input]
+ * - tastedescription [input]
+ * - size [select]
+ * - airdelivery [checkbox]
  */
 
-return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
+return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'dao' => NULL,
-   'key' => 'outputActive',
+   'key' => 'vegetablesAndfruits',
    'parentClass' => '',
    'implementsInterfaces' => '',
-   'title' => 'Вивід активний',
-   'group' => 'Додати правило',
+   'title' => 'Овочі та фрукти',
+   'group' => 'Кастомні (Продукти)',
    'layoutDefinitions' => 
   \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'name' => NULL,
@@ -31,7 +30,7 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
      'children' => 
     array (
       0 => 
-      \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
+      \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -45,12 +44,72 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'children' => 
         array (
           0 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
-             'name' => 'ruletype',
-             'title' => 'Тип правила',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'sort',
+             'title' => 'Сорт',
              'tooltip' => '',
              'mandatory' => false,
-             'noteditable' => true,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => false,
+             'showCharCount' => false,
+             'width' => '',
+             'defaultValueGenerator' => '',
+          )),
+          1 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'tastedescription',
+             'title' => 'Опис смаку',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => false,
+             'showCharCount' => false,
+             'width' => '',
+             'defaultValueGenerator' => '',
+          )),
+          2 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'name' => 'size',
+             'title' => 'Розмір',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
              'index' => false,
              'locked' => false,
              'style' => '',
@@ -67,11 +126,21 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
             array (
               0 => 
               array (
-                'key' => 'outputActive',
-                'value' => 'outputActive',
+                'key' => 'S',
+                'value' => 'S',
+              ),
+              1 => 
+              array (
+                'key' => 'M',
+                'value' => 'M',
+              ),
+              2 => 
+              array (
+                'key' => 'L',
+                'value' => 'L',
               ),
             ),
-             'defaultValue' => 'outputActive',
+             'defaultValue' => '',
              'optionsProviderClass' => '',
              'optionsProviderData' => '',
              'columnLength' => 190,
@@ -79,62 +148,10 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'defaultValueGenerator' => '',
              'width' => '',
           )),
-          1 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'name' => 'priority',
-             'title' => 'Пріоритет',
-             'tooltip' => '',
-             'mandatory' => true,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'integer' => true,
-             'unsigned' => false,
-             'minValue' => 1.0,
-             'maxValue' => 5.0,
-             'unique' => false,
-             'decimalSize' => NULL,
-             'decimalPrecision' => NULL,
-             'width' => 95,
-             'defaultValueGenerator' => '',
-          )),
-          2 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-             'name' => 'webtrue',
-             'title' => 'Правило актуальне для сайту',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => 0,
-             'defaultValueGenerator' => '',
-          )),
           3 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-             'name' => 'mobiletrue',
-             'title' => 'Правило актуальне для мобільного додатку',
+             'name' => 'airdelivery',
+             'title' => 'Авіадоставка',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -151,36 +168,6 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
             array (
             ),
              'defaultValue' => 0,
-             'defaultValueGenerator' => '',
-          )),
-          4 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'name' => 'limitactiveoutput',
-             'title' => 'Ліміт (Вивід Активний)',
-             'tooltip' => '',
-             'mandatory' => true,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'integer' => false,
-             'unsigned' => false,
-             'minValue' => 1.0,
-             'maxValue' => NULL,
-             'unique' => false,
-             'decimalSize' => NULL,
-             'decimalPrecision' => NULL,
-             'width' => 95,
              'defaultValueGenerator' => '',
           )),
         ),
@@ -188,10 +175,7 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
-         'fieldtype' => 'panel',
-         'layout' => NULL,
-         'border' => false,
-         'icon' => '',
+         'fieldtype' => 'fieldset',
          'labelWidth' => 100,
          'labelAlign' => 'left',
       )),
@@ -210,5 +194,13 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
    'fieldDefinitionsCache' => NULL,
    'blockedVarsForExport' => 
   array (
+  ),
+   'classDefinitions' => 
+  array (
+    0 => 
+    array (
+      'classname' => 'Product',
+      'fieldname' => 'pcustomization',
+    ),
   ),
 ));

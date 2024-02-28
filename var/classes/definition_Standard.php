@@ -3,25 +3,23 @@
 /**
  * Inheritance: no
  * Variants: no
- * Title: Сортовий склад
  *
  * Fields Summary:
- * - code [input]
- * - localizedfields [localizedfields]
- * -- winevariety [input]
+ * - standardcod [input]
+ * - standardname [input]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '40',
-   'name' => 'Winecomposition',
-   'title' => 'Сортовий склад',
+   'id' => '81',
+   'name' => 'Standard',
+   'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1707866268,
+   'modificationDate' => 1709117567,
    'userOwner' => 2,
    'userModification' => 2,
-   'parentClass' => 'Pimcore\\Model\\DataObject\\Product',
+   'parentClass' => '',
    'implementsInterfaces' => '',
    'listingParentClass' => '',
    'useTraits' => '',
@@ -48,11 +46,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'children' => 
     array (
       0 => 
-      \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
+      \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
-         'title' => 'Загальні',
+         'title' => '',
          'width' => '',
          'height' => '',
          'collapsible' => false,
@@ -63,7 +61,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
         array (
           0 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'code',
+             'name' => 'standardcod',
              'title' => 'Код з 1С',
              'tooltip' => '',
              'mandatory' => false,
@@ -92,82 +90,41 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
-             'name' => 'localizedfields',
-             'title' => '',
-             'tooltip' => NULL,
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'standardname',
+             'title' => 'Назва',
+             'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
              'locked' => false,
-             'style' => NULL,
+             'style' => '',
              'permissions' => NULL,
              'fieldtype' => '',
              'relationType' => false,
              'invisible' => false,
-             'visibleGridView' => true,
-             'visibleSearch' => true,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
              'blockedVarsForExport' => 
             array (
             ),
-             'children' => 
-            array (
-              0 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                 'name' => 'winevariety',
-                 'title' => 'Сорт (сортовий склад)',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => true,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'defaultValue' => NULL,
-                 'columnLength' => 190,
-                 'regex' => '',
-                 'regexFlags' => 
-                array (
-                ),
-                 'unique' => false,
-                 'showCharCount' => false,
-                 'width' => '',
-                 'defaultValueGenerator' => '',
-              )),
-            ),
-             'region' => NULL,
-             'layout' => NULL,
-             'maxTabs' => NULL,
-             'border' => false,
-             'provideSplitView' => false,
-             'tabPosition' => 'top',
-             'hideLabelsWhenTabsReached' => NULL,
-             'referencedFields' => 
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
             array (
             ),
-             'permissionView' => NULL,
-             'permissionEdit' => NULL,
-             'labelWidth' => 100,
-             'labelAlign' => 'left',
-             'fieldDefinitionsCache' => NULL,
+             'unique' => false,
+             'showCharCount' => false,
+             'width' => '',
+             'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
         array (
         ),
-         'fieldtype' => 'panel',
-         'layout' => NULL,
-         'border' => false,
-         'icon' => '',
+         'fieldtype' => 'fieldset',
          'labelWidth' => 100,
          'labelAlign' => 'left',
       )),
@@ -183,8 +140,8 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => '/bundles/pimcoreadmin/img/twemoji/1f377.svg',
-   'group' => 'Alcohol Attributes (Вино)',
+   'icon' => '',
+   'group' => 'ProductInfo',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
    'previewGeneratorReference' => '',
