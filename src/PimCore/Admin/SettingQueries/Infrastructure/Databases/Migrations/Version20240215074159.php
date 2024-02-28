@@ -25,7 +25,7 @@ final class Version20240215074159 extends AbstractMigration
                 name VARCHAR(255),
                 text VARCHAR(255),
                 endpoint VARCHAR(255),
-                typeId integer,
+                type_id integer,
                 query TEXT,
                 x_api_key VARCHAR(255),
                 PRIMARY KEY(id)
