@@ -35,7 +35,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1706738830,
+   'modificationDate' => 1707854147,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -955,7 +955,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               0 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                  'name' => 'dishesrelation',
-                 'title' => 'Посуд для приготування ',
+                 'title' => 'Посуд для приготування',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -1253,31 +1253,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'deletedDataComponents' => 
   array (
-    0 => 
-    \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
-       'name' => 'preview',
-       'title' => 'Превью',
-       'tooltip' => '',
-       'mandatory' => false,
-       'noteditable' => false,
-       'index' => false,
-       'locked' => false,
-       'style' => '',
-       'permissions' => NULL,
-       'fieldtype' => '',
-       'relationType' => false,
-       'invisible' => false,
-       'visibleGridView' => false,
-       'visibleSearch' => false,
-       'blockedVarsForExport' => 
-      array (
-      ),
-       'toolbarConfig' => '',
-       'excludeFromSearchIndex' => false,
-       'maxCharacters' => '',
-       'height' => 180,
-       'width' => 500,
-    )),
   ),
    'blockedVarsForExport' => 
   array (

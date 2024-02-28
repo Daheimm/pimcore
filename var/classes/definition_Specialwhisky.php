@@ -3,25 +3,25 @@
 /**
  * Inheritance: no
  * Variants: no
- * Title: Сортовий склад
+ * Title: Особливості (віскі)
  *
  * Fields Summary:
  * - code [input]
  * - localizedfields [localizedfields]
- * -- winevariety [input]
+ * -- specialwhiskyname [input]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '40',
-   'name' => 'Winecomposition',
-   'title' => 'Сортовий склад',
+   'id' => '68',
+   'name' => 'Specialwhisky',
+   'title' => 'Особливості (віскі)',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1707866268,
+   'modificationDate' => 1707871282,
    'userOwner' => 2,
    'userModification' => 2,
-   'parentClass' => 'Pimcore\\Model\\DataObject\\Product',
+   'parentClass' => '',
    'implementsInterfaces' => '',
    'listingParentClass' => '',
    'useTraits' => '',
@@ -114,8 +114,8 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
               0 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                 'name' => 'winevariety',
-                 'title' => 'Сорт (сортовий склад)',
+                 'name' => 'specialwhiskyname',
+                 'title' => 'Особливості (віскі)',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -183,8 +183,8 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => '/bundles/pimcoreadmin/img/twemoji/1f377.svg',
-   'group' => 'Alcohol Attributes (Вино)',
+   'icon' => '',
+   'group' => 'Alcohol Attributes (Віскі)',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
    'previewGeneratorReference' => '',

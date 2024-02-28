@@ -3,25 +3,25 @@
 /**
  * Inheritance: no
  * Variants: no
- * Title: Сортовий склад
+ * Title: Країни (вино)
  *
  * Fields Summary:
  * - code [input]
  * - localizedfields [localizedfields]
- * -- winevariety [input]
+ * -- countrywine [input]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '40',
-   'name' => 'Winecomposition',
-   'title' => 'Сортовий склад',
+   'id' => '65',
+   'name' => 'Winecountry',
+   'title' => 'Країни (вино)',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1707866268,
+   'modificationDate' => 1707950698,
    'userOwner' => 2,
    'userModification' => 2,
-   'parentClass' => 'Pimcore\\Model\\DataObject\\Product',
+   'parentClass' => '',
    'implementsInterfaces' => '',
    'listingParentClass' => '',
    'useTraits' => '',
@@ -114,8 +114,8 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
               0 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                 'name' => 'winevariety',
-                 'title' => 'Сорт (сортовий склад)',
+                 'name' => 'countrywine',
+                 'title' => 'Країна (вино)',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -183,7 +183,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => '/bundles/pimcoreadmin/img/twemoji/1f377.svg',
+   'icon' => '',
    'group' => 'Alcohol Attributes (Вино)',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
@@ -216,6 +216,28 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'deletedDataComponents' => 
   array (
+    0 => 
+    \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+       'name' => 'isfilter',
+       'title' => 'Фільтр 3-го рівня',
+       'tooltip' => '',
+       'mandatory' => false,
+       'noteditable' => false,
+       'index' => false,
+       'locked' => false,
+       'style' => '',
+       'permissions' => NULL,
+       'fieldtype' => '',
+       'relationType' => false,
+       'invisible' => false,
+       'visibleGridView' => true,
+       'visibleSearch' => false,
+       'blockedVarsForExport' => 
+      array (
+      ),
+       'defaultValue' => 1,
+       'defaultValueGenerator' => '',
+    )),
   ),
    'blockedVarsForExport' => 
   array (
