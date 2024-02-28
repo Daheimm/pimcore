@@ -73,6 +73,8 @@ services:
     App\PimCore\Admin\SettingQueries\Infrastructure\Controllers\:
         resource: '../src/PimCore/Admin/SettingQueries/Infrastructure/Controllers/'
         tags: [ 'controller.service_arguments' ]
+
+
     # Example custom templating helper
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they

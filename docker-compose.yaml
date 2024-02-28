@@ -108,17 +108,17 @@ services:
         extra_hosts:
             - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
-    chrome:
-        image: browserless/chrome
-        restart: always
-        extra_hosts:
-            - "pimcore-gw-dev.iwis.io:192.168.166.62"
+    #chrome:
+       # image: browserless/chrome
+       ## restart: always
+       # extra_hosts:
+        #    - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
-    gotenberg:
-        image: gotenberg/gotenberg:7
-        restart: always
-        extra_hosts:
-            - "pimcore-gw-dev.iwis.io:192.168.166.62"
+   # gotenberg:
+    #    image: gotenberg/gotenberg:7
+     #   restart: always
+       # extra_hosts:
+       #     - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
     rabbitmq:
         image: rabbitmq:3.8.2-management
