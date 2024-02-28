@@ -3,6 +3,7 @@
 namespace App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl;
 
 
+use App\PimCore\Admin\SettingQueries\Infrastructure\Repositories\GraphQl\GraphqlRequestsPimcoreRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: GraphqlRequestsPimcoreRepository::class)]
@@ -14,24 +15,24 @@ class GraphqlRequestsPimcore
     #[ORM\Column(type: 'integer')]
     private int $id;
     #[ORM\Column(type: 'integer')]
-    private int $typeId;
+    private ?int $typeId;
     #[ORM\Column(type: 'string')]
-    private string $query;
+    private ?string $query;
 
     #[ORM\Column(type: 'string')]
-    private string $xApiKey;
+    private ?string $xApiKey;
     #[ORM\Column(type: 'string')]
-    private string $text;
+    private ?string $text;
 
     #[ORM\Column(type: 'string')]
-    private string $endpoint;
+    private ?string $endpoint;
 
-    public function getEndpoint(): string
+    public function getEndpoint(): ?string
     {
         return $this->endpoint;
     }
 
-    public function setEndpoint(string $endpoint): void
+    public function setEndpoint(?string $endpoint): void
     {
         $this->endpoint = $endpoint;
     }
@@ -48,23 +49,23 @@ class GraphqlRequestsPimcore
         $this->leaf = $leaf;
     }
 
-    public function getText(): string
+    public function getText(): ?string
     {
         return $this->text;
     }
 
-    public function setText(string $text): self
+    public function setText(?string $text): self
     {
         $this->text = $text;
         return $this;
     }
 
-    public function getXApiKey(): string
+    public function getXApiKey(): ?string
     {
         return $this->xApiKey;
     }
 
-    public function setXApiKey(string $xApiKey): self
+    public function setXApiKey(?string $xApiKey): self
     {
         $this->xApiKey = $xApiKey;
         return $this;
@@ -75,28 +76,28 @@ class GraphqlRequestsPimcore
         return $this->id;
     }
 
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
 
-    public function getTypeId(): int
+    public function getTypeId(): ?int
     {
         return $this->typeId;
     }
 
-    public function setTypeId(int $typeId): self
+    public function setTypeId(?int $typeId): self
     {
         $this->typeId = $typeId;
         return $this;
     }
 
-    public function getQuery(): string
+    public function getQuery(): ?string
     {
         return $this->query;
     }
 
-    public function setQuery(string $query): self
+    public function setQuery(?string $query): self
     {
         $this->query = $query;
         return $this;

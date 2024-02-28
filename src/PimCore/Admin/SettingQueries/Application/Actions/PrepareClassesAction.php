@@ -13,7 +13,7 @@ class PrepareClassesAction
      * @param int $idIsActive
      * @return array
      */
-    public static function run(array $arrays, int $idIsActive = 0)
+    public static function run(array $arrays, ?int $idIsActive = 0)
     {
         $newArr = [];
         /**
