@@ -54,7 +54,7 @@ services:
         # image: pimcore/pimcore:php8.2-debug-latest
         image: ${COMPOSE_PROJECT_NAME}:${TAG:-latest}
         build:
-            context: ${BASE_ENV_DIR}/docker
+            context: ./.stack/docker
             # target: app-dev
             # args:
             #   # To authenticate to private registry either use username / password, or Oauth key/secret / etc
@@ -86,7 +86,7 @@ services:
         user: '1000:1000' # set to your uid:gid
         restart: always
         build:
-            context: ${BASE_ENV_DIR}/docker/supervisord
+            context: ./.stack/docker/supervisord
         depends_on:
             # - db
             db:
