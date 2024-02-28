@@ -22,10 +22,12 @@ final class Version20240215074159 extends AbstractMigration
         // Створення таблиці 'graphql_requests'
         $this->addSql("CREATE TABLE graphql_requests_pimcore (
         id SERIAL NOT NULL,
-        name VARCHAR(255) NOT NULL
-        type VARCHAR(255) NOT NULL,
-        query TEXT NOT NULL,
-        x_api_key VARCHAR(255) NOT NULL
+        name VARCHAR(255),
+        text VARCHAR(255),
+        endpoint VARCHAR(255),
+        typeId integer,
+        query TEXT,
+        x_api_key VARCHAR(255),
         PRIMARY KEY(id)
     )");
     }
