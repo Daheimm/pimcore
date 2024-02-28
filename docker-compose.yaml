@@ -36,17 +36,6 @@ services:
             start_period: 1m
             timeout: 3s
 
-    postgres:
-        image: postgres:latest
-        environment:
-            POSTGRES_USER: pimcore
-            POSTGRES_PASSWORD: pimcore
-            POSTGRES_DB: pimcore
-        ports:
-            - "5432:5432"
-        volumes:
-            - ${HOME}/data/pimcore-gw-dev/postgresql:/var/lib/postgresql/data
-
     nginx:
         image: nginx:stable-alpine
         restart: always
@@ -108,17 +97,17 @@ services:
         extra_hosts:
             - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
-    chrome:
-        image: browserless/chrome
-        restart: always
-        extra_hosts:
-            - "pimcore-gw-dev.iwis.io:192.168.166.62"
+        # chrome:
+        #   image: browserless/chrome
+        #    restart: always
+        #   extra_hosts:
+        #      - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
-    gotenberg:
-        image: gotenberg/gotenberg:7
-        restart: always
-        extra_hosts:
-            - "pimcore-gw-dev.iwis.io:192.168.166.62"
+        #gotenberg:
+        #    image: gotenberg/gotenberg:7
+        #  restart: always
+        #   extra_hosts:
+        #      - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
     rabbitmq:
         image: rabbitmq:3.8.2-management
