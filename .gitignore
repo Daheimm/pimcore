@@ -14,8 +14,6 @@ cache
 /.env.local
 /.env.local.php
 /.env.*.local
-!/config/local
-/config/local/*
 !config/local/.gitkeep
 /cache
 /var/cache
