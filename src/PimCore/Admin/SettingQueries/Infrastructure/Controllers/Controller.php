@@ -17,6 +17,7 @@ abstract class Controller extends AbstractController
 
     /**
      * @param array|object $body
+     *
      * @return JsonResponse
      */
     public function response(array|object $body): JsonResponse
@@ -39,6 +40,7 @@ abstract class Controller extends AbstractController
 
     /**
      * @param object $object
+     *
      * @return void
      */
     protected function validation(object $object): void

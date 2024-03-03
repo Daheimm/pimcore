@@ -26,6 +26,6 @@ class TreeService implements TreeServiceInterface
 
     public function remove(int $id): void
     {
-       $this->graphqlRequestsPimcoreRepository->remove($id);
+        $this->graphqlRequestsPimcoreRepository->remove($id);
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl;
 
-
 use App\PimCore\Admin\SettingQueries\Infrastructure\Repositories\GraphQl\GraphqlRequestsPimcoreRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -57,6 +56,7 @@ class GraphqlRequestsPimcore
     public function setText(?string $text): self
     {
         $this->text = $text;
+
         return $this;
     }
 
@@ -68,6 +68,7 @@ class GraphqlRequestsPimcore
     public function setXApiKey(?string $xApiKey): self
     {
         $this->xApiKey = $xApiKey;
+
         return $this;
     }
 
@@ -89,6 +90,7 @@ class GraphqlRequestsPimcore
     public function setTypeId(?int $typeId): self
     {
         $this->typeId = $typeId;
+
         return $this;
     }
 
@@ -100,7 +102,7 @@ class GraphqlRequestsPimcore
     public function setQuery(?string $query): self
     {
         $this->query = $query;
+
         return $this;
     }
-
 }

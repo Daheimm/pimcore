@@ -4,7 +4,6 @@ namespace App\PimCore\Admin\SettingQueries\Infrastructure\Repositories\GraphQl;
 
 use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
 
-
 use App\PimCore\Admin\SettingQueries\Domain\Reposutories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -18,7 +17,7 @@ class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implement
 
     public function getGraphQl(string $type): ?GraphqlRequestsPimcore
     {
-        return $this->findOneBy(["type" => $type]);
+        return $this->findOneBy(['type' => $type]);
     }
 
     public function getAll(): array
@@ -40,6 +39,7 @@ class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implement
     {
         $this->_em->persist($graphqlRequestsPimcore);
         $this->_em->flush();
+
         return $graphqlRequestsPimcore;
     }
 
@@ -54,6 +54,7 @@ class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implement
     {
         $this->_em->flush($graphqlRequestsPimcore);
         $this->_em->flush();
+
         return $graphqlRequestsPimcore;
     }
 }

@@ -2,10 +2,7 @@
 
 namespace App\PimCore\Receipts\Application\Commands;
 
-use App\PimCore\Products\Application\Messages\Exports\ProductExportsMessage;
 use App\PimCore\Receipts\Application\Messages\Exports\RecipeExportMessage;
-use App\PimCore\Receipts\Application\Messages\GraphQl\RecipeInformationMessage;
-use App\PimCore\Receipts\Application\Messages\GraphQl\RecipeUpdateMessage;
 use App\Shared\Application\Serivces\GraphQl\Interfaces\GraphqlRequestsPimcoreServiceInterface;
 use App\Shared\Application\Serivces\Http\GraphQL\GraphQLInterface;
 use Pimcore\Console\AbstractCommand;
@@ -24,16 +21,15 @@ use Symfony\Component\Messenger\MessageBusInterface;
 )]
 class ImportRecipeCommand extends AbstractCommand
 {
-    const TYPE = "Recipe";
+    const TYPE = 'Recipe';
 
     public function __construct(
 
         private readonly GraphqlRequestsPimcoreServiceInterface $graphqlRequestsPimcoreService,
-        private readonly GraphQLInterface                       $graphQL,
-        private readonly MessageBusInterface                    $bus,
-        private readonly LoggerInterface                        $logger
-    )
-    {
+        private readonly GraphQLInterface $graphQL,
+        private readonly MessageBusInterface $bus,
+        private readonly LoggerInterface $logger
+    ) {
         parent::__construct();
     }
 
@@ -62,10 +58,11 @@ class ImportRecipeCommand extends AbstractCommand
 
                     $query = str_replace('$$id', $recipe->getId(), $graphQl->getQuery());
 
-                    $graphQlResult = $this->graphQL->executeQuery("pimcore-graphql-webservices/receipt", $query, $graphQl->getXApiKey());
+                    $graphQlResult = $this->graphQL->executeQuery('pimcore-graphql-webservices/receipt', $query, $graphQl->getXApiKey());
 
                     if (array_key_exists('errors', $graphQlResult)) {
                         $this->logger->error($graphQlResult);
+
                         return Command::FAILURE;
                     }
 
@@ -81,5 +78,4 @@ class ImportRecipeCommand extends AbstractCommand
 
         return Command::SUCCESS;
     }
-
 }

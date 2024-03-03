@@ -4,13 +4,11 @@ namespace App\PimCore\Admin\SettingQueries\Application\Dto\Settings;
 
 class GraphQLPimCoreResponse
 {
-
     private int $id;
 
     private array $type;
 
     private ?string $query;
-
 
     private ?string $xApiKey;
 
@@ -28,9 +26,9 @@ class GraphQLPimCoreResponse
     public function setEndpoint(?string $endpoint): self
     {
         $this->endpoint = $endpoint;
+
         return $this;
     }
-
 
     public function getId(): ?int
     {
@@ -40,6 +38,7 @@ class GraphQLPimCoreResponse
     public function setId(?int $id): self
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -51,6 +50,7 @@ class GraphQLPimCoreResponse
     public function setType(array $type): self
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -62,6 +62,7 @@ class GraphQLPimCoreResponse
     public function setQuery(?string $query): self
     {
         $this->query = $query;
+
         return $this;
     }
 
@@ -73,6 +74,7 @@ class GraphQLPimCoreResponse
     public function setXApiKey(?string $xApiKey): self
     {
         $this->xApiKey = $xApiKey;
+
         return $this;
     }
 
@@ -84,6 +86,7 @@ class GraphQLPimCoreResponse
     public function setText(?string $text): self
     {
         $this->text = $text;
+
         return $this;
     }
 
@@ -96,5 +99,4 @@ class GraphQLPimCoreResponse
     {
         $this->leaf = $leaf;
     }
-
 }
