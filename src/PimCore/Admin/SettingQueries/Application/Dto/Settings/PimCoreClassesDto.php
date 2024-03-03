@@ -16,6 +16,7 @@ class PimCoreClassesDto
     public function setName(string $name): self
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -27,6 +28,7 @@ class PimCoreClassesDto
     public function setId(string $id): self
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -38,6 +40,7 @@ class PimCoreClassesDto
     public function setActive(?bool $active): self
     {
         $this->active = $active;
+
         return $this;
     }
 }

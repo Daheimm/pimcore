@@ -16,4 +16,3 @@ enum FieldsIntoExportEnum: string
     case VariantRelations = 'variantrelations';     // Варіант (3 рівень)
     case SubcategoryRelation = 'subcategoryrelation';  // Субкатегорія (3 рівень)
 }
-

@@ -12,7 +12,7 @@ class RecordListener
 {
     public function __construct(
         private readonly DataProcessingLayersInterfaces $dataProcessingLayersInterfaces,
-        private readonly LoggerInterface                $logger)
+        private readonly LoggerInterface $logger)
     {
     }
 
@@ -20,7 +20,7 @@ class RecordListener
     {
         try {
             if ($event instanceof DataObjectEvent) {
-                $this->dataProcessingLayersInterfaces->createHandler($event->getObject()::class, $event->getObject(), "postUpdate");
+                $this->dataProcessingLayersInterfaces->createHandler($event->getObject()::class, $event->getObject(), 'postUpdate');
             }
         } catch (Exception $e) {
             $this->logger->critical($e->getMessage());

@@ -1,5 +1,6 @@
 {
   "name": "pimcore/skeleton",
+  "description": "Інтеграція PimCore.",
   "type": "project",
   "license": "GPL-3.0-or-later",
   "config": {
@@ -39,6 +40,8 @@
   "require-dev": {
     "codeception/codeception": "^5.0.3",
     "codeception/module-symfony": "^3.1.0",
+    "friendsofphp/php-cs-fixer": "^3.51",
+    "phpstan/phpstan": "^1.10",
     "symfony/maker-bundle": "^1.54"
   },
   "suggest": {

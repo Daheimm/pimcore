@@ -2,7 +2,6 @@
 
 namespace App\PimCore\Receipts\Infrastructure\MessageHandler;
 
-
 use App\PimCore\Receipts\Application\Messages\GraphQl\RecipeInformationMessage;
 use App\PimCore\Receipts\Application\Messages\GraphQl\RecipeUpdateMessage;
 use App\Shared\Application\Serivces\GraphQl\Interfaces\GraphqlRequestsPimcoreServiceInterface;
@@ -15,15 +14,14 @@ use Symfony\Component\Messenger\MessageBusInterface;
 #[AsMessageHandler]
 class RecipeMessageHandler
 {
-    const TYPE = "Recipe";
+    const TYPE = 'Recipe';
 
     public function __construct(
         private readonly GraphqlRequestsPimcoreServiceInterface $graphqlRequestsPimcoreService,
-        private readonly GraphQLInterface                       $graphQL,
-        private readonly MessageBusInterface                    $bus,
-        private readonly LoggerInterface                        $logger
-    )
-    {
+        private readonly GraphQLInterface $graphQL,
+        private readonly MessageBusInterface $bus,
+        private readonly LoggerInterface $logger
+    ) {
     }
 
     public function __invoke(RecipeInformationMessage $message): void
@@ -36,13 +34,13 @@ class RecipeMessageHandler
         }
         $query = str_replace('$$id', $message->getId(), $graphQl->getQuery());
 
-        $graphQl = $this->graphQL->executeQuery("pimcore-graphql-webservices/receipt", $query, $graphQl->getXApiKey());
+        $graphQl = $this->graphQL->executeQuery('pimcore-graphql-webservices/receipt', $query, $graphQl->getXApiKey());
 
         if (array_key_exists('errors', $graphQl)) {
             $this->logger->error($graphQl);
+
             return;
         }
-
 
         $this->bus->dispatch(new RecipeUpdateMessage($graphQl['data']),
             [

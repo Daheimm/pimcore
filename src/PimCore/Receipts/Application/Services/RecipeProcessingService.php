@@ -8,7 +8,6 @@ use Pimcore\Model\DataObject\Recipe;
 
 class RecipeProcessingService implements RecipeProcessingServiceInterface
 {
-
     public function __construct(private readonly EventUpdateRecipeServiceInterface $eventUpdateRecipeService)
     {
     }
@@ -16,8 +15,8 @@ class RecipeProcessingService implements RecipeProcessingServiceInterface
     public function processing(Recipe $recipe, string $eventName): void
     {
         match ($eventName) {
-            "postUpdate" => $this->eventUpdateRecipeService->update($recipe),
-            "postDelete" =>  $this->eventUpdateRecipeService->delete($recipe),
+            'postUpdate' => $this->eventUpdateRecipeService->update($recipe),
+            'postDelete' =>  $this->eventUpdateRecipeService->delete($recipe),
             default => [],
         };
 

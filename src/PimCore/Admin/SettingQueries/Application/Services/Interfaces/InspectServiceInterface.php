@@ -6,4 +6,3 @@ interface InspectServiceInterface
 {
     public function checkQuery(int $id);
 }
-

@@ -1,0 +1,60 @@
+stages:
+  - build
+  - analyze
+  - test
+  - deploy
+
+
+build-dev:
+  stage: build
+  environment: dev
+  only:
+    - dev
+  except:
+    - master
+  image: docker:24.0.5
+  services:
+    - docker:24.0.5-dind
+
+# Задания для запуска статического анализа кода
+cs-fixer:
+  stage: analyze
+  tags:
+    - stage
+  image: $CONTAINER_IMAGE_PATH
+  only:
+    - stage
+  script:
+    - cd /var/www/
+    - php ./vendor/bin/pint
+
+# очікуємо рефакторінгу
+#deptrac:
+#  stage: analyze
+#  image: $CONTAINER_IMAGE_PATH
+#  script:
+#    - cd /var/www/
+#    - vendor/bin/deptrac analyze deptrac-layers.yaml
+#    - vendor/bin/deptrac analyze deptrac-modules.yaml
+
+composer-validate:
+  stage: analyze
+  image: $CONTAINER_IMAGE_PATH
+  tags:
+    - stage
+  only:
+    - stage
+  script:
+    - cd /var/www/
+    - composer validate --no-check-all --strict
+
+php-stan:
+  stage: analyze
+  image: $CONTAINER_IMAGE_PATH
+  tags:
+    - stage
+  only:
+    - stage
+  script:
+    - cd /var/www/
+    - vendor/bin/phpstan analyse app

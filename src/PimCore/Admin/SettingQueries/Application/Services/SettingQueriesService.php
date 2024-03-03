@@ -15,7 +15,7 @@ class SettingQueriesService implements SettingQueriesServiceInterface
 {
     public function __construct(
         private readonly GraphqlRequestsPimcoreRepositoryInterface $graphqlRequestsPimcoreRepository,
-        private readonly ClassesPimCoreServiceInterface            $classesPimCoreService)
+        private readonly ClassesPimCoreServiceInterface $classesPimCoreService)
     {
     }
 
@@ -41,8 +41,10 @@ class SettingQueriesService implements SettingQueriesServiceInterface
             ->setType($activeCalsses)
             ->setId($entity->getId())
             ->setEndpoint($entity->getEndpoint());
+
         return $prepareEntity;
     }
+
     public function getById(int $id): GraphqlRequestsPimcore
     {
         return $this->graphqlRequestsPimcoreRepository->getById($id);
