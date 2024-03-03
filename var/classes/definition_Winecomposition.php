@@ -18,7 +18,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => 'Сортовий склад',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1702477710,
+   'modificationDate' => 1707866268,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => 'Pimcore\\Model\\DataObject\\Product',
@@ -115,7 +115,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               0 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                  'name' => 'winevariety',
-                 'title' => 'Сорт',
+                 'title' => 'Сорт (сортовий склад)',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -184,7 +184,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelAlign' => 'left',
   )),
    'icon' => '/bundles/pimcoreadmin/img/twemoji/1f377.svg',
-   'group' => 'Alcohol Attributes',
+   'group' => 'Alcohol Attributes (Вино)',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
    'previewGeneratorReference' => '',

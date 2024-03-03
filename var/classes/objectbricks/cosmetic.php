@@ -2,9 +2,9 @@
 
 /**
  * Fields Summary:
- * - typeproductrelation [manyToManyObjectRelation]
- * - variantrelation [manyToManyObjectRelation]
+ * - segmentgroup [manyToManyObjectRelation]
  * - texturerelation [manyToManyObjectRelation]
+ * - usezonerelation [manyToManyObjectRelation]
  * - flavorrelation [manyToManyObjectRelation]
  * - activecomponents [manyToManyObjectRelation]
  * - effectsrelation [manyToManyObjectRelation]
@@ -69,14 +69,14 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             array (
               0 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'typeproductrelation',
+                 'name' => 'segmentgroup',
                  'title' => 'Сегментна група',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
                  'locked' => false,
-                 'style' => '',
+                 'style' => 'float:right; margin-right:1px; ',
                  'permissions' => NULL,
                  'fieldtype' => '',
                  'relationType' => true,
@@ -96,7 +96,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'displayMode' => 'combo',
                  'pathFormatterClass' => '',
                  'maxItems' => NULL,
-                 'visibleFields' => 'typeproduct',
+                 'visibleFields' => 'key',
                  'allowToCreateNewObject' => false,
                  'allowToClearRelation' => true,
                  'optimizedAdminLoading' => false,
@@ -108,46 +108,6 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'height' => '',
               )),
               1 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'variantrelation',
-                 'title' => 'Зона використання',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'VariantTypeProduct',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'typevariant',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
-              )),
-              2 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                  'name' => 'texturerelation',
                  'title' => 'Текстура',
@@ -171,6 +131,46 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                   0 => 
                   array (
                     'classes' => 'Texture',
+                  ),
+                ),
+                 'displayMode' => 'combo',
+                 'pathFormatterClass' => '',
+                 'maxItems' => NULL,
+                 'visibleFields' => 'key',
+                 'allowToCreateNewObject' => false,
+                 'allowToClearRelation' => true,
+                 'optimizedAdminLoading' => false,
+                 'enableTextSelection' => false,
+                 'visibleFieldDefinitions' => 
+                array (
+                ),
+                 'width' => '',
+                 'height' => '',
+              )),
+              2 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
+                 'name' => 'usezonerelation',
+                 'title' => 'Зона використання',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => 'float:right; margin-right:1px; ',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => true,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                  0 => 
+                  array (
+                    'classes' => 'VariantTypeProduct',
                   ),
                 ),
                  'displayMode' => 'combo',

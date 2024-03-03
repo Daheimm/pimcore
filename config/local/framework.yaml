@@ -1,0 +1,7 @@
+framework:
+    http_client:
+        scoped_clients:
+            pimCore:
+                base_uri: 'http://nginx'
+                headers:
+                    Accept: 'application/json'

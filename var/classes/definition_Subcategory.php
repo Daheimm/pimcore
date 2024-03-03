@@ -21,7 +21,6 @@
  * - activeformob [checkbox]
  * - visibleformob [checkbox]
  * - questionnaire4level [manyToManyObjectRelation]
- * - subquestionnaire [fieldcollections]
  * - alwaysshow [checkbox]
  * - considerinventory [checkbox]
  * - subcategoryrules [fieldcollections]
@@ -35,7 +34,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1706158174,
+   'modificationDate' => 1708542537,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => 'Pimcore\\Model\\DataObject\\Variant',
@@ -626,7 +625,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               0 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                  'name' => 'questionnaire4level',
-                 'title' => 'Опитувальники Варіант 2',
+                 'title' => 'Опитувальники',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -662,37 +661,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 ),
                  'width' => '',
                  'height' => '',
-              )),
-              1 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\Fieldcollections::__set_state(array(
-                 'name' => 'subquestionnaire',
-                 'title' => 'Додати опитувальники для Категорії 3 рівня',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'allowedTypes' => 
-                array (
-                  0 => 'questionnaires',
-                ),
-                 'lazyLoading' => true,
-                 'maxItems' => NULL,
-                 'disallowAddRemove' => false,
-                 'disallowReorder' => false,
-                 'collapsed' => false,
-                 'collapsible' => false,
-                 'border' => false,
               )),
             ),
              'locked' => false,

@@ -1,0 +1,6 @@
+controllers_admin:
+    resource:
+        path: ../../src/PimCore/Admin/SettingQueries/Infrastructure/Controllers
+        namespace: App\PimCore\Admin\SettingQueries\Infrastructure\Controllers
+        prefix: /
+    type: attribute

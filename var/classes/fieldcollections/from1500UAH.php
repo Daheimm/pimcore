@@ -2,6 +2,7 @@
 
 /**
  * Fields Summary:
+ * - ruletype [select]
  * - priority [numeric]
  * - quantity [numeric]
  * - webtrue [checkbox]
@@ -44,6 +45,41 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'children' => 
         array (
           0 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'name' => 'ruletype',
+             'title' => 'Тип правила',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => true,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'options' => 
+            array (
+              0 => 
+              array (
+                'key' => 'from1500UAH',
+                'value' => 'from1500UAH',
+              ),
+            ),
+             'defaultValue' => 'from1500UAH',
+             'optionsProviderClass' => '',
+             'optionsProviderData' => '',
+             'columnLength' => 190,
+             'dynamicOptions' => false,
+             'defaultValueGenerator' => '',
+             'width' => '',
+          )),
+          1 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
              'name' => 'priority',
              'title' => 'Пріоритет',
@@ -73,7 +109,7 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'width' => 95,
              'defaultValueGenerator' => '',
           )),
-          1 => 
+          2 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
              'name' => 'quantity',
              'title' => 'К-сть одиниць від 1500 грн',
@@ -103,7 +139,7 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'width' => 95,
              'defaultValueGenerator' => '',
           )),
-          2 => 
+          3 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
              'name' => 'webtrue',
              'title' => 'Правило актуальне для сайту',
@@ -125,7 +161,7 @@ return \Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'defaultValue' => 0,
              'defaultValueGenerator' => '',
           )),
-          3 => 
+          4 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
              'name' => 'mobiletrue',
              'title' => 'Правило актуальне для мобільного додатку',

@@ -36,17 +36,6 @@ services:
             start_period: 1m
             timeout: 3s
 
-    postgres:
-        image: postgres:latest
-        environment:
-            POSTGRES_USER: pimcore
-            POSTGRES_PASSWORD: pimcore
-            POSTGRES_DB: pimcore
-        ports:
-            - "5432:5432"
-        volumes:
-            - ${HOME}/data/pimcore-gw-dev/postgresql:/var/lib/postgresql/data
-
     nginx:
         image: nginx:stable-alpine
         restart: always
@@ -65,7 +54,7 @@ services:
         # image: pimcore/pimcore:php8.2-debug-latest
         image: ${COMPOSE_PROJECT_NAME}:${TAG:-latest}
         build:
-            context: ${BASE_ENV_DIR}/docker
+            context: ./.stack/docker
             # target: app-dev
             # args:
             #   # To authenticate to private registry either use username / password, or Oauth key/secret / etc
@@ -97,7 +86,7 @@ services:
         user: '1000:1000' # set to your uid:gid
         restart: always
         build:
-            context: ${BASE_ENV_DIR}/docker/supervisord
+            context: ./.stack/docker/supervisord
         depends_on:
             # - db
             db:
@@ -108,17 +97,17 @@ services:
         extra_hosts:
             - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
-    chrome:
-        image: browserless/chrome
-        restart: always
-        extra_hosts:
-            - "pimcore-gw-dev.iwis.io:192.168.166.62"
+        # chrome:
+        #   image: browserless/chrome
+        #    restart: always
+        #   extra_hosts:
+        #      - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
-    gotenberg:
-        image: gotenberg/gotenberg:7
-        restart: always
-        extra_hosts:
-            - "pimcore-gw-dev.iwis.io:192.168.166.62"
+        #gotenberg:
+        #    image: gotenberg/gotenberg:7
+        #  restart: always
+        #   extra_hosts:
+        #      - "pimcore-gw-dev.iwis.io:192.168.166.62"
 
     rabbitmq:
         image: rabbitmq:3.8.2-management

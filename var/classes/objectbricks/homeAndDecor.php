@@ -13,7 +13,6 @@
  * - sharpening [numeric]
  * - capacity [numeric]
  * - typeproductrelation [manyToManyObjectRelation]
- * - variantrelation [manyToManyObjectRelation]
  * - usingrelation [manyToManyObjectRelation]
  * - handletyperelation [manyToManyObjectRelation]
  * - hardnessrelation [manyToManyObjectRelation]
@@ -430,46 +429,6 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'displayMode' => 'combo',
                  'pathFormatterClass' => '',
                  'maxItems' => NULL,
-                 'visibleFields' => 'typeproduct',
-                 'allowToCreateNewObject' => false,
-                 'allowToClearRelation' => true,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
-                array (
-                ),
-                 'width' => '',
-                 'height' => '',
-              )),
-              1 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'variantrelation',
-                 'title' => 'Тип товару',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => true,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'classes' => 
-                array (
-                  0 => 
-                  array (
-                    'classes' => 'VariantTypeProduct',
-                  ),
-                ),
-                 'displayMode' => 'combo',
-                 'pathFormatterClass' => '',
-                 'maxItems' => NULL,
                  'visibleFields' => 'key',
                  'allowToCreateNewObject' => false,
                  'allowToClearRelation' => true,
@@ -481,7 +440,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => '',
                  'height' => '',
               )),
-              2 => 
+              1 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                  'name' => 'usingrelation',
                  'title' => 'Використання (кухня)',
@@ -521,7 +480,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => '',
                  'height' => '',
               )),
-              3 => 
+              2 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                  'name' => 'handletyperelation',
                  'title' => 'Тип рукоятки',
@@ -550,7 +509,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'displayMode' => 'combo',
                  'pathFormatterClass' => '',
                  'maxItems' => NULL,
-                 'visibleFields' => 'typehandle',
+                 'visibleFields' => 'key',
                  'allowToCreateNewObject' => false,
                  'allowToClearRelation' => true,
                  'optimizedAdminLoading' => false,
@@ -561,7 +520,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => '',
                  'height' => '',
               )),
-              4 => 
+              3 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                  'name' => 'hardnessrelation',
                  'title' => 'Міцність сталі',
@@ -590,7 +549,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'displayMode' => 'combo',
                  'pathFormatterClass' => '',
                  'maxItems' => 1,
-                 'visibleFields' => 'hardness',
+                 'visibleFields' => 'key',
                  'allowToCreateNewObject' => false,
                  'allowToClearRelation' => true,
                  'optimizedAdminLoading' => false,
