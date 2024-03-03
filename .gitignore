@@ -162,3 +162,4 @@ nbproject
 /var/config/system_settings/system_settings.yaml
 /var/config/web-to-print/web_to_print.yaml
 /supervisord.pid
+/cache/

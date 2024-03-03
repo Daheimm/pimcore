@@ -1,5 +1,6 @@
 {
   "name": "pimcore/skeleton",
+  "description": "Інтеграція PimCore.",
   "type": "project",
   "license": "GPL-3.0-or-later",
   "config": {
