@@ -114,6 +114,46 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     }
                 },
                 {
+                    xtype: 'textfield',
+                    fieldLabel: t("Path"),
+                    name: 'folderPath',
+                    readOnly: true,
+                    fieldCls: "pimcore_property_droptarget", // Додаємо клас для візуалізації приймача перетягування
+                    listeners: {
+                        afterrender: function (field) {
+                            // Ініціалізація DropZone після рендеру поля
+                            var dropZone = new Ext.dd.DropZone(field.bodyEl, {
+                                // Вказуємо ddGroup для перетягуваних елементів
+                                ddGroup: 'element',
+
+                                // Функція для отримання цілі з події
+                                getTargetFromEvent: function(e) {
+                                    return field.bodyEl.dom;
+                                },
+
+                                // Подія при наведенні елемента над зоною
+                                onNodeOver : function(target, dd, e, data) {
+                                    return Ext.dd.DropZone.prototype.dropAllowed;
+                                },
+
+                                // Подія при скиданні елемента у зону
+                                onNodeDrop : function(target, dd, e, data) {
+                                    // Логіка для обробки перетягнутого об'єкта
+                                    // Приклад: встановлення шляху перетягнутого об'єкта до поля
+                                    if (data && data.records && data.records[0]) {
+                                        var record = data.records[0];
+                                        var path = record.get("path"); // Або будь-яке відповідне поле з об'єкта record
+                                        field.setValue(path); // Встановлення шляху до поля
+                                        return true;
+                                    }
+                                    return false;
+                                },
+
+                            });
+                        }
+                    }
+                },
+                {
                     xtype: "textfield",
                     fieldLabel: t("Endpoint"),
                     name: "endpoint",
