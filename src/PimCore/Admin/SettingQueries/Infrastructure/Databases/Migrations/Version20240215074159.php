@@ -32,11 +32,9 @@ final class Version20240215074159 extends AbstractMigration
             )');
     }
 
-
     public function down(Schema $schema): void
     {
         // Видалення таблиці 'graphql_requests'
-        $this->addSql("DROP TABLE graphql_requests_pimcore");
+        $this->addSql('DROP TABLE graphql_requests_pimcore');
     }
-
 }

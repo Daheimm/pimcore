@@ -2,8 +2,6 @@
 
 namespace App\MessageHandler;
 
-use Symfony\Component\Messenger\Attribute\AsMessageHandler;
-
 class SampleMessangeHandler
 {
     public function __invoke(SampleMessage $message)

@@ -7,11 +7,10 @@ use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcor
 use App\PimCore\Admin\SettingQueries\Domain\Reposutories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
 use App\Shared\Application\Serivces\Http\GraphQL\GraphQLInterface;
 
-
 readonly class InspectService implements InspectServiceInterface
 {
     public function __construct(
-        private GraphQLInterface                          $graphQL,
+        private GraphQLInterface $graphQL,
         private GraphqlRequestsPimcoreRepositoryInterface $graphqlRequestsPimcoreRepository)
     {
     }

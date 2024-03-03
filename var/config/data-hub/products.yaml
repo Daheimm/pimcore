@@ -1,0 +1,152 @@
+pimcore_data_hub:
+    configurations:
+        products:
+            general:
+                active: true
+                type: graphql
+                name: products
+                description: ''
+                group: ''
+                sqlObjectCondition: ''
+                modificationDate: 1707833464
+                path: null
+                createDate: 1707829220
+            schema:
+                queryEntities:
+                    Product:
+                        id: Product
+                        name: Product
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: status
+                                        label: Статус
+                                        dataType: select
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: packingtype
+                                        label: Пакування
+                                        dataType: select
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: h1name
+                                        label: 'Назва h1'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: h2name
+                                        label: 'Назва h2'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: productname
+                                        label: Найменування
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: webname
+                                        label: 'Назва для Web'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: mobilename
+                                        label: 'Назва для Mobile'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: materialmobile
+                                        label: 'Опис Mobile'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: materialweb
+                                        label: 'Опис Web'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    isOperator: true
+                                    attributes:
+                                        label: 'Date Formatter'
+                                        type: operator
+                                        class: DateFormatter
+                                        format: ''
+                                        childs: {  }
+                                    key: '#65cb782275684'
+                    Rootcategorys:
+                        id: Rootcategorys
+                        name: Rootcategorys
+                mutationEntities:
+                    TypeProduct:
+                        id: TypeProduct
+                        name: TypeProduct
+                        update: true
+                specialEntities:
+                    document:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    document_folder:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    asset:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    asset_folder:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    asset_listing:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    object_folder:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    translation:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    translation_listing:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+            security:
+                method: datahub_apikey
+                apikey:
+                    - 47e4c94bf623c9d5c3ef2f41e4935fe9
+                skipPermissionCheck: false
+                disableIntrospection: false
+            workspaces:
+                asset: {  }
+                document: {  }
+                object:
+                    -
+                        read: true
+                        cpath: '/Product Info/Products'
+                        create: false
+                        update: false
+                        delete: false
+                        id: extModel1045-1
+            permissions:
+                user: {  }
+                role: {  }

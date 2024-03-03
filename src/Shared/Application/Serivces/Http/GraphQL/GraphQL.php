@@ -15,7 +15,7 @@ class GraphQL implements GraphQLInterface
 {
     public function __construct(
         private readonly HttpClientInterface $pimCore,
-        private readonly LoggerInterface     $logger)
+        private readonly LoggerInterface $logger)
     {
     }
 
@@ -23,7 +23,9 @@ class GraphQL implements GraphQLInterface
      * @param string $endpoint
      * @param string $query
      * @param string $xApiKey
+     *
      * @return array
+     *
      * @throws ClientExceptionInterface
      * @throws DecodingExceptionInterface
      * @throws RedirectionExceptionInterface
@@ -54,4 +56,3 @@ class GraphQL implements GraphQLInterface
         return $content;
     }
 }
-

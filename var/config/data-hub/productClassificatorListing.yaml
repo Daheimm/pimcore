@@ -1,0 +1,344 @@
+pimcore_data_hub:
+    configurations:
+        productClassificatorListing:
+            general:
+                active: true
+                type: graphql
+                name: productClassificatorListing
+                description: ''
+                group: ''
+                sqlObjectCondition: ''
+                modificationDate: 1708172503
+                path: null
+                createDate: 1708171653
+            schema:
+                queryEntities:
+                    ProductClassificator:
+                        id: ProductClassificator
+                        name: ProductClassificator
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: fullname
+                                        label: 'Повна назва'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: level1
+                                        label: 'Рівень 1'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: level2
+                                        label: 'Рівень 2'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: level3
+                                        label: 'Рівень 3'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classnom1
+                                        label: 'Клас Ном. 1'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classnom2
+                                        label: 'Клас Ном. 2'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classnom3
+                                        label: 'Клас Ном. 3'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classnom4
+                                        label: 'Клас Ном. 4'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                    NomClass1:
+                        id: NomClass1
+                        name: NomClass1
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: namenomclass1
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    NomClass2:
+                        id: NomClass2
+                        name: NomClass2
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namenomclass2
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    NomClass3:
+                        id: NomClass3
+                        name: NomClass3
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namenomclass3
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    NomClass4:
+                        id: NomClass4
+                        name: NomClass4
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namenomclass4
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    VariantNomClass1:
+                        id: VariantNomClass1
+                        name: VariantNomClass1
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namevariant1
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentnomclass
+                                        label: 'Батьківський клас'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    VariantNomClass2:
+                        id: VariantNomClass2
+                        name: VariantNomClass2
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namevariant2
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentnomclass
+                                        label: 'Батьківський клас'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    VariantNomClass3:
+                        id: VariantNomClass3
+                        name: VariantNomClass3
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namevariant3
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentnomclass
+                                        label: 'Батьківський клас'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    VariantNomClass4:
+                        id: VariantNomClass4
+                        name: VariantNomClass4
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namevariant4
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentnomclass
+                                        label: 'Батьківський клас'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                mutationEntities: {  }
+                specialEntities:
+                    document:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    document_folder:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    asset:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    asset_folder:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    asset_listing:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    object_folder:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    translation:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    translation_listing:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+            security:
+                method: datahub_apikey
+                apikey:
+                    - 65cd917e3c8476cbf39d639a32d3b02a
+                skipPermissionCheck: false
+                disableIntrospection: true
+            workspaces:
+                asset: {  }
+                document: {  }
+                object:
+                    -
+                        read: true
+                        cpath: /Classificator
+                        create: false
+                        update: false
+                        delete: false
+                        id: extModel4226-1
+            permissions:
+                user: {  }
+                role: {  }

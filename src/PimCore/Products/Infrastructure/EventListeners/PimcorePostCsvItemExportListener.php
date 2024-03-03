@@ -14,15 +14,13 @@ final class PimcorePostCsvItemExportListener
 {
     public function __construct(
         private readonly ExportDataModifierServiceInterface $dataModifierService,
-        private readonly LoggerInterface                    $logger)
+        private readonly LoggerInterface $logger)
     {
     }
-
 
     public function onPostCsvItemExport(DataObjectEvent $event)
     {
         $context = $event->getArgument('context');
-
 
         if (!($context['source'] === 'pimcore-export' && $event->getObject() instanceof Product)) {
             return;

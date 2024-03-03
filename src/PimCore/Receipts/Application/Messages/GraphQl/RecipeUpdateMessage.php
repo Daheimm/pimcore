@@ -4,7 +4,7 @@ namespace App\PimCore\Receipts\Application\Messages\GraphQl;
 
 class RecipeUpdateMessage
 {
-    const ROUTING_KEY = "products.event.recipe.update";
+    const ROUTING_KEY = 'products.event.recipe.update';
 
     public function __construct(private array $message)
     {

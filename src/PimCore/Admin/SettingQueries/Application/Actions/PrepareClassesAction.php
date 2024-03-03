@@ -5,12 +5,12 @@ namespace App\PimCore\Admin\SettingQueries\Application\Actions;
 use App\PimCore\Admin\SettingQueries\Application\Dto\Settings\PimCoreClassesDto;
 use Pimcore\Model\DataObject\ClassDefinition;
 
-
 class PrepareClassesAction
 {
     /**
      * @param array $arrays
      * @param int $idIsActive
+     *
      * @return array
      */
     public static function run(array $arrays, ?int $idIsActive = 0)
@@ -31,7 +31,7 @@ class PrepareClassesAction
 
             $newArr[] = $prepareClass;
         }
+
         return $newArr;
     }
 }
-
