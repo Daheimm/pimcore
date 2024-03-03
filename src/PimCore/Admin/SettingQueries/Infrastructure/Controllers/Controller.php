@@ -46,7 +46,7 @@ abstract class Controller extends AbstractController
         $errors = $this->validator->validate($object);
 
         if (count($errors) > 0) {
-            throw new ValidationFailedException($errors);
+            throw new ValidationFailedException($object, $errors);
         }
     }
 

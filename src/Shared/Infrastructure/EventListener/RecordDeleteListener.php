@@ -19,7 +19,7 @@ class RecordDeleteListener
     {
     }
 
-    #[NoReturn] public function onDeleteDataObject(ElementEventInterface $event): void
+    public function onDeleteDataObject(ElementEventInterface $event): void
     {
         try {
             if ($event instanceof DataObjectEvent) {

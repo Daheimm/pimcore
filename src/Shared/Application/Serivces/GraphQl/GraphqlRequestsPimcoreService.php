@@ -2,9 +2,10 @@
 
 namespace App\Shared\Application\Serivces\GraphQl;
 
+use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
 use App\PimCore\Admin\SettingQueries\Domain\Reposutories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
 use App\Shared\Application\Serivces\GraphQl\Interfaces\GraphqlRequestsPimcoreServiceInterface;
-use App\Shared\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
+
 
 class GraphqlRequestsPimcoreService implements GraphqlRequestsPimcoreServiceInterface
 {
