@@ -19,8 +19,10 @@ cache
 /var/cache
 /var/*
 !/var/.gitkeep
-!/var/classes/
-/var/classes/DataObject
+#!/var/classes/
+#/var/classes/DataObject
+/var/classes
+/var/config/data_hub/
 
 !/var/config
 /var/config/system.yml
