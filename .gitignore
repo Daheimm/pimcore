@@ -163,3 +163,5 @@ nbproject
 /var/config/web-to-print/web_to_print.yaml
 /supervisord.pid
 /cache/
+/var/classes/
+/cache/
