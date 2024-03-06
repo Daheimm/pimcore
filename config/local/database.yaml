@@ -14,7 +14,7 @@ doctrine:
                 server_version: '10.11.5-MariaDB-1:10.11.5+maria~ubu2204'
             postgres:
                 driver: 'pdo_pgsql'
-                host: postgres-test
+                host: postgres
                 port: 5432
                 user: pimcore
                 password: pimcore
