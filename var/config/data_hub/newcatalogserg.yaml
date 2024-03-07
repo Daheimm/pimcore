@@ -1,0 +1,1644 @@
+pimcore_data_hub:
+    configurations:
+        newcatalogserg:
+            general:
+                active: true
+                type: graphql
+                name: newcatalogserg
+                description: ''
+                group: ''
+                sqlObjectCondition: ''
+                modificationDate: 1709489082
+                path: null
+                createDate: 1709426068
+            schema:
+                queryEntities:
+                    Product:
+                        id: Product
+                        name: Product
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: ID
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: hideonsite
+                                        label: 'Вимкнути продукт для відображення на сайті'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: hideonapp
+                                        label: 'Вимкнути продукт для відображення в додатку'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: itemnumber
+                                        label: Артикул
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: codguid
+                                        label: 'Код (GUID)'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: status
+                                        label: Статус
+                                        dataType: select
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: packingtype
+                                        label: Пакування
+                                        dataType: select
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: stepselector
+                                        label: 'Крок вагового селектору, g.'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: productsize
+                                        label: Ємність
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: measureelations
+                                        label: 'Базова Од. вимірювання'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: alternativeuom
+                                        label: 'Альтернативна Од. вимірювання'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: retentionperiod
+                                        label: 'Термін зберігання (дн.)'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: deliveryleadtime
+                                        label: 'Строк відвантаження (дн.)'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: packagingperiod
+                                        label: 'Строк фасування (дн.)'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: h1name
+                                        label: 'Назва h1'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: h2name
+                                        label: 'Назва h2'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: notshowh2
+                                        label: 'Не показувати h2'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: productname
+                                        label: Найменування
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: webname
+                                        label: 'Назва для Web'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: mobilename
+                                        label: 'Назва для Mobile'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: productcomposition
+                                        label: "Склад (без зв'язків)"
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: materialweb
+                                        label: 'Опис Web'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: materialmobile
+                                        label: 'Опис Mobile'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: manufacturerelatoin
+                                        label: Виробник
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: countrurelations
+                                        label: 'Країна виробництва'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: regionrelation
+                                        label: Регіон
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: brandrelations
+                                        label: Бренд
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: countrubrand
+                                        label: 'Країна бренду'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: lineproductrelatoin
+                                        label: 'Лінія продукту'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: publishinghouse
+                                        label: 'Відобразити як "Видавництво"'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: directimport
+                                        label: 'Прямий імпорт'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: Класифікатор
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nomclass1
+                                        label: 'Клас Ном. 1'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nomclass2
+                                        label: 'Клас Ном. 2'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nomclass3
+                                        label: 'Клас Ном. 3'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nomclass4
+                                        label: 'Клас Ном. 4'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: rootcatrelations
+                                        label: 'Категорія (1 рівень)'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: categoriesrelations
+                                        label: 'Категорія (2 рівень)'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: variantrelations
+                                        label: 'Варіант (3 рівень)'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: subcategoryrelation
+                                        label: 'Субкатегорія (3 рівень)'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: ingredients
+                                        label: Ingredients
+                                        dataType: fieldcollections
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: productsets
+                                        label: Productsets
+                                        dataType: fieldcollections
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: fotoproduct
+                                        label: 'Фото продукту'
+                                        dataType: hotspotimage
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: price100g
+                                        label: 'Відобразити ціну за 100 грам'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: price1kg
+                                        label: 'Відобразити ціну за кілограм'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: pieceprice
+                                        label: 'Відобразити ціну за 1 штуку '
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: boxprice
+                                        label: 'Відобразити ціну за ящик'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: alwaysshow
+                                        label: 'Завжди в наявності'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: individualrules
+                                        label: 'Ігнорувати правила категорій. Має індівідуальні правила 👇'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: rulesproduct
+                                        label: 'Додайте правила для продукта: '
+                                        dataType: fieldcollections
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: questionnaireproduct
+                                        label: 'Додати опитувальники для Продукту'
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: synonymsrelation
+                                        label: 'Синоніми пошуку'
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: relatedproducts
+                                        label: 'Групування товарів по ознаці (подібні товари)'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: enogastronomy
+                                        label: 'Еногастрономія (взаємна рекомендація)'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: crosssell
+                                        label: 'Крос-сейл (одностороння рекомендація)'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~fat
+                                        label: 'Жири г/100г'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~strength
+                                        label: Міцність
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~kilojoules
+                                        label: кДж
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~na
+                                        label: Na
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~fatcontent
+                                        label: 'Жирність %'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~protein
+                                        label: 'Білки г/100г'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~sugar
+                                        label: 'Цукор  г/100г'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~fatsaturated
+                                        label: 'Насичені жири'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~salt2
+                                        label: 'Сіль по рецептурі'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~salt
+                                        label: Сіль
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~pngk
+                                        label: 'в т.ч. ПНЖК'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~mds
+                                        label: 'в т.ч. МДС/IBU'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~calories
+                                        label: 'Калорії Ккал/100г'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~carb
+                                        label: 'Вуглеводи г/100г'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~drymatter
+                                        label: 'Сухої речовини, %'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~brix
+                                        label: Брикса
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~waterin
+                                        label: 'Води в ОВ'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~methodofpreparation
+                                        label: 'Спосіб приготування'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~sulfites
+                                        label: 'Всього сульфітів'
+                                        dataType: select
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~dstu
+                                        label: ДСТУ/ТУ
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~farm
+                                        label: Фермерський
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~glutenfree
+                                        label: Безглютеновий
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~halal
+                                        label: Халяльний
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~vegan
+                                        label: Веган
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~lactosefree
+                                        label: Безлактозний
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~coimpositeproduct
+                                        label: 'Композитний продукт'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~kosher
+                                        label: 'Кошерний продукт'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~sugarless
+                                        label: 'Без цукру'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~vegetarian
+                                        label: Вегетаріанський
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~vertcert
+                                        label: 'Потрібен ветеринарний сертифікат'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~organic
+                                        label: Органічний
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~pregnancy
+                                        label: 'Для вагітних'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~allergen
+                                        label: 'Містить алергени'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~pasteurization
+                                        label: Пастеризація
+                                        dataType: select
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~allergen2
+                                        label: Алергени
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~storageconditions
+                                        label: 'Умови зберігання '
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: nutrition~cookingrecommendation
+                                        label: 'Рекомендація з приготування'
+                                        dataType: input
+                                    isOperator: false
+                    Questionnaire:
+                        id: Questionnaire
+                        name: Questionnaire
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: name
+                                        label: 'Назва опитувальника'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: question
+                                        label: 'Питання опитувальника'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: answer
+                                        label: 'Варіанти відповідей'
+                                        dataType: fieldcollections
+                                    isOperator: false
+                    Components:
+                        id: Components
+                        name: Components
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: ingredientname
+                                        label: 'Назва інгредієнта'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: ingredientinfo
+                                        label: 'Опис інгредієнта'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: ingredientfoto
+                                        label: Фото
+                                        dataType: image
+                                    isOperator: false
+                    MeasureUnit:
+                        id: MeasureUnit
+                        name: MeasureUnit
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: measurename
+                                        label: Значення
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: abbreviation
+                                        label: Скорочення
+                                        dataType: input
+                                    isOperator: false
+                    Manufacturer:
+                        id: Manufacturer
+                        name: Manufacturer
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: manufacturername
+                                        label: Виробник
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: manufacturerrelatoin
+                                        label: Країна
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: childbrands
+                                        label: 'Дочірні бренди'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    Country:
+                        id: Country
+                        name: Country
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: countryname
+                                        label: Країна
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: countrycode
+                                        label: 'Код країни'
+                                        dataType: input
+                                    isOperator: false
+                    Region:
+                        id: Region
+                        name: Region
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentcountry
+                                        label: 'Країна (parent)'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: regionname
+                                        label: Регіон
+                                        dataType: input
+                                    isOperator: false
+                    Brand:
+                        id: Brand
+                        name: Brand
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentmanufacturer
+                                        label: 'Виробник (parent)'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: countrybrandrelatoin
+                                        label: 'Країна бренду'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: countrymanufacturer
+                                        label: 'Країна виробництва'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: brandname
+                                        label: Бренд
+                                        dataType: input
+                                    isOperator: false
+                    Productline:
+                        id: Productline
+                        name: Productline
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentbrand
+                                        label: 'Бренд (parent)'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: productlinename
+                                        label: 'Лінія продукту'
+                                        dataType: input
+                                    isOperator: false
+                    ProductClassificator:
+                        id: ProductClassificator
+                        name: ProductClassificator
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: fullname
+                                        label: 'Повна назва'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: level1
+                                        label: 'Рівень 1'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: level2
+                                        label: 'Рівень 2'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: level3
+                                        label: 'Рівень 3'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classnom1
+                                        label: 'Клас Ном. 1'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classnom2
+                                        label: 'Клас Ном. 2'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classnom3
+                                        label: 'Клас Ном. 3'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classnom4
+                                        label: 'Клас Ном. 4'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                    NomClass1:
+                        id: NomClass1
+                        name: NomClass1
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namenomclass1
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    NomClass2:
+                        id: NomClass2
+                        name: NomClass2
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namenomclass2
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    NomClass3:
+                        id: NomClass3
+                        name: NomClass3
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namenomclass3
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    NomClass4:
+                        id: NomClass4
+                        name: NomClass4
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namenomclass4
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    VariantNomClass1:
+                        id: VariantNomClass1
+                        name: VariantNomClass1
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namevariant1
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentnomclass
+                                        label: 'Батьківський клас'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    VariantNomClass2:
+                        id: VariantNomClass2
+                        name: VariantNomClass2
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namevariant2
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentnomclass
+                                        label: 'Батьківський клас'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    VariantNomClass3:
+                        id: VariantNomClass3
+                        name: VariantNomClass3
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namevariant3
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentnomclass
+                                        label: 'Батьківський клас'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    VariantNomClass4:
+                        id: VariantNomClass4
+                        name: VariantNomClass4
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: code
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: namevariant4
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: parentnomclass
+                                        label: 'Батьківський клас'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: classificator
+                                        label: 'Задіяні сегменти класифікатора'
+                                        dataType: manyToManyRelation
+                                    isOperator: false
+                    SearchSynonyms:
+                        id: SearchSynonyms
+                        name: SearchSynonyms
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: synonymname
+                                        label: 'Назва синоніму'
+                                        dataType: input
+                                    isOperator: false
+                    Rootcategorys:
+                        id: Rootcategorys
+                        name: Rootcategorys
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: number
+                                        label: 'Порядковий номер'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: rootcategoryname
+                                        label: 'Категорія (1 рівень)'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: infoweb
+                                        label: 'Опис Web'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: infomobile
+                                        label: 'Опис Mobile'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: webbicon
+                                        label: 'Іконка для сайту'
+                                        dataType: externalImage
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: mobileicon
+                                        label: 'Іконка для моб. додатку'
+                                        dataType: externalImage
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activeforweb
+                                        label: 'Активна для сайту'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: visibleforweb
+                                        label: 'Видима для сайту'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activeformob
+                                        label: 'Активна для додатку'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: visibleformob
+                                        label: 'Видима для додатку'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: questionnaire1level
+                                        label: Опитувальники
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: logo
+                                        label: Логотип
+                                        dataType: image
+                                    isOperator: false
+                    Category:
+                        id: Category
+                        name: Category
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: rootcatrelation
+                                        label: 'Категорія (1 рівень)'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: number
+                                        label: 'Порядковий номер'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: categoryname
+                                        label: 'Категорія (2 рівень)'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: infoweb
+                                        label: 'Опис Web'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: infomobile
+                                        label: 'Опис Mobile'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: webbicon
+                                        label: 'Іконка для сайту'
+                                        dataType: externalImage
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: mobileicon
+                                        label: 'Іконка для моб. додатку'
+                                        dataType: externalImage
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activeforweb
+                                        label: 'Активна для сайту'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: visibleforweb
+                                        label: 'Видима для сайту'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activeformob
+                                        label: 'Активна для додатку'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: visibleformob
+                                        label: 'Видима для додатку'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: publishinghouse
+                                        label: 'Відобразити як "Видавництво"'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: questionnaire2level
+                                        label: Опитувальники
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: alwaysshow
+                                        label: 'Завжди в наявності'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: considerinventory
+                                        label: 'Враховувати залишки та правила 👇'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: categoryrules
+                                        label: 'Додайте правила для категорії: '
+                                        dataType: fieldcollections
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: logo
+                                        label: Логотип
+                                        dataType: image
+                                    isOperator: false
+                    Variant:
+                        id: Variant
+                        name: Variant
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activitystatus
+                                        label: Активний
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: rootcatrelation
+                                        label: 'Категорія (1 рівень)'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: categoryrelation
+                                        label: 'Батьківська категорія (2 рівень)'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: number
+                                        label: 'Порядковий номер'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: variantname
+                                        label: 'Тип (варіант)'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: infoweb
+                                        label: 'Опис Web'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: infomobile
+                                        label: 'Опис Mobile'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: webbicon
+                                        label: 'Іконка для сайту'
+                                        dataType: externalImage
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: mobileicon
+                                        label: 'Іконка для моб. додатку'
+                                        dataType: externalImage
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activeforweb
+                                        label: 'Видима для сайту'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: visibleforweb
+                                        label: 'Видимий для web'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activeformob
+                                        label: 'Активна для додатку'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: visibleformob
+                                        label: 'Видима для додатку'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: publishinghouse
+                                        label: 'Відобразити як "Видавництво"'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: questionnaire3level
+                                        label: Опитувальники
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: alwaysshow
+                                        label: 'Завжди в наявності'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: considerinventory
+                                        label: 'Враховувати залишки та правила 👇'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: rulesvariant
+                                        label: 'Додайте правила для категорії: '
+                                        dataType: fieldcollections
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: logo
+                                        label: Логотип
+                                        dataType: image
+                                    isOperator: false
+                    Subcategory:
+                        id: Subcategory
+                        name: Subcategory
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activitystatus
+                                        label: Активний
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: rootcatrelation
+                                        label: 'Категорія (1 рівень)'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: categoryrelation
+                                        label: 'Категорія (2 рівень)'
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: variantrelation
+                                        label: Варіант
+                                        dataType: manyToOneRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: number
+                                        label: 'Порядковий номер'
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: subcategoryname
+                                        label: 'Підкатегорія (3 рівень)'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: infoweb
+                                        label: 'Опис Web'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: infomobile
+                                        label: 'Опис Mobile'
+                                        dataType: wysiwyg
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: webbicon
+                                        label: 'Іконка для сайту'
+                                        dataType: externalImage
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: mobileicon
+                                        label: 'Іконка для моб. додатку'
+                                        dataType: externalImage
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activeforweb
+                                        label: 'Активна для сайту'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: visibleforweb
+                                        label: 'Видима для сайту'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: activeformob
+                                        label: 'Активна для додатку'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: visibleformob
+                                        label: 'Видима для додатку'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: questionnaire4level
+                                        label: Опитувальники
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: alwaysshow
+                                        label: 'Завжди в наявності'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: considerinventory
+                                        label: 'Враховувати залишки та правила 👇'
+                                        dataType: checkbox
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: subcategoryrules
+                                        label: 'Додайте правила для категорії: '
+                                        dataType: fieldcollections
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: logo
+                                        label: Логотип
+                                        dataType: image
+                                    isOperator: false
+                mutationEntities: {  }
+                specialEntities:
+                    document:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    document_folder:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    asset:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    asset_folder:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    asset_listing:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    object_folder:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    translation:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    translation_listing:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+            security:
+                method: datahub_apikey
+                apikey:
+                    - d88132855d45a4b9c362c0e31ca04e6d
+                skipPermissionCheck: false
+                disableIntrospection: false
+            workspaces:
+                asset: {  }
+                document: {  }
+                object:
+                    -
+                        read: true
+                        cpath: '/Product Info'
+                        create: false
+                        update: false
+                        delete: false
+                        id: extModel2460-1
+            permissions:
+                user: {  }
+                role: {  }
