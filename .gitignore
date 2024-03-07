@@ -50,3 +50,4 @@ nbproject
 # temp
 .temp
 /cache/
+/public/var/tmp/
