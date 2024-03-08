@@ -75,7 +75,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
+<<<<<<< HEAD
    'modificationDate' => 1709624313,
+=======
+   'modificationDate' => 1709708511,
+>>>>>>> analytics working
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -2000,6 +2004,10 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   3 => 'attributesAlcohol',
                   4 => 'nutrition',
                   5 => 'flowers',
+<<<<<<< HEAD
+=======
+                  6 => 'alcoholAttributes',
+>>>>>>> analytics working
                 ),
                  'maxItems' => 1,
                  'border' => true,

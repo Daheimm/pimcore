@@ -17,7 +17,6 @@
  * - densityplato [slider]
  * - saturation [slider]
  * - localizedfields [localizedfields]
- * -- taste [input]
  * -- particularities [input]
  * -- serving [textarea]
  */
@@ -170,12 +169,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                   ),
                 ),
                  'defaultValue' => '',
-                 'optionsProviderClass' => '',
-                 'optionsProviderData' => '',
                  'columnLength' => 190,
                  'dynamicOptions' => false,
                  'defaultValueGenerator' => '',
                  'width' => '',
+                 'optionsProviderType' => 'configure',
+                 'optionsProviderClass' => 'Pimcore\\Bundle\\CoreBundle\\OptionsProvider\\SelectOptionsOptionsProvider',
+                 'optionsProviderData' => '',
               )),
               4 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
@@ -210,12 +210,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                   ),
                 ),
                  'defaultValue' => '',
-                 'optionsProviderClass' => '',
-                 'optionsProviderData' => '',
                  'columnLength' => 190,
                  'dynamicOptions' => false,
                  'defaultValueGenerator' => '',
                  'width' => '',
+                 'optionsProviderType' => 'configure',
+                 'optionsProviderClass' => '',
+                 'optionsProviderData' => '',
               )),
               5 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
@@ -580,36 +581,6 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                 array (
                   0 => 
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                     'name' => 'taste',
-                     'title' => 'Смак',
-                     'tooltip' => '',
-                     'mandatory' => false,
-                     'noteditable' => false,
-                     'index' => false,
-                     'locked' => false,
-                     'style' => '',
-                     'permissions' => NULL,
-                     'fieldtype' => '',
-                     'relationType' => false,
-                     'invisible' => false,
-                     'visibleGridView' => false,
-                     'visibleSearch' => false,
-                     'blockedVarsForExport' => 
-                    array (
-                    ),
-                     'defaultValue' => NULL,
-                     'columnLength' => 600,
-                     'regex' => '',
-                     'regexFlags' => 
-                    array (
-                    ),
-                     'unique' => false,
-                     'showCharCount' => false,
-                     'width' => 600,
-                     'defaultValueGenerator' => '',
-                  )),
-                  1 => 
-                  \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                      'name' => 'particularities',
                      'title' => 'Особливості стилю',
                      'tooltip' => '',
@@ -638,7 +609,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                      'width' => 600,
                      'defaultValueGenerator' => '',
                   )),
-                  2 => 
+                  1 => 
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
                      'name' => 'serving',
                      'title' => 'Як подавати',
@@ -721,5 +692,8 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
       'classname' => 'Product',
       'fieldname' => 'alcoholcustomization',
     ),
+  ),
+   'activeDispatchingEvents' => 
+  array (
   ),
 ));
