@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 sqlObjectCondition: ''
-                modificationDate: 1709920341
+                modificationDate: 1709921854
                 path: null
                 createDate: 1708539555
             schema:
@@ -4121,6 +4121,26 @@ pimcore_data_hub:
                     Plantstype:
                         id: Plantstype
                         name: Plantstype
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: cod1c
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: name
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
                 mutationEntities: {  }
                 specialEntities:
                     document:
