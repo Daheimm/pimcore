@@ -9,9 +9,6 @@
  * - localizedfields [localizedfields]
  * -- application [wysiwyg]
  * -- precautions [wysiwyg]
- * - nutritionfacts [block]
- * -- component [input]
- * -- quantity [numeric]
  */
 
 return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
@@ -306,124 +303,6 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'permissionEdit' => NULL,
                  'labelWidth' => 100,
                  'labelAlign' => 'left',
-                 'fieldDefinitionsCache' => NULL,
-              )),
-            ),
-             'locked' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'fieldtype' => 'fieldset',
-             'labelWidth' => 100,
-             'labelAlign' => 'left',
-          )),
-          1 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
-             'name' => 'Layout',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => 'Склад',
-             'width' => '',
-             'height' => '',
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'children' => 
-            array (
-              0 => 
-              \Pimcore\Model\DataObject\ClassDefinition\Data\Block::__set_state(array(
-                 'name' => 'nutritionfacts',
-                 'title' => '',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'lazyLoading' => false,
-                 'disallowAddRemove' => false,
-                 'disallowReorder' => false,
-                 'collapsible' => false,
-                 'collapsed' => false,
-                 'maxItems' => NULL,
-                 'styleElement' => '',
-                 'children' => 
-                array (
-                  0 => 
-                  \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                     'name' => 'component',
-                     'title' => 'Компонент',
-                     'tooltip' => '',
-                     'mandatory' => false,
-                     'noteditable' => false,
-                     'index' => false,
-                     'locked' => false,
-                     'style' => '',
-                     'permissions' => NULL,
-                     'fieldtype' => '',
-                     'relationType' => false,
-                     'invisible' => false,
-                     'visibleGridView' => false,
-                     'visibleSearch' => true,
-                     'blockedVarsForExport' => 
-                    array (
-                    ),
-                     'defaultValue' => NULL,
-                     'columnLength' => 190,
-                     'regex' => '',
-                     'regexFlags' => 
-                    array (
-                    ),
-                     'unique' => false,
-                     'showCharCount' => false,
-                     'width' => '',
-                     'defaultValueGenerator' => '',
-                  )),
-                  1 => 
-                  \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-                     'name' => 'quantity',
-                     'title' => 'Кількість',
-                     'tooltip' => '',
-                     'mandatory' => false,
-                     'noteditable' => false,
-                     'index' => false,
-                     'locked' => false,
-                     'style' => '',
-                     'permissions' => NULL,
-                     'fieldtype' => '',
-                     'relationType' => false,
-                     'invisible' => false,
-                     'visibleGridView' => false,
-                     'visibleSearch' => true,
-                     'blockedVarsForExport' => 
-                    array (
-                    ),
-                     'defaultValue' => NULL,
-                     'integer' => false,
-                     'unsigned' => false,
-                     'minValue' => NULL,
-                     'maxValue' => NULL,
-                     'unique' => false,
-                     'decimalSize' => NULL,
-                     'decimalPrecision' => NULL,
-                     'width' => 120,
-                     'defaultValueGenerator' => '',
-                  )),
-                ),
-                 'layout' => NULL,
-                 'referencedFields' => 
-                array (
-                ),
                  'fieldDefinitionsCache' => NULL,
               )),
             ),
