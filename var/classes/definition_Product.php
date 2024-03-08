@@ -75,11 +75,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-<<<<<<< HEAD
-   'modificationDate' => 1709624313,
-=======
    'modificationDate' => 1709708511,
->>>>>>> analytics working
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -88,13 +84,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'useTraits' => '',
    'listingUseTraits' => '',
    'encryption' => false,
-   'encryptedTables' => 
+   'encryptedTables' =>
   array (
   ),
    'allowInherit' => true,
    'allowVariants' => true,
    'showVariants' => true,
-   'layoutDefinitions' => 
+   'layoutDefinitions' =>
   \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'name' => 'pimcore_root',
      'type' => NULL,
@@ -106,9 +102,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'collapsed' => false,
      'bodyStyle' => NULL,
      'datatype' => 'layout',
-     'children' => 
+     'children' =>
     array (
-      0 => 
+      0 =>
       \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
          'name' => 'Картка товару',
          'type' => NULL,
@@ -120,9 +116,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'collapsed' => false,
          'bodyStyle' => '',
          'datatype' => 'layout',
-         'children' => 
+         'children' =>
         array (
-          0 => 
+          0 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'General Info',
              'type' => NULL,
@@ -134,9 +130,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
                  'name' => 'Layout',
                  'type' => NULL,
@@ -148,9 +144,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => '',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
-                  0 => 
+                  0 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Base info',
                      'type' => NULL,
@@ -162,9 +158,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'name' => 'hideonsite',
                          'title' => 'Вимкнути продукт для відображення на сайті',
@@ -180,13 +176,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => 0,
                          'defaultValueGenerator' => '',
                       )),
-                      1 => 
+                      1 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'name' => 'hideonapp',
                          'title' => 'Вимкнути продукт для відображення в додатку',
@@ -202,13 +198,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => 0,
                          'defaultValueGenerator' => '',
                       )),
-                      2 => 
+                      2 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                          'name' => 'itemnumber',
                          'title' => 'Артикул',
@@ -224,13 +220,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => NULL,
                          'columnLength' => 190,
                          'regex' => '',
-                         'regexFlags' => 
+                         'regexFlags' =>
                         array (
                         ),
                          'unique' => true,
@@ -238,7 +234,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'width' => '',
                          'defaultValueGenerator' => '',
                       )),
-                      3 => 
+                      3 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                          'name' => 'codguid',
                          'title' => 'Код (GUID)',
@@ -254,13 +250,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => NULL,
                          'columnLength' => 190,
                          'regex' => '',
-                         'regexFlags' => 
+                         'regexFlags' =>
                         array (
                         ),
                          'unique' => true,
@@ -268,7 +264,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'width' => '',
                          'defaultValueGenerator' => '',
                       )),
-                      4 => 
+                      4 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
                          'name' => 'status',
                          'title' => 'Статус',
@@ -284,37 +280,37 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'options' => 
+                         'options' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'key' => 'Активний',
                             'value' => 'Активний',
                           ),
-                          1 => 
+                          1 =>
                           array (
                             'key' => 'Запланований',
                             'value' => 'Запланований',
                           ),
-                          2 => 
+                          2 =>
                           array (
                             'key' => 'Новинка',
                             'value' => 'Новинка',
                           ),
-                          3 => 
+                          3 =>
                           array (
                             'key' => 'Вивід Пасивний',
                             'value' => 'Вивід Пасивний',
                           ),
-                          4 => 
+                          4 =>
                           array (
                             'key' => 'Вивід Активний',
                             'value' => 'Вивід Активний',
                           ),
-                          5 => 
+                          5 =>
                           array (
                             'key' => 'Закритий',
                             'value' => 'Закритий',
@@ -329,7 +325,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'optionsProviderClass' => '',
                          'optionsProviderData' => '',
                       )),
-                      5 => 
+                      5 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
                          'name' => 'packingtype',
                          'title' => 'Пакування',
@@ -345,17 +341,17 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'options' => 
+                         'options' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'key' => 'Ваговий',
                             'value' => 'Ваговий',
                           ),
-                          1 => 
+                          1 =>
                           array (
                             'key' => 'Штучний',
                             'value' => 'Штучний',
@@ -370,7 +366,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'optionsProviderClass' => '',
                          'optionsProviderData' => '',
                       )),
-                      6 => 
+                      6 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                          'name' => 'stepselector',
                          'title' => 'Крок вагового селектору, g.',
@@ -386,7 +382,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => NULL,
@@ -400,7 +396,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'width' => 250,
                          'defaultValueGenerator' => '',
                       )),
-                      7 => 
+                      7 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                          'name' => 'productsize',
                          'title' => 'Ємність',
@@ -416,7 +412,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => NULL,
@@ -430,7 +426,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'width' => 250,
                          'defaultValueGenerator' => '',
                       )),
-                      8 => 
+                      8 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                          'name' => 'measureelations',
                          'title' => 'Базова Од. вимірювання',
@@ -446,12 +442,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'MeasureUnit',
                           ),
@@ -463,16 +459,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'width' => 243,
                       )),
-                      9 => 
+                      9 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                          'name' => 'alternativeuom',
                          'title' => 'Альтернативна Од. вимірювання',
@@ -488,12 +484,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'MeasureUnit',
                           ),
@@ -505,16 +501,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'width' => 243,
                       )),
-                      10 => 
+                      10 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
                          'name' => 'Layout',
                          'type' => NULL,
@@ -526,18 +522,18 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'collapsed' => false,
                          'bodyStyle' => '',
                          'datatype' => 'layout',
-                         'children' => 
+                         'children' =>
                         array (
                         ),
                          'locked' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'fieldtype' => 'tabpanel',
                          'border' => false,
                          'tabPosition' => 'top',
                       )),
-                      11 => 
+                      11 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                          'name' => 'retentionperiod',
                          'title' => 'Термін зберігання (дн.)',
@@ -553,7 +549,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => NULL,
@@ -567,7 +563,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'width' => 250,
                          'defaultValueGenerator' => '',
                       )),
-                      12 => 
+                      12 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                          'name' => 'deliveryleadtime',
                          'title' => 'Строк відвантаження (дн.)',
@@ -583,7 +579,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => NULL,
@@ -597,7 +593,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'width' => 250,
                          'defaultValueGenerator' => '',
                       )),
-                      13 => 
+                      13 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                          'name' => 'packagingperiod',
                          'title' => 'Строк фасування (дн.)',
@@ -613,7 +609,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => NULL,
@@ -629,14 +625,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
-                  1 => 
+                  1 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -648,9 +644,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                          'name' => 'h1name',
                          'title' => 'Назва h1',
@@ -666,13 +662,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => NULL,
                          'columnLength' => 190,
                          'regex' => '',
-                         'regexFlags' => 
+                         'regexFlags' =>
                         array (
                         ),
                          'unique' => false,
@@ -680,7 +676,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'width' => 500,
                          'defaultValueGenerator' => '',
                       )),
-                      1 => 
+                      1 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                          'name' => 'h2name',
                          'title' => 'Назва h2',
@@ -696,13 +692,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => NULL,
                          'columnLength' => 190,
                          'regex' => '',
-                         'regexFlags' => 
+                         'regexFlags' =>
                         array (
                         ),
                          'unique' => false,
@@ -710,7 +706,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'width' => 500,
                          'defaultValueGenerator' => '',
                       )),
-                      2 => 
+                      2 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'name' => 'notshowh2',
                          'title' => 'Не показувати h2',
@@ -726,13 +722,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => 1,
                          'defaultValueGenerator' => '',
                       )),
-                      3 => 
+                      3 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
                          'name' => 'localizedfields',
                          'title' => '',
@@ -748,12 +744,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'children' => 
+                         'children' =>
                         array (
-                          0 => 
+                          0 =>
                           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                              'name' => 'productname',
                              'title' => 'Найменування',
@@ -769,13 +765,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'invisible' => false,
                              'visibleGridView' => true,
                              'visibleSearch' => false,
-                             'blockedVarsForExport' => 
+                             'blockedVarsForExport' =>
                             array (
                             ),
                              'defaultValue' => NULL,
                              'columnLength' => 190,
                              'regex' => '',
-                             'regexFlags' => 
+                             'regexFlags' =>
                             array (
                             ),
                              'unique' => false,
@@ -783,7 +779,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'width' => 500,
                              'defaultValueGenerator' => '',
                           )),
-                          1 => 
+                          1 =>
                           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                              'name' => 'webname',
                              'title' => 'Назва для Web',
@@ -799,13 +795,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'invisible' => false,
                              'visibleGridView' => false,
                              'visibleSearch' => false,
-                             'blockedVarsForExport' => 
+                             'blockedVarsForExport' =>
                             array (
                             ),
                              'defaultValue' => NULL,
                              'columnLength' => 190,
                              'regex' => '',
-                             'regexFlags' => 
+                             'regexFlags' =>
                             array (
                             ),
                              'unique' => false,
@@ -813,7 +809,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'width' => 500,
                              'defaultValueGenerator' => '',
                           )),
-                          2 => 
+                          2 =>
                           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                              'name' => 'mobilename',
                              'title' => 'Назва для Mobile',
@@ -829,13 +825,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'invisible' => false,
                              'visibleGridView' => false,
                              'visibleSearch' => false,
-                             'blockedVarsForExport' => 
+                             'blockedVarsForExport' =>
                             array (
                             ),
                              'defaultValue' => NULL,
                              'columnLength' => 190,
                              'regex' => '',
-                             'regexFlags' => 
+                             'regexFlags' =>
                             array (
                             ),
                              'unique' => false,
@@ -843,7 +839,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'width' => 500,
                              'defaultValueGenerator' => '',
                           )),
-                          3 => 
+                          3 =>
                           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                              'name' => 'productcomposition',
                              'title' => 'Склад (без зв\'язків)',
@@ -859,13 +855,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'invisible' => false,
                              'visibleGridView' => false,
                              'visibleSearch' => false,
-                             'blockedVarsForExport' => 
+                             'blockedVarsForExport' =>
                             array (
                             ),
                              'defaultValue' => NULL,
                              'columnLength' => 2000,
                              'regex' => '',
-                             'regexFlags' => 
+                             'regexFlags' =>
                             array (
                             ),
                              'unique' => false,
@@ -873,7 +869,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'width' => 500,
                              'defaultValueGenerator' => '',
                           )),
-                          4 => 
+                          4 =>
                           \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
                              'name' => 'materialweb',
                              'title' => 'Опис Web',
@@ -889,7 +885,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'invisible' => false,
                              'visibleGridView' => false,
                              'visibleSearch' => false,
-                             'blockedVarsForExport' => 
+                             'blockedVarsForExport' =>
                             array (
                             ),
                              'toolbarConfig' => '',
@@ -898,7 +894,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'height' => 150,
                              'width' => 400,
                           )),
-                          5 => 
+                          5 =>
                           \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
                              'name' => 'materialmobile',
                              'title' => 'Опис Mobile',
@@ -914,7 +910,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                              'invisible' => false,
                              'visibleGridView' => false,
                              'visibleSearch' => false,
-                             'blockedVarsForExport' => 
+                             'blockedVarsForExport' =>
                             array (
                             ),
                              'toolbarConfig' => '',
@@ -931,7 +927,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'provideSplitView' => false,
                          'tabPosition' => 'top',
                          'hideLabelsWhenTabsReached' => NULL,
-                         'referencedFields' => 
+                         'referencedFields' =>
                         array (
                         ),
                          'permissionView' => NULL,
@@ -942,14 +938,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
-                  2 => 
+                  2 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -961,9 +957,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\StructuredTable::__set_state(array(
                          'name' => 'assortmat',
                          'title' => 'Канали збуту',
@@ -979,35 +975,35 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'labelWidth' => 250,
                          'labelFirstCell' => 'Канали збуту',
-                         'cols' => 
+                         'cols' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'position' => 1,
                             'key' => 'status',
                             'label' => 'Статус',
                             'type' => 'text',
                           ),
-                          1 => 
+                          1 =>
                           array (
                             'type' => 'text',
                             'position' => 2,
                             'key' => 'changesdate',
                             'label' => 'Дата змін',
                           ),
-                          2 => 
+                          2 =>
                           array (
                             'type' => 'text',
                             'position' => 3,
                             'key' => 'reason',
                             'label' => 'Причина змін',
                           ),
-                          3 => 
+                          3 =>
                           array (
                             'type' => 'bool',
                             'position' => 4,
@@ -1015,21 +1011,21 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                             'label' => 'Відображення на сайті',
                           ),
                         ),
-                         'rows' => 
+                         'rows' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'position' => 1,
                             'key' => 'badboy',
                             'label' => 'Badboy',
                           ),
-                          1 => 
+                          1 =>
                           array (
                             'position' => 2,
                             'key' => 'tetrapak',
                             'label' => 'ТетраПак',
                           ),
-                          2 => 
+                          2 =>
                           array (
                             'position' => 3,
                             'key' => 'mechnikova',
@@ -1041,7 +1037,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
@@ -1050,7 +1046,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'tabpanel',
@@ -1059,7 +1055,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -1069,7 +1065,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          1 => 
+          1 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Product Category',
              'type' => NULL,
@@ -1081,9 +1077,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                  'name' => 'manufacturerelatoin',
                  'title' => 'Виробник',
@@ -1099,12 +1095,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => true,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'classes' => 
+                 'classes' =>
                 array (
-                  0 => 
+                  0 =>
                   array (
                     'classes' => 'Manufacturer',
                   ),
@@ -1116,16 +1112,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'allowToClearRelation' => true,
                  'objectsAllowed' => true,
                  'assetsAllowed' => false,
-                 'assetTypes' => 
+                 'assetTypes' =>
                 array (
                 ),
                  'documentsAllowed' => false,
-                 'documentTypes' => 
+                 'documentTypes' =>
                 array (
                 ),
                  'width' => '',
               )),
-              1 => 
+              1 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                  'name' => 'countrurelations',
                  'title' => 'Країна виробництва',
@@ -1141,12 +1137,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => true,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'classes' => 
+                 'classes' =>
                 array (
-                  0 => 
+                  0 =>
                   array (
                     'classes' => 'Country',
                   ),
@@ -1158,16 +1154,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'allowToClearRelation' => true,
                  'objectsAllowed' => true,
                  'assetsAllowed' => false,
-                 'assetTypes' => 
+                 'assetTypes' =>
                 array (
                 ),
                  'documentsAllowed' => false,
-                 'documentTypes' => 
+                 'documentTypes' =>
                 array (
                 ),
                  'width' => '',
               )),
-              2 => 
+              2 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                  'name' => 'regionrelation',
                  'title' => 'Регіон',
@@ -1183,12 +1179,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => true,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'classes' => 
+                 'classes' =>
                 array (
-                  0 => 
+                  0 =>
                   array (
                     'classes' => 'Region',
                   ),
@@ -1200,16 +1196,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'allowToClearRelation' => true,
                  'objectsAllowed' => true,
                  'assetsAllowed' => false,
-                 'assetTypes' => 
+                 'assetTypes' =>
                 array (
                 ),
                  'documentsAllowed' => false,
-                 'documentTypes' => 
+                 'documentTypes' =>
                 array (
                 ),
                  'width' => '',
               )),
-              3 => 
+              3 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                  'name' => 'brandrelations',
                  'title' => 'Бренд',
@@ -1225,12 +1221,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => true,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'classes' => 
+                 'classes' =>
                 array (
-                  0 => 
+                  0 =>
                   array (
                     'classes' => 'Brand',
                   ),
@@ -1242,16 +1238,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'allowToClearRelation' => true,
                  'objectsAllowed' => true,
                  'assetsAllowed' => false,
-                 'assetTypes' => 
+                 'assetTypes' =>
                 array (
                 ),
                  'documentsAllowed' => false,
-                 'documentTypes' => 
+                 'documentTypes' =>
                 array (
                 ),
                  'width' => '',
               )),
-              4 => 
+              4 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                  'name' => 'countrubrand',
                  'title' => 'Країна бренду',
@@ -1267,12 +1263,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => true,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'classes' => 
+                 'classes' =>
                 array (
-                  0 => 
+                  0 =>
                   array (
                     'classes' => 'Country',
                   ),
@@ -1284,16 +1280,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'allowToClearRelation' => true,
                  'objectsAllowed' => true,
                  'assetsAllowed' => false,
-                 'assetTypes' => 
+                 'assetTypes' =>
                 array (
                 ),
                  'documentsAllowed' => false,
-                 'documentTypes' => 
+                 'documentTypes' =>
                 array (
                 ),
                  'width' => '',
               )),
-              5 => 
+              5 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'publishinghouse',
                  'title' => 'Відобразити як "Видавництво"',
@@ -1309,13 +1305,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'defaultValue' => 0,
                  'defaultValueGenerator' => '',
               )),
-              6 => 
+              6 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'directimport',
                  'title' => 'Прямий імпорт',
@@ -1331,13 +1327,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'defaultValue' => 0,
                  'defaultValueGenerator' => '',
               )),
-              7 => 
+              7 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                  'name' => 'lineproductrelatoin',
                  'title' => 'Лінія продукту',
@@ -1353,12 +1349,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => true,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'classes' => 
+                 'classes' =>
                 array (
-                  0 => 
+                  0 =>
                   array (
                     'classes' => 'Productline',
                   ),
@@ -1370,16 +1366,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'allowToClearRelation' => true,
                  'objectsAllowed' => true,
                  'assetsAllowed' => false,
-                 'assetTypes' => 
+                 'assetTypes' =>
                 array (
                 ),
                  'documentsAllowed' => false,
-                 'documentTypes' => 
+                 'documentTypes' =>
                 array (
                 ),
                  'width' => '',
               )),
-              8 => 
+              8 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
                  'name' => 'Layout',
                  'type' => NULL,
@@ -1391,9 +1387,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => '',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
-                  0 => 
+                  0 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -1405,9 +1401,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                          'name' => 'classificator',
                          'title' => 'Класифікатор',
@@ -1423,12 +1419,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'ProductClassificator',
                           ),
@@ -1440,16 +1436,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'width' => 600,
                       )),
-                      1 => 
+                      1 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                          'name' => 'nomclass1',
                          'title' => 'Клас Ном. 1',
@@ -1465,12 +1461,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'VariantNomClass1',
                           ),
@@ -1482,16 +1478,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'width' => 600,
                       )),
-                      2 => 
+                      2 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                          'name' => 'nomclass2',
                          'title' => 'Клас Ном. 2',
@@ -1507,12 +1503,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'VariantNomClass2',
                           ),
@@ -1524,16 +1520,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'width' => 600,
                       )),
-                      3 => 
+                      3 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                          'name' => 'nomclass3',
                          'title' => 'Клас Ном. 3',
@@ -1549,12 +1545,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'VariantNomClass3',
                           ),
@@ -1566,16 +1562,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'width' => 600,
                       )),
-                      4 => 
+                      4 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                          'name' => 'nomclass4',
                          'title' => 'Клас Ном. 4',
@@ -1591,12 +1587,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'VariantNomClass4',
                           ),
@@ -1608,25 +1604,25 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'width' => 600,
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
-                  1 => 
+                  1 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -1638,9 +1634,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::__set_state(array(
                          'name' => 'rootcatrelations',
                          'title' => 'Категорія (1 рівень)',
@@ -1656,12 +1652,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'Rootcategorys',
                           ),
@@ -1674,18 +1670,18 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'enableTextSelection' => false,
                          'width' => '',
                          'height' => '',
                       )),
-                      1 => 
+                      1 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::__set_state(array(
                          'name' => 'categoriesrelations',
                          'title' => 'Категорія (2 рівень)',
@@ -1701,12 +1697,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'Category',
                           ),
@@ -1719,18 +1715,18 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'enableTextSelection' => false,
                          'width' => '',
                          'height' => '',
                       )),
-                      2 => 
+                      2 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::__set_state(array(
                          'name' => 'variantrelations',
                          'title' => 'Варіант (3 рівень)',
@@ -1746,12 +1742,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'Variant',
                           ),
@@ -1764,18 +1760,18 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'enableTextSelection' => false,
                          'width' => '',
                          'height' => '',
                       )),
-                      3 => 
+                      3 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::__set_state(array(
                          'name' => 'subcategoryrelation',
                          'title' => 'Субкатегорія (3 рівень)',
@@ -1791,12 +1787,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'Subcategory',
                           ),
@@ -1809,11 +1805,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'enableTextSelection' => false,
@@ -1822,14 +1818,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
-                  2 => 
+                  2 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -1841,9 +1837,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::__set_state(array(
                          'name' => 'rootsabotagerelations',
                          'title' => 'Sabotage Категорія (1 рівень)',
@@ -1859,12 +1855,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'SabotageCatalog',
                           ),
@@ -1877,18 +1873,18 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'enableTextSelection' => false,
                          'width' => '',
                          'height' => '',
                       )),
-                      1 => 
+                      1 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::__set_state(array(
                          'name' => 'categorysabotage',
                          'title' => 'Sabotage Категорія (2 рівень)',
@@ -1904,12 +1900,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'SabotageCategory',
                           ),
@@ -1922,11 +1918,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'enableTextSelection' => false,
@@ -1935,7 +1931,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
@@ -1944,7 +1940,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'tabpanel',
@@ -1953,7 +1949,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -1963,7 +1959,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          2 => 
+          2 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Basic Characteristics',
              'type' => NULL,
@@ -1975,9 +1971,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
                  'name' => 'customfeatures',
                  'title' => 'Атрибути товарних груп',
@@ -1993,10 +1989,10 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'allowedTypes' => 
+                 'allowedTypes' =>
                 array (
                   0 => 'supplements',
                   1 => 'cosmetic',
@@ -2004,17 +2000,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   3 => 'attributesAlcohol',
                   4 => 'nutrition',
                   5 => 'flowers',
-<<<<<<< HEAD
-=======
                   6 => 'alcoholAttributes',
->>>>>>> analytics working
                 ),
                  'maxItems' => 1,
                  'border' => true,
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -2024,7 +2017,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          3 => 
+          3 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Custom Features',
              'type' => NULL,
@@ -2036,9 +2029,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
                  'name' => 'alcoholcustomization',
                  'title' => 'Розширена кастомізація Алкоголю',
@@ -2054,10 +2047,10 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'allowedTypes' => 
+                 'allowedTypes' =>
                 array (
                   0 => 'beerAttributes',
                   1 => 'ciderAttributes',
@@ -2069,7 +2062,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'maxItems' => 1,
                  'border' => true,
               )),
-              1 => 
+              1 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
                  'name' => 'pcustomization',
                  'title' => 'Розширена кастомізація Продукти',
@@ -2085,10 +2078,10 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'allowedTypes' => 
+                 'allowedTypes' =>
                 array (
                   0 => 'cheesesAttributes',
                   1 => 'coffeeAttributes',
@@ -2102,7 +2095,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -2112,7 +2105,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          4 => 
+          4 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
@@ -2124,9 +2117,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Text::__set_state(array(
                  'name' => 'Layout',
                  'type' => NULL,
@@ -2138,11 +2131,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => 'padding: 10px; background-color: #d9edf7; border-color: #bce8f1 !important; color: #31708f;',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'text',
@@ -2151,7 +2144,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'renderingData' => '',
                  'border' => false,
               )),
-              1 => 
+              1 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
                  'name' => 'Layout',
                  'type' => NULL,
@@ -2163,9 +2156,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => '',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
-                  0 => 
+                  0 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -2177,9 +2170,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Fieldcollections::__set_state(array(
                          'name' => 'ingredients',
                          'title' => 'Ingredients',
@@ -2195,10 +2188,10 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'allowedTypes' => 
+                         'allowedTypes' =>
                         array (
                           0 => 'aktivingredients',
                         ),
@@ -2212,14 +2205,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
-                  1 => 
+                  1 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -2231,9 +2224,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Fieldcollections::__set_state(array(
                          'name' => 'productsets',
                          'title' => 'Productsets',
@@ -2249,10 +2242,10 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'allowedTypes' => 
+                         'allowedTypes' =>
                         array (
                           0 => 'Productsets',
                         ),
@@ -2266,7 +2259,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
@@ -2275,7 +2268,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'tabpanel',
@@ -2284,7 +2277,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -2294,7 +2287,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          5 => 
+          5 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
@@ -2306,9 +2299,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\Hotspotimage::__set_state(array(
                  'name' => 'fotoproduct',
                  'title' => 'Фото продукту',
@@ -2324,7 +2317,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => true,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'predefinedDataTemplates' => '',
@@ -2334,7 +2327,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -2344,7 +2337,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          6 => 
+          6 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
@@ -2356,9 +2349,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
                  'name' => 'Layout',
                  'type' => NULL,
@@ -2370,9 +2363,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => '',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
-                  0 => 
+                  0 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -2384,9 +2377,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'name' => 'price100g',
                          'title' => 'Відобразити ціну за 100 грам',
@@ -2402,13 +2395,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => 0,
                          'defaultValueGenerator' => '',
                       )),
-                      1 => 
+                      1 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'name' => 'price1kg',
                          'title' => 'Відобразити ціну за кілограм',
@@ -2424,13 +2417,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => 0,
                          'defaultValueGenerator' => '',
                       )),
-                      2 => 
+                      2 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'name' => 'pieceprice',
                          'title' => 'Відобразити ціну за 1 штуку ',
@@ -2446,13 +2439,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => 0,
                          'defaultValueGenerator' => '',
                       )),
-                      3 => 
+                      3 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'name' => 'boxprice',
                          'title' => 'Відобразити ціну за ящик',
@@ -2468,7 +2461,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => 0,
@@ -2476,14 +2469,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
-                  1 => 
+                  1 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -2495,9 +2488,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'name' => 'alwaysshow',
                          'title' => 'Завжди в наявності',
@@ -2513,13 +2506,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => 0,
                          'defaultValueGenerator' => '',
                       )),
-                      1 => 
+                      1 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                          'name' => 'individualrules',
                          'title' => 'Ігнорувати правила категорій. Має індівідуальні правила 👇',
@@ -2535,13 +2528,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
                          'defaultValue' => 0,
                          'defaultValueGenerator' => '',
                       )),
-                      2 => 
+                      2 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Fieldcollections::__set_state(array(
                          'name' => 'rulesproduct',
                          'title' => 'Додайте правила для продукта: ',
@@ -2557,10 +2550,10 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => false,
                          'visibleSearch' => false,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'allowedTypes' => 
+                         'allowedTypes' =>
                         array (
                           0 => 'passiveOutput',
                           1 => 'outputActive',
@@ -2578,7 +2571,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
@@ -2587,7 +2580,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'tabpanel',
@@ -2596,7 +2589,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -2606,7 +2599,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          7 => 
+          7 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
@@ -2618,9 +2611,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                  'name' => 'questionnaireproduct',
                  'title' => 'Додати опитувальники для Продукту',
@@ -2636,12 +2629,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => true,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'classes' => 
+                 'classes' =>
                 array (
-                  0 => 
+                  0 =>
                   array (
                     'classes' => 'Questionnaire',
                   ),
@@ -2654,7 +2647,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'allowToClearRelation' => true,
                  'optimizedAdminLoading' => false,
                  'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
+                 'visibleFieldDefinitions' =>
                 array (
                 ),
                  'width' => '',
@@ -2662,7 +2655,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -2672,7 +2665,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          8 => 
+          8 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
@@ -2684,9 +2677,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
                  'name' => 'Layout',
                  'type' => NULL,
@@ -2698,9 +2691,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => '',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
-                  0 => 
+                  0 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -2712,9 +2705,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                          'name' => 'synonymsrelation',
                          'title' => 'Синоніми пошуку',
@@ -2730,12 +2723,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'SearchSynonyms',
                           ),
@@ -2748,7 +2741,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'optimizedAdminLoading' => false,
                          'enableTextSelection' => false,
-                         'visibleFieldDefinitions' => 
+                         'visibleFieldDefinitions' =>
                         array (
                         ),
                          'width' => '',
@@ -2756,14 +2749,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
-                  1 => 
+                  1 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -2775,9 +2768,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::__set_state(array(
                          'name' => 'relatedproducts',
                          'title' => 'Групування товарів по ознаці (подібні товари)',
@@ -2793,12 +2786,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'Product',
                           ),
@@ -2811,11 +2804,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'enableTextSelection' => false,
@@ -2824,14 +2817,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
                      'labelWidth' => 100,
                      'labelAlign' => 'left',
                   )),
-                  2 => 
+                  2 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                      'name' => 'Layout',
                      'type' => NULL,
@@ -2843,9 +2836,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'collapsed' => false,
                      'bodyStyle' => '',
                      'datatype' => 'layout',
-                     'children' => 
+                     'children' =>
                     array (
-                      0 => 
+                      0 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::__set_state(array(
                          'name' => 'enogastronomy',
                          'title' => 'Еногастрономія (взаємна рекомендація)',
@@ -2861,12 +2854,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'Product',
                           ),
@@ -2879,18 +2872,18 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'enableTextSelection' => false,
                          'width' => '',
                          'height' => '',
                       )),
-                      1 => 
+                      1 =>
                       \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyRelation::__set_state(array(
                          'name' => 'crosssell',
                          'title' => 'Крос-сейл (одностороння рекомендація)',
@@ -2906,12 +2899,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'invisible' => false,
                          'visibleGridView' => true,
                          'visibleSearch' => true,
-                         'blockedVarsForExport' => 
+                         'blockedVarsForExport' =>
                         array (
                         ),
-                         'classes' => 
+                         'classes' =>
                         array (
-                          0 => 
+                          0 =>
                           array (
                             'classes' => 'Product',
                           ),
@@ -2924,11 +2917,11 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'allowToClearRelation' => true,
                          'objectsAllowed' => true,
                          'assetsAllowed' => false,
-                         'assetTypes' => 
+                         'assetTypes' =>
                         array (
                         ),
                          'documentsAllowed' => false,
-                         'documentTypes' => 
+                         'documentTypes' =>
                         array (
                         ),
                          'enableTextSelection' => false,
@@ -2937,7 +2930,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                       )),
                     ),
                      'locked' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'fieldtype' => 'fieldset',
@@ -2946,7 +2939,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'tabpanel',
@@ -2955,7 +2948,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -2967,7 +2960,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           )),
         ),
          'locked' => false,
-         'blockedVarsForExport' => 
+         'blockedVarsForExport' =>
         array (
         ),
          'fieldtype' => 'tabpanel',
@@ -2976,7 +2969,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
       )),
     ),
      'locked' => false,
-     'blockedVarsForExport' => 
+     'blockedVarsForExport' =>
     array (
     ),
      'fieldtype' => 'panel',
@@ -2991,13 +2984,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
    'previewGeneratorReference' => '',
-   'compositeIndices' => 
+   'compositeIndices' =>
   array (
   ),
    'showFieldLookup' => false,
-   'propertyVisibility' => 
+   'propertyVisibility' =>
   array (
-    'grid' => 
+    'grid' =>
     array (
       'id' => true,
       'key' => false,
@@ -3006,7 +2999,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
       'modificationDate' => true,
       'creationDate' => true,
     ),
-    'search' => 
+    'search' =>
     array (
       'id' => true,
       'key' => false,
@@ -3017,16 +3010,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
     ),
   ),
    'enableGridLocking' => false,
-   'deletedDataComponents' => 
+   'deletedDataComponents' =>
   array (
   ),
-   'blockedVarsForExport' => 
+   'blockedVarsForExport' =>
   array (
   ),
-   'fieldDefinitionsCache' => 
+   'fieldDefinitionsCache' =>
   array (
   ),
-   'activeDispatchingEvents' => 
+   'activeDispatchingEvents' =>
   array (
   ),
 ));

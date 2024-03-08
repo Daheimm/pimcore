@@ -18,10 +18,8 @@
 
 /var/*
 !/var/.gitkeep
-#!/var/classes/
-#/var/classes/DataObject
-/var/classes
-/var/config/data_hub/
+!/var/classes/
+/var/classes/DataObject
 
 !/var/config
 /var/config/system.yml
