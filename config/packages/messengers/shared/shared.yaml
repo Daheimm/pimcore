@@ -1,0 +1,23 @@
+framework:
+    messenger:
+        serializer:
+            default_serializer: messenger.transport.symfony_serializer
+            symfony_serializer:
+                format: json
+                context: { }
+        transports:
+            async: '%env(RABBITMQ_URL)%'
+            sync: 'sync://'
+            local.pim_core.shared.object_data:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: local.pimcore.shared.object_data
+                    queues:
+                        local.pim_core.shared.object_data.events:
+                            binding_keys:
+                                - 'shared.object_data.*'
+
+        routing:
+            App\Shared\Application\RabbitMQ\Messages\ObjectData\ObjectDataMessage: sync

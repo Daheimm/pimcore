@@ -74,7 +74,17 @@ services:
         resource: '../src/PimCore/Admin/SettingQueries/Infrastructure/Controllers/'
         tags: [ 'controller.service_arguments' ]
 
+    App\Shared\Application\Services\RabbitMQ\RabbitMQService:
+        public: true
+        autowire: true
+        autoconfigure: true
 
+    App\PimCore\ProductInfo\Products\Infrastructure\Handlers\ProductHandler:
+        public: true
+        autowire: true
+        autoconfigure: true
+        arguments:
+            $strategies: !tagged_iterator 'app.strategy.product'
     # Example custom templating helper
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they

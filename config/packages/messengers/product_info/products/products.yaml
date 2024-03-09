@@ -1,0 +1,19 @@
+framework:
+    messenger:
+        serializer:
+            default_serializer: messenger.transport.symfony_serializer
+            symfony_serializer:
+                format: json
+                context: { }
+        transports:
+            async: '%env(RABBITMQ_URL)%'
+            pimCore.products:
+                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: pimcore.product_info
+                    queues:
+                        pimCore.product_info.events:
+                            binding_keys:
+                                - 'product_info.product.*'

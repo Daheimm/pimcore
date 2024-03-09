@@ -2,7 +2,6 @@
 
 namespace App\Shared\Infrastructure\EventListener;
 
-use App\Shared\Application\Factories\DataProcessingLayersInterfaces;
 use Exception;
 use Pimcore\Event\Model\DataObjectEvent;
 use Pimcore\Event\Model\ElementEventInterface;
@@ -13,7 +12,6 @@ use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 class RecordDeleteListener
 {
     public function __construct(
-        private readonly DataProcessingLayersInterfaces $dataProcessingLayersInterfaces,
         private readonly LoggerInterface $logger)
     {
     }
@@ -22,7 +20,6 @@ class RecordDeleteListener
     {
         try {
             if ($event instanceof DataObjectEvent) {
-                $this->dataProcessingLayersInterfaces->createHandler($event->getObject()::class, $event->getObject(), 'postDelete');
             }
         } catch (Exception $e) {
             $this->logger->critical($e->getMessage());

@@ -2,16 +2,18 @@
 
 namespace App\Shared\Infrastructure\EventListener;
 
+use App\Shared\Application\Facades\RabbitMQ\RabbitMQFacade;
 use App\Shared\Application\Factories\DataProcessingLayersInterfaces;
+use App\Shared\Application\RabbitMQ\Messages\ObjectData\ObjectDataMessage;
 use Exception;
 use Pimcore\Event\Model\DataObjectEvent;
 use Pimcore\Event\Model\ElementEventInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpStamp;
 
 class RecordListener
 {
     public function __construct(
-        private readonly DataProcessingLayersInterfaces $dataProcessingLayersInterfaces,
         private readonly LoggerInterface $logger)
     {
     }
@@ -20,9 +22,14 @@ class RecordListener
     {
         try {
             if ($event instanceof DataObjectEvent) {
-                $this->dataProcessingLayersInterfaces->createHandler($event->getObject()::class, $event->getObject(), 'postUpdate');
+                RabbitMQFacade::dispatch(new ObjectDataMessage('update', $event->getObject()::class, $event->getObject()->getId()),
+                    [
+                        new AmqpStamp(ObjectDataMessage::ROUTE_MESSAGE),
+                    ]
+                );
             }
         } catch (Exception $e) {
+            dd($e);
             $this->logger->critical($e->getMessage());
         }
     }

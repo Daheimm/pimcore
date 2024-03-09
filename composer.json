@@ -18,6 +18,7 @@
     "guzzlehttp/guzzle": "^7.8",
     "guzzlehttp/promises": "^2.0",
     "jms/serializer-bundle": "^5.4",
+    "lagdo/symfony-facades": "^2.2",
     "monolog/monolog": "*",
     "php-amqplib/rabbitmq-bundle": "^2.13",
     "pimcore/admin-ui-classic-bundle": "^1.3",

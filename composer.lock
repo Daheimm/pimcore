@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8017929e1f8c36e98da9185ea5d982d0",
+    "content-hash": "649de1307d941745bffd672f23cfacc0",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3329,6 +3329,64 @@
                 "source": "https://github.com/KnpLabs/KnpPaginatorBundle/tree/v6.3.0"
             },
             "time": "2023-11-19T08:15:37+00:00"
+        },
+        {
+            "name": "lagdo/symfony-facades",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lagdo/symfony-facades.git",
+                "reference": "8d0233a7df23586b8e9ffe7e0bed281add908c1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lagdo/symfony-facades/zipball/8d0233a7df23586b8e9ffe7e0bed281add908c1c",
+                "reference": "8d0233a7df23586b8e9ffe7e0bed281add908c1c",
+                "shasum": ""
+            },
+            "require": {
+                "psr/container": ">=1.0.0",
+                "symfony/framework-bundle": "4.*|5.*|6.*|7.*"
+            },
+            "require-dev": {
+                "nyholm/symfony-bundle-test": "^2.0",
+                "php": ">=7.0.0",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpunit/phpcov": "^8.2",
+                "phpunit/phpunit": "^9.5",
+                "symfony/phpunit-bridge": "^5.4",
+                "symfony/test-pack": "^1.0",
+                "twig/twig": "^3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lagdo\\Symfony\\Facades\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Thierry Feuzeu"
+                }
+            ],
+            "description": "Call Symfony services using facades.",
+            "homepage": "https://github.com/lagdo/symfony-facades",
+            "keywords": [
+                "facades",
+                "framework",
+                "php",
+                "services",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/lagdo/symfony-facades/issues",
+                "source": "https://github.com/lagdo/symfony-facades"
+            },
+            "time": "2024-02-05T16:50:59+00:00"
         },
         {
             "name": "lcobucci/clock",
@@ -17816,5 +17874,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
