@@ -22,7 +22,11 @@ class RecordListener
     {
         try {
             if ($event instanceof DataObjectEvent) {
-                RabbitMQFacade::dispatch(new ObjectDataMessage('update', $event->getObject()::class, $event->getObject()->getId()),
+                RabbitMQFacade::dispatch(new ObjectDataMessage('update',
+                    $event->getObject()::class,
+                    $event->getObject()->getId(),
+                    $event->getObject()->getClassId()
+                ),
                     [
                         new AmqpStamp(ObjectDataMessage::ROUTE_MESSAGE),
                     ]

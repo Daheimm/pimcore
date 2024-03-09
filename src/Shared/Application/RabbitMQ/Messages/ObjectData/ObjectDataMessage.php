@@ -10,8 +10,19 @@ class ObjectDataMessage
         private string $method,
         private string $class,
         private int    $id,
+        private int $classDefinitionId
     )
     {
+    }
+
+    public function getClassDefinitionId(): int
+    {
+        return $this->classDefinitionId;
+    }
+
+    public function setClassDefinitionId(int $classDefinitionId): void
+    {
+        $this->classDefinitionId = $classDefinitionId;
     }
 
     public function getMethod(): string

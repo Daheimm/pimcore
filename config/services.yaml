@@ -79,12 +79,23 @@ services:
         autowire: true
         autoconfigure: true
 
+    App\PimCore\Admin\SettingQueries\Infrastructure\Repositories\GraphQl\GraphqlRequestsPimcoreRepository:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+    App\Shared\Infrastructure\Http\GraphQL:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+
     App\PimCore\ProductInfo\Products\Infrastructure\Handlers\ProductHandler:
         public: true
         autowire: true
         autoconfigure: true
         arguments:
-            $strategies: !tagged_iterator 'app.strategy.product'
+            $strategies: !tagged_iterator { tag: 'app.strategy.product' }
     # Example custom templating helper
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they

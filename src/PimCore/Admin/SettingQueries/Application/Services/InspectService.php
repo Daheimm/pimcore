@@ -4,8 +4,8 @@ namespace App\PimCore\Admin\SettingQueries\Application\Services;
 
 use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\InspectServiceInterface;
 use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
-use App\PimCore\Admin\SettingQueries\Domain\Reposutories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
-use App\Shared\Application\Services\Http\GraphQL\GraphQLInterface;
+use App\PimCore\Admin\SettingQueries\Domain\Repositories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
+use App\Shared\Infrastructure\Http\GraphQL\GraphQLInterface;
 
 readonly class InspectService implements InspectServiceInterface
 {

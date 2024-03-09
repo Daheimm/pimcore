@@ -8,7 +8,7 @@ use App\PimCore\Admin\SettingQueries\Application\Dto\Settings\SettingsRequestDto
 use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\ClassesPimCoreServiceInterface;
 use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\SettingQueriesServiceInterface;
 use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
-use App\PimCore\Admin\SettingQueries\Domain\Reposutories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
+use App\PimCore\Admin\SettingQueries\Domain\Repositories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 
 class SettingQueriesService implements SettingQueriesServiceInterface
@@ -29,7 +29,7 @@ class SettingQueriesService implements SettingQueriesServiceInterface
 
     public function showById(int $id): GraphQLPimCoreResponse
     {
-        $entity = $this->graphqlRequestsPimcoreRepository->getById($id);
+        $entity = $this->graphqlRequestsPimcoreRepository->getByTypeId($id);
         $classses = $this->classesPimCoreService->getAll();
 
         $activeCalsses = PrepareClassesAction::run($classses, $entity->getTypeId());
@@ -47,7 +47,7 @@ class SettingQueriesService implements SettingQueriesServiceInterface
 
     public function getById(int $id): GraphqlRequestsPimcore
     {
-        return $this->graphqlRequestsPimcoreRepository->getById($id);
+        return $this->graphqlRequestsPimcoreRepository->getByTypeId($id);
     }
 
     public function update(SettingsRequestDto $settingsRequestDto): GraphqlRequestsPimcore

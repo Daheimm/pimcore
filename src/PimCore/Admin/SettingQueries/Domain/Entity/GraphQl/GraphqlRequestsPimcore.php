@@ -13,7 +13,7 @@ class GraphqlRequestsPimcore
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private int $id;
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'integer', name: 'type_id')]
     private ?int $typeId;
     #[ORM\Column(type: 'string')]
     private ?string $query;

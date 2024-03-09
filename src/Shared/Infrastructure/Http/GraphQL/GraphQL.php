@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Shared\Application\Services\Http\GraphQL;
+namespace App\Shared\Infrastructure\Http\GraphQL;
 
 use PHPUnit\Logging\Exception;
 use Psr\Log\LoggerInterface;
@@ -11,11 +11,12 @@ use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
+
 class GraphQL implements GraphQLInterface
 {
     public function __construct(
         private readonly HttpClientInterface $pimCore,
-        private readonly LoggerInterface $logger)
+        private readonly LoggerInterface     $logger)
     {
     }
 

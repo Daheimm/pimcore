@@ -1,10 +1,10 @@
 <?php
 
-namespace App\PimCore\ProductInfo\Products\Infrastructure\Handlers\Receipts\Application\Commands;
+namespace App\PimCore\Receipts\Application\Commands;
 
-use App\PimCore\ProductInfo\Products\Infrastructure\Handlers\Receipts\Application\Messages\Exports\RecipeExportMessage;
+use App\PimCore\Receipts\Application\Messages\Exports\RecipeExportMessage;
 use App\Shared\Application\Services\GraphQl\Interfaces\GraphqlRequestsPimcoreServiceInterface;
-use App\Shared\Application\Services\Http\GraphQL\GraphQLInterface;
+use App\Shared\Infrastructure\Http\GraphQL\GraphQLInterface;
 use Pimcore\Console\AbstractCommand;
 use Pimcore\Model\DataObject\Recipe;
 use Psr\Log\LoggerInterface;

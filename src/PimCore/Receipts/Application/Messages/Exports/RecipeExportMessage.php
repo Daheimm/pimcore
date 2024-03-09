@@ -1,6 +1,6 @@
 <?php
 
-namespace App\PimCore\ProductInfo\Products\Infrastructure\Handlers\Receipts\Application\Messages\Exports;
+namespace App\PimCore\Receipts\Application\Messages\Exports;
 
 class RecipeExportMessage
 {

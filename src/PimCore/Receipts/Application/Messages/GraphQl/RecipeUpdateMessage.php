@@ -1,6 +1,6 @@
 <?php
 
-namespace App\PimCore\ProductInfo\Products\Infrastructure\Handlers\Receipts\Application\Messages\GraphQl;
+namespace App\PimCore\Receipts\Application\Messages\GraphQl;
 
 class RecipeUpdateMessage
 {

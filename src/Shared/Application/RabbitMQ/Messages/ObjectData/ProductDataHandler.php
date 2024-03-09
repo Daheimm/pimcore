@@ -13,7 +13,7 @@ class ProductDataHandler
     public function __invoke(ObjectDataMessage $objectDataMessage): void
     {
         match ($objectDataMessage->getClass()) {
-            Product::class => ProductHandlerFacade::handler($objectDataMessage->getClass(), $objectDataMessage->getId()),
+            Product::class => ProductHandlerFacade::handler($objectDataMessage->getClass(), $objectDataMessage->getId(), $objectDataMessage->getClassDefinitionId()),
             default => '',
         };
     }

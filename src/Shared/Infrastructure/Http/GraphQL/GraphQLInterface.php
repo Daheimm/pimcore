@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Shared\Application\Services\Http\GraphQL;
+namespace App\Shared\Infrastructure\Http\GraphQL;
 
 interface GraphQLInterface
 {

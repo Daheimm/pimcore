@@ -1,6 +1,6 @@
 <?php
 
-namespace App\PimCore\ProductInfo\Products\Infrastructure\Handlers\Receipts\Application\Services\Interfaces;
+namespace App\PimCore\Receipts\Application\Services\Interfaces;
 
 use Pimcore\Model\DataObject\Recipe;
 

@@ -3,7 +3,9 @@
 namespace App\PimCore\ProductInfo\Products\Application\Strategies;
 
 use Pimcore\Model\DataObject\Product;
+use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
+#[AutoconfigureTag('app.strategy.product')]
 interface ProcessingStrategyInterface
 {
     /**
@@ -16,5 +18,5 @@ interface ProcessingStrategyInterface
      * @param int $id
      * @return mixed
      */
-    public function process(int $id);
+    public function process(int $id, int $classDefinitionId);
 }

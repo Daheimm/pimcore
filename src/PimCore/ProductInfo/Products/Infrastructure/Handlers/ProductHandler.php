@@ -10,15 +10,16 @@ class ProductHandler
     {
     }
 
-    public function handler(string $className, int $id): void
+    public function handler(string $className, int $id,int $classDefinitionId): void
     {
-        dd($this->strategies);
         /**
          * @var $strategy ProcessingStrategyInterface
          */
+
         foreach ($this->strategies as $strategy) {
+
             if ($strategy->support($className)) {
-                $strategy->process($id);
+                $strategy->process($id,$classDefinitionId);
                 break;
             }
         }

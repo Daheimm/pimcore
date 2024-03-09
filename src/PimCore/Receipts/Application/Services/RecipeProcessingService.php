@@ -1,9 +1,9 @@
 <?php
 
-namespace App\PimCore\ProductInfo\Products\Infrastructure\Handlers\Receipts\Application\Services;
+namespace App\PimCore\Receipts\Application\Services;
 
-use App\PimCore\ProductInfo\Products\Infrastructure\Handlers\Receipts\Application\Services\Interfaces\EventUpdateRecipeServiceInterface;
-use App\PimCore\ProductInfo\Products\Infrastructure\Handlers\Receipts\Application\Services\Interfaces\RecipeProcessingServiceInterface;
+use App\PimCore\Receipts\Application\Services\Interfaces\EventUpdateRecipeServiceInterface;
+use App\PimCore\Receipts\Application\Services\Interfaces\RecipeProcessingServiceInterface;
 use Pimcore\Model\DataObject\Recipe;
 
 class RecipeProcessingService implements RecipeProcessingServiceInterface
