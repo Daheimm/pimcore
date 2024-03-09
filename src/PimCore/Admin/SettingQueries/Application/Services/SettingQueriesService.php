@@ -29,7 +29,7 @@ class SettingQueriesService implements SettingQueriesServiceInterface
 
     public function showById(int $id): GraphQLPimCoreResponse
     {
-        $entity = $this->graphqlRequestsPimcoreRepository->getByTypeId($id);
+        $entity = $this->graphqlRequestsPimcoreRepository->getById($id);
         $classses = $this->classesPimCoreService->getAll();
 
         $activeCalsses = PrepareClassesAction::run($classses, $entity->getTypeId());

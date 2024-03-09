@@ -57,4 +57,9 @@ class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implement
 
         return $graphqlRequestsPimcore;
     }
+
+    public function getById(int $id): ?GraphqlRequestsPimcore
+    {
+        return $this->find($id);
+    }
 }

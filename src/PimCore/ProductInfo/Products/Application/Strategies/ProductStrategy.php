@@ -6,6 +6,7 @@ namespace App\PimCore\ProductInfo\Products\Application\Strategies;
 use App\PimCore\Admin\SettingQueries\Application\Facades\PimCoreQueueSettingsFacade;
 use App\PimCore\Admin\SettingQueries\Domain\Repositories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
 use App\Shared\Application\Facades\GraphQL\GraphQLFacade;
+use App\Shared\Application\Facades\RabbitMQ\RabbitMQFacade;
 use App\Shared\Infrastructure\Http\GraphQL\GraphQLInterface;
 
 use Pimcore\Model\DataObject\Product;
@@ -27,7 +28,7 @@ class ProductStrategy implements ProcessingStrategyInterface
             $requestCustom->getXApiKey()
         );
 
-        dd($requestCustom);
+        //RabbitMQFacade::dispatch($requestCustom)
     }
 
     public function support(string $className)
