@@ -52,3 +52,4 @@ nbproject
 /cache/
 /public/var/tmp/
 /supervisord.pid
+.DS_Store
