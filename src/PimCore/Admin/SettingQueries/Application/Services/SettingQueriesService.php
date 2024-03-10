@@ -41,14 +41,14 @@ class SettingQueriesService implements SettingQueriesServiceInterface
             ->setType($activeCalsses)
             ->setId($entity->getId())
             ->setEndpoint($entity->getEndpoint())
-            ->setPath($entity->getPath());
+            ->setFolderPath($entity->getPath());
 
         return $prepareEntity;
     }
 
     public function getById(int $id): GraphqlRequestsPimcore
     {
-        return $this->graphqlRequestsPimcoreRepository->getByTypeId($id);
+        return $this->graphqlRequestsPimcoreRepository->getById($id);
     }
 
     public function update(SettingsRequestDto $settingsRequestDto): GraphqlRequestsPimcore
@@ -67,7 +67,7 @@ class SettingQueriesService implements SettingQueriesServiceInterface
             ->setXApiKey($settingsRequestDto->getXApiKey())
             ->setTypeId($settingsRequestDto->getType())
             ->setEndpoint($settingsRequestDto->getEndpoint())
-            ->setPath($settingsRequestDto->getPath());
+            ->setPath($settingsRequestDto->getFolderPath());
 
         return $this->graphqlRequestsPimcoreRepository->update($entity);
 
