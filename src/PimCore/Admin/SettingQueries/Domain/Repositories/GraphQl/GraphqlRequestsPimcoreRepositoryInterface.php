@@ -14,7 +14,7 @@ interface GraphqlRequestsPimcoreRepositoryInterface
 
     public function getById(int $id): ?GraphqlRequestsPimcore;
 
-    public function getByTypeId(int $id): ?GraphqlRequestsPimcore;
+    public function getByTypeId(int $id): array;
 
     public function save(GraphqlRequestsPimcore $graphqlRequestsPimcore): GraphqlRequestsPimcore;
 

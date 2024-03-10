@@ -9,10 +9,21 @@ class ObjectDataMessage
     public function __construct(
         private string $method,
         private string $class,
+        private string $pathFolder,
         private int    $id,
-        private int $classDefinitionId
+        private int    $classDefinitionId
     )
     {
+    }
+
+    public function getPathFolder(): string
+    {
+        return $this->pathFolder;
+    }
+
+    public function setPathFolder(string $pathFolder): void
+    {
+        $this->pathFolder = $pathFolder;
     }
 
     public function getClassDefinitionId(): int

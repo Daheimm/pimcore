@@ -2,7 +2,7 @@
 
 namespace App\PimCore\ProductInfo\Products\Application\Strategies;
 
-use Pimcore\Model\DataObject\Product;
+use App\Shared\Application\Dto\ObjectDatas\ObjectDataDto;
 use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
 #[AutoconfigureTag('app.strategy.product')]
@@ -15,8 +15,8 @@ interface ProcessingStrategyInterface
     public function support(string $className);
 
     /**
-     * @param int $id
+     * @param ObjectDataDto $objectDataDto
      * @return mixed
      */
-    public function process(int $id, int $classDefinitionId);
+    public function process(ObjectDataDto $objectDataDto);
 }

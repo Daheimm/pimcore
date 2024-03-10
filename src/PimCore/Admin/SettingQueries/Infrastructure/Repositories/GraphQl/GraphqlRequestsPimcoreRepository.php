@@ -30,9 +30,9 @@ class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implement
         return $this->findAll();
     }
 
-    public function getByTypeId(int $id): ?GraphqlRequestsPimcore
+    public function getByTypeId(int $id): array
     {
-        return $this->findOneBy(['typeId' => $id]);
+        return $this->findBy(['typeId' => $id]);
     }
 
     public function save(GraphqlRequestsPimcore $graphqlRequestsPimcore): GraphqlRequestsPimcore

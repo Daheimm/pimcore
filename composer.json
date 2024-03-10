@@ -29,6 +29,8 @@
     "pimcore/perspective-editor": "^1.7",
     "pimcore/pimcore": "^11.0.4",
     "pimcore/web2print-tools-bundle": "^5.0",
+    "react/async": "^v4.2.0",
+    "react/http": "^v1.9.0",
     "symfony/amqp-messenger": "^7.0",
     "symfony/dotenv": "^6.2",
     "symfony/http-client": "^7.0",

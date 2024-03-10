@@ -3,7 +3,6 @@
 namespace App\Shared\Infrastructure\EventListener;
 
 use App\Shared\Application\Facades\RabbitMQ\RabbitMQFacade;
-use App\Shared\Application\Factories\DataProcessingLayersInterfaces;
 use App\Shared\Application\RabbitMQ\Messages\ObjectData\ObjectDataMessage;
 use Exception;
 use Pimcore\Event\Model\DataObjectEvent;
@@ -25,7 +24,8 @@ class RecordListener
                 RabbitMQFacade::dispatch(new ObjectDataMessage('update',
                     $event->getObject()::class,
                     $event->getObject()->getId(),
-                    $event->getObject()->getClassId()
+                    $event->getObject()->getClassId(),
+                    $event->getObject()->getPath(),
                 ),
                     [
                         new AmqpStamp(ObjectDataMessage::ROUTE_MESSAGE),
@@ -33,7 +33,7 @@ class RecordListener
                 );
             }
         } catch (Exception $e) {
-            dd($e);
+
             $this->logger->critical($e->getMessage());
         }
     }

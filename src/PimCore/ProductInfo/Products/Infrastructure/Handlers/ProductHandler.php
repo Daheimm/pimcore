@@ -3,6 +3,7 @@
 namespace App\PimCore\ProductInfo\Products\Infrastructure\Handlers;
 
 use App\PimCore\ProductInfo\Products\Application\Strategies\ProcessingStrategyInterface;
+use App\Shared\Application\Dto\ObjectDatas\ObjectDataDto;
 
 class ProductHandler
 {
@@ -10,7 +11,7 @@ class ProductHandler
     {
     }
 
-    public function handler(string $className, int $id,int $classDefinitionId): void
+    public function handler(ObjectDataDto $objectDataDto): void
     {
         /**
          * @var $strategy ProcessingStrategyInterface
@@ -18,8 +19,8 @@ class ProductHandler
 
         foreach ($this->strategies as $strategy) {
 
-            if ($strategy->support($className)) {
-                $strategy->process($id,$classDefinitionId);
+            if ($strategy->support($objectDataDto->getClass())) {
+                $strategy->process($objectDataDto);
                 break;
             }
         }
