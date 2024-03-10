@@ -38,9 +38,6 @@
  * - storageconditions [input]
  * - cookingrecommendation [input]
  * - brix [numeric]
- * - nutritionfacts [block]
- * -- component [input]
- * -- quantity [numeric]
  */
 
 return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
@@ -50,7 +47,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'implementsInterfaces' => '',
    'title' => 'Продукти - Базові Атрибути',
    'group' => 'Продукти',
-   'layoutDefinitions' =>
+   'layoutDefinitions' => 
   \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'name' => NULL,
      'type' => NULL,
@@ -62,9 +59,9 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
      'collapsed' => false,
      'bodyStyle' => NULL,
      'datatype' => 'layout',
-     'children' =>
+     'children' => 
     array (
-      0 =>
+      0 => 
       \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
          'name' => 'Layout',
          'type' => NULL,
@@ -76,9 +73,9 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
          'collapsed' => false,
          'bodyStyle' => '',
          'datatype' => 'layout',
-         'children' =>
+         'children' => 
         array (
-          0 =>
+          0 => 
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
@@ -90,9 +87,9 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' =>
+             'children' => 
             array (
-              0 =>
+              0 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'fat',
                  'title' => 'Жири г/100г',
@@ -108,7 +105,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -122,7 +119,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              1 =>
+              1 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'strength',
                  'title' => 'Міцність',
@@ -138,7 +135,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -152,7 +149,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              2 =>
+              2 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'kilojoules',
                  'title' => 'кДж',
@@ -168,7 +165,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -182,7 +179,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              3 =>
+              3 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'na',
                  'title' => 'Na',
@@ -198,7 +195,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -212,7 +209,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              4 =>
+              4 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'fatcontent',
                  'title' => 'Жирність %',
@@ -228,7 +225,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -242,7 +239,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              5 =>
+              5 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'protein',
                  'title' => 'Білки г/100г',
@@ -258,7 +255,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -272,7 +269,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              6 =>
+              6 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'sugar',
                  'title' => 'Цукор  г/100г',
@@ -288,7 +285,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -302,7 +299,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              7 =>
+              7 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'fatsaturated',
                  'title' => 'Насичені жири',
@@ -318,7 +315,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -332,7 +329,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              8 =>
+              8 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'salt2',
                  'title' => 'Сіль по рецептурі',
@@ -348,7 +345,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -362,7 +359,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              9 =>
+              9 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'salt',
                  'title' => 'Сіль',
@@ -378,7 +375,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -392,7 +389,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              10 =>
+              10 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'pngk',
                  'title' => 'в т.ч. ПНЖК',
@@ -408,7 +405,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -422,7 +419,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              11 =>
+              11 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'mds',
                  'title' => 'в т.ч. МДС/IBU',
@@ -438,7 +435,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -452,7 +449,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              12 =>
+              12 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'calories',
                  'title' => 'Калорії Ккал/100г',
@@ -468,7 +465,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -482,7 +479,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              13 =>
+              13 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'carb',
                  'title' => 'Вуглеводи г/100г',
@@ -498,7 +495,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -512,7 +509,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              14 =>
+              14 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'drymatter',
                  'title' => 'Сухої речовини, %',
@@ -528,7 +525,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -542,7 +539,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 170,
                  'defaultValueGenerator' => '',
               )),
-              15 =>
+              15 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                  'name' => 'methodofpreparation',
                  'title' => 'Спосіб приготування',
@@ -558,13 +555,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'columnLength' => 190,
                  'regex' => '',
-                 'regexFlags' =>
+                 'regexFlags' => 
                 array (
                 ),
                  'unique' => false,
@@ -572,7 +569,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 250,
                  'defaultValueGenerator' => '',
               )),
-              16 =>
+              16 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
                  'name' => 'sulfites',
                  'title' => 'Всього сульфітів',
@@ -588,12 +585,12 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
-                 'options' =>
+                 'options' => 
                 array (
-                  0 =>
+                  0 => 
                   array (
                     'key' => 'Немає даних',
                     'value' => 'Немає даних',
@@ -608,7 +605,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'optionsProviderClass' => '',
                  'optionsProviderData' => '',
               )),
-              17 =>
+              17 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
                  'name' => 'dstu',
                  'title' => 'ДСТУ/ТУ',
@@ -624,12 +621,12 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => true,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
-                 'classes' =>
+                 'classes' => 
                 array (
-                  0 =>
+                  0 => 
                   array (
                     'classes' => 'Standard',
                   ),
@@ -641,25 +638,25 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'allowToClearRelation' => true,
                  'objectsAllowed' => true,
                  'assetsAllowed' => false,
-                 'assetTypes' =>
+                 'assetTypes' => 
                 array (
                 ),
                  'documentsAllowed' => false,
-                 'documentTypes' =>
+                 'documentTypes' => 
                 array (
                 ),
                  'width' => 250,
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' =>
+             'blockedVarsForExport' => 
             array (
             ),
              'fieldtype' => 'fieldset',
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          1 =>
+          1 => 
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
@@ -671,9 +668,9 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' =>
+             'children' => 
             array (
-              0 =>
+              0 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'farm',
                  'title' => 'Фермерський',
@@ -689,13 +686,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              1 =>
+              1 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'glutenfree',
                  'title' => 'Безглютеновий',
@@ -711,13 +708,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              2 =>
+              2 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'halal',
                  'title' => 'Халяльний',
@@ -733,13 +730,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              3 =>
+              3 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'vegan',
                  'title' => 'Веган',
@@ -755,13 +752,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              4 =>
+              4 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'lactosefree',
                  'title' => 'Безлактозний',
@@ -777,13 +774,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              5 =>
+              5 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'coimpositeproduct',
                  'title' => 'Композитний продукт',
@@ -799,13 +796,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              6 =>
+              6 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'kosher',
                  'title' => 'Кошерний продукт',
@@ -821,13 +818,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              7 =>
+              7 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'sugarless',
                  'title' => 'Без цукру',
@@ -843,13 +840,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              8 =>
+              8 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'vegetarian',
                  'title' => 'Вегетаріанський',
@@ -865,13 +862,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              9 =>
+              9 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'vertcert',
                  'title' => 'Потрібен ветеринарний сертифікат',
@@ -887,13 +884,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              10 =>
+              10 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'organic',
                  'title' => 'Органічний',
@@ -909,13 +906,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              11 =>
+              11 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'pregnancy',
                  'title' => 'Для вагітних',
@@ -931,13 +928,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              12 =>
+              12 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
                  'name' => 'allergen',
                  'title' => 'Містить алергени',
@@ -953,13 +950,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'defaultValueGenerator' => '',
               )),
-              13 =>
+              13 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
                  'name' => 'pasteurization',
                  'title' => 'Пастеризація',
@@ -975,27 +972,27 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
-                 'options' =>
+                 'options' => 
                 array (
-                  0 =>
+                  0 => 
                   array (
                     'key' => 'Пастеризований',
                     'value' => 'Пастеризований',
                   ),
-                  1 =>
+                  1 => 
                   array (
                     'key' => 'Не пастеризований',
                     'value' => 'Не пастеризований',
                   ),
-                  2 =>
+                  2 => 
                   array (
                     'key' => 'Консервований',
                     'value' => 'Консервований',
                   ),
-                  3 =>
+                  3 => 
                   array (
                     'key' => 'Стерилізований',
                     'value' => 'Стерилізований',
@@ -1010,7 +1007,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'optionsProviderClass' => 'Pimcore\\Bundle\\CoreBundle\\OptionsProvider\\SelectOptionsOptionsProvider',
                  'optionsProviderData' => '',
               )),
-              14 =>
+              14 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                  'name' => 'allergen2',
                  'title' => 'Алергени',
@@ -1026,13 +1023,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'columnLength' => 190,
                  'regex' => '',
-                 'regexFlags' =>
+                 'regexFlags' => 
                 array (
                 ),
                  'unique' => false,
@@ -1040,7 +1037,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 450,
                  'defaultValueGenerator' => '',
               )),
-              15 =>
+              15 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                  'name' => 'storageconditions',
                  'title' => 'Умови зберігання ',
@@ -1056,13 +1053,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'columnLength' => 190,
                  'regex' => '',
-                 'regexFlags' =>
+                 'regexFlags' => 
                 array (
                 ),
                  'unique' => false,
@@ -1070,7 +1067,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 450,
                  'defaultValueGenerator' => '',
               )),
-              16 =>
+              16 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                  'name' => 'cookingrecommendation',
                  'title' => 'Рекомендація з приготування',
@@ -1086,13 +1083,13 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
                  'columnLength' => 190,
                  'regex' => '',
-                 'regexFlags' =>
+                 'regexFlags' => 
                 array (
                 ),
                  'unique' => false,
@@ -1100,7 +1097,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'width' => 450,
                  'defaultValueGenerator' => '',
               )),
-              17 =>
+              17 => 
               \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
                  'name' => 'brix',
                  'title' => 'Брікса',
@@ -1116,7 +1113,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' =>
+                 'blockedVarsForExport' => 
                 array (
                 ),
                  'defaultValue' => NULL,
@@ -1132,125 +1129,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' =>
-            array (
-            ),
-             'fieldtype' => 'fieldset',
-             'labelWidth' => 100,
-             'labelAlign' => 'left',
-          )),
-          2 =>
-          \Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
-             'name' => 'Layout',
-             'type' => NULL,
-             'region' => NULL,
-             'title' => 'Склад',
-             'width' => '',
-             'height' => '',
-             'collapsible' => false,
-             'collapsed' => false,
-             'bodyStyle' => '',
-             'datatype' => 'layout',
-             'children' =>
-            array (
-              0 =>
-              \Pimcore\Model\DataObject\ClassDefinition\Data\Block::__set_state(array(
-                 'name' => 'nutritionfacts',
-                 'title' => '',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'fieldtype' => '',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' =>
-                array (
-                ),
-                 'lazyLoading' => false,
-                 'disallowAddRemove' => false,
-                 'disallowReorder' => false,
-                 'collapsible' => false,
-                 'collapsed' => false,
-                 'maxItems' => NULL,
-                 'styleElement' => '',
-                 'children' =>
-                array (
-                  0 =>
-                  \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                     'name' => 'component',
-                     'title' => 'Компонент',
-                     'tooltip' => '',
-                     'mandatory' => false,
-                     'noteditable' => false,
-                     'index' => false,
-                     'locked' => false,
-                     'style' => '',
-                     'permissions' => NULL,
-                     'fieldtype' => '',
-                     'relationType' => false,
-                     'invisible' => false,
-                     'visibleGridView' => false,
-                     'visibleSearch' => true,
-                     'blockedVarsForExport' =>
-                    array (
-                    ),
-                     'defaultValue' => NULL,
-                     'columnLength' => 190,
-                     'regex' => '',
-                     'regexFlags' =>
-                    array (
-                    ),
-                     'unique' => false,
-                     'showCharCount' => false,
-                     'width' => '',
-                     'defaultValueGenerator' => '',
-                  )),
-                  1 =>
-                  \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-                     'name' => 'quantity',
-                     'title' => 'Кількість',
-                     'tooltip' => '',
-                     'mandatory' => false,
-                     'noteditable' => false,
-                     'index' => false,
-                     'locked' => false,
-                     'style' => '',
-                     'permissions' => NULL,
-                     'fieldtype' => '',
-                     'relationType' => false,
-                     'invisible' => false,
-                     'visibleGridView' => false,
-                     'visibleSearch' => true,
-                     'blockedVarsForExport' =>
-                    array (
-                    ),
-                     'defaultValue' => NULL,
-                     'integer' => false,
-                     'unsigned' => false,
-                     'minValue' => NULL,
-                     'maxValue' => NULL,
-                     'unique' => false,
-                     'decimalSize' => NULL,
-                     'decimalPrecision' => NULL,
-                     'width' => 120,
-                     'defaultValueGenerator' => '',
-                  )),
-                ),
-                 'layout' => NULL,
-                 'referencedFields' =>
-                array (
-                ),
-                 'fieldDefinitionsCache' => NULL,
-              )),
-            ),
-             'locked' => false,
-             'blockedVarsForExport' =>
+             'blockedVarsForExport' => 
             array (
             ),
              'fieldtype' => 'fieldset',
@@ -1259,7 +1138,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
           )),
         ),
          'locked' => false,
-         'blockedVarsForExport' =>
+         'blockedVarsForExport' => 
         array (
         ),
          'fieldtype' => 'tabpanel',
@@ -1268,7 +1147,7 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
       )),
     ),
      'locked' => false,
-     'blockedVarsForExport' =>
+     'blockedVarsForExport' => 
     array (
     ),
      'fieldtype' => 'panel',
@@ -1279,18 +1158,18 @@ return \Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
      'labelAlign' => 'left',
   )),
    'fieldDefinitionsCache' => NULL,
-   'blockedVarsForExport' =>
+   'blockedVarsForExport' => 
   array (
   ),
-   'classDefinitions' =>
+   'classDefinitions' => 
   array (
-    0 =>
+    0 => 
     array (
       'classname' => 'Product',
       'fieldname' => 'customfeatures',
     ),
   ),
-   'activeDispatchingEvents' =>
+   'activeDispatchingEvents' => 
   array (
   ),
 ));
