@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 sqlObjectCondition: ''
-                modificationDate: 1709628753
+                modificationDate: 1709921854
                 path: null
                 createDate: 1708539555
             schema:
@@ -3229,6 +3229,12 @@ pimcore_data_hub:
                                     isOperator: false
                                 -
                                     attributes:
+                                        attribute: nutrition~brix
+                                        label: Брікса
+                                        dataType: numeric
+                                    isOperator: false
+                                -
+                                    attributes:
                                         attribute: cheesesAttributes~cheesetype
                                         label: 'Тип сиру'
                                         dataType: manyToOneRelation
@@ -3650,7 +3656,7 @@ pimcore_data_hub:
                                 -
                                     attributes:
                                         attribute: supplements~nutritionfacts
-                                        label: ''
+                                        label: (supplements~nutritionfacts)
                                         dataType: block
                                     isOperator: false
                                 -
@@ -3936,18 +3942,18 @@ pimcore_data_hub:
                                 -
                                     attributes:
                                         attribute: id
-                                        label: id
+                                        label: ID
                                         dataType: system
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: cod1c
+                                        attribute: cheesecod1c
                                         label: 'Код з 1С'
                                         dataType: input
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: name
+                                        attribute: cheesetypename
                                         label: Назва
                                         dataType: input
                                     isOperator: false
@@ -3959,18 +3965,18 @@ pimcore_data_hub:
                                 -
                                     attributes:
                                         attribute: id
-                                        label: id
+                                        label: ID
                                         dataType: system
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: cod1c
+                                        attribute: chocotypecod1c
                                         label: 'Код з 1С'
                                         dataType: input
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: name
+                                        attribute: chocotypename
                                         label: Назва
                                         dataType: input
                                     isOperator: false
@@ -3982,18 +3988,18 @@ pimcore_data_hub:
                                 -
                                     attributes:
                                         attribute: id
-                                        label: id
+                                        label: ID
                                         dataType: system
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: cod1c
+                                        attribute: meattypecod1c
                                         label: 'Код з 1С'
                                         dataType: input
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: name
+                                        attribute: meattypename
                                         label: Назва
                                         dataType: input
                                     isOperator: false
@@ -4005,18 +4011,18 @@ pimcore_data_hub:
                                 -
                                     attributes:
                                         attribute: id
-                                        label: id
+                                        label: ID
                                         dataType: system
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: cod1c
+                                        attribute: mildewtypecod1c
                                         label: 'Код з 1С'
                                         dataType: input
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: name
+                                        attribute: mildewtypename
                                         label: Назва
                                         dataType: input
                                     isOperator: false
@@ -4028,18 +4034,18 @@ pimcore_data_hub:
                                 -
                                     attributes:
                                         attribute: id
-                                        label: id
+                                        label: ID
                                         dataType: system
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: cod1c
+                                        attribute: milktypecod1c
                                         label: 'Код з 1С'
                                         dataType: input
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: name
+                                        attribute: milktypename
                                         label: Назва
                                         dataType: input
                                     isOperator: false
@@ -4051,18 +4057,18 @@ pimcore_data_hub:
                                 -
                                     attributes:
                                         attribute: id
-                                        label: id
+                                        label: ID
                                         dataType: system
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: cod1c
+                                        attribute: preparationmethodcod1c
                                         label: 'Код з 1С'
                                         dataType: input
                                     isOperator: false
                                 -
                                     attributes:
-                                        attribute: name
+                                        attribute: preparationmethodname
                                         label: Назва
                                         dataType: input
                                     isOperator: false
@@ -4097,6 +4103,29 @@ pimcore_data_hub:
                                 -
                                     attributes:
                                         attribute: id
+                                        label: ID
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: teatypecod1c
+                                        label: 'Код з 1С'
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: teatypename
+                                        label: Назва
+                                        dataType: input
+                                    isOperator: false
+                    Plantstype:
+                        id: Plantstype
+                        name: Plantstype
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
                                         label: id
                                         dataType: system
                                     isOperator: false
@@ -4112,9 +4141,6 @@ pimcore_data_hub:
                                         label: Назва
                                         dataType: input
                                     isOperator: false
-                    Plantstype:
-                        id: Plantstype
-                        name: Plantstype
                 mutationEntities: {  }
                 specialEntities:
                     document:
