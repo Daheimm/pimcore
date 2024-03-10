@@ -4,7 +4,10 @@ namespace App\PimCore\ProductInfo\Products\Application\Strategies;
 
 
 use App\PimCore\Admin\SettingQueries\Application\Facades\PimCoreQueueSettingsFacade;
+use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
+use App\PimCore\Admin\SettingQueries\Domain\Repositories\GraphQl\FetchGraphqlRequestsPimcoreRepositoryInterface;
 use App\PimCore\Admin\SettingQueries\Domain\Repositories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
+use App\PimCore\ProductInfo\Products\Application\Actions\Prepares\LoadDataToArrayAction;
 use App\Shared\Application\Dto\ObjectDatas\ObjectDataDto;
 use App\Shared\Application\Facades\GraphQL\GraphQLFacade;
 use App\Shared\Application\Facades\RabbitMQ\RabbitMQFacade;
@@ -16,13 +19,12 @@ class ProductStrategy implements ProcessingStrategyInterface
 {
     public function process(ObjectDataDto $objectDataDto)
     {
-        $requestsCustom = PimCoreQueueSettingsFacade::getByTypeId($objectDataDto->getClassDefinitionId());
+        $dataForQueue = [];
+        $queriesGeneral = PimCoreQueueSettingsFacade::findByTypeIdWithEmptyEndpoint($objectDataDto->getClassDefinitionId());
+        $queriesSpecific = PimCoreQueueSettingsFacade::findByTypeIdAndPath($objectDataDto->getClassDefinitionId(), $objectDataDto->getPathFolder());
+dd($queriesSpecific);
+        $dataForQueue[] = LoadDataToArrayAction::run($queriesGeneral);
 
-        $requestCustom = GraphQLFacade::executeQuery(
-            $requestCustom->getEndpoint(),
-            $requestCustom->getQuery(),
-            $requestCustom->getXApiKey()
-        );
 
         //RabbitMQFacade::dispatch($requestCustom)
     }

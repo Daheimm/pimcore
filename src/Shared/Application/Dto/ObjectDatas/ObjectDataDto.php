@@ -4,15 +4,12 @@ namespace App\Shared\Application\Dto\ObjectDatas;
 
 final class ObjectDataDto
 {
-    public function __construct(
-        private string $method,
-        private string $class,
-        private string $pathFolder,
-        private int    $id,
-        private int    $classDefinitionId
-    )
-    {
-    }
+    private string $method;
+    private string $class;
+    private string $pathFolder;
+    private int $id;
+    private int $classDefinitionId;
+
 
     public function getMethod(): string
     {

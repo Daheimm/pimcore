@@ -2,16 +2,18 @@
 
 namespace App\Shared\Infrastructure\Http\GraphQL\Async;
 
-use PHPUnit\Logging\Exception;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
-use React\Http\Browser;
+use App\Shared\Infrastructure\Http\HttpGraphQLAsyncAbstract;
+use React\Promise\PromiseInterface;
 
-class GraphQLAsync implements GraphQLAsyncInterface
+
+class GraphQLAsync extends HttpGraphQLAsyncAbstract implements GraphQLAsyncInterface
 {
-    // private readonly Browser $browser ;
+    private string $baseUrl;
+
     public function __construct()
     {
-        //    $this->browser = new React\Http\Browser();
+        $this->baseUrl = $this->params->get('LOCALHOST.BASE.URL');
+        parent::__construct();
     }
 
     /**
@@ -19,11 +21,14 @@ class GraphQLAsync implements GraphQLAsyncInterface
      * @param string $query
      * @param string $xApiKey
      *
-     * @return array
+     * @return PromiseInterface
      *
      */
-    public function executeQueryAsync(string $endpoint, string $query, string $xApiKey): void
+    public function executeQueryAsync(string $endpoint, string $query, string $xApiKey): PromiseInterface
     {
-        //  $browser->get('https://example.com/')
+        return $this->browser->post(sprintf("%s/%s", $this->baseUrl, $endpoint),
+            [
+                'X-API-Key' => $xApiKey
+            ], $query);
     }
 }

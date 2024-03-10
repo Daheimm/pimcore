@@ -12,6 +12,8 @@ use Lagdo\Symfony\Facades\AbstractFacade;
  * @method static ?GraphqlRequestsPimcore getGraphQl(string $type) Отримати GraphQL запит за типом.
  * @method static array getAll() Отримати всі налаштування GraphQL.
  * @method static array getTree() Отримати дерево налаштувань GraphQL.
+ * @method static array findByTypeIdWithEmptyEndpoint(int $typeId) Отримати всі налаштування GraphQL.
+ * @method static array findByTypeIdAndPath(int $typeId, string $path) Отримати дерево налаштувань GraphQL.
  * @method static array getByTypeId(int $id) Отримати GraphQL налаштування за ідентифікатором типу.
  * @method static GraphqlRequestsPimcore save(GraphqlRequestsPimcore $graphqlRequestsPimcore) Зберегти налаштування GraphQL.
  * @method static GraphqlRequestsPimcore update(GraphqlRequestsPimcore $graphqlRequestsPimcore) Оновити налаштування GraphQL.

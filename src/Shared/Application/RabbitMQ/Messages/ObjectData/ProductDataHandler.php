@@ -13,12 +13,14 @@ class ProductDataHandler
 {
     public function __invoke(ObjectDataMessage $objectDataMessage): void
     {
+
         $dto = (new ObjectDataDto())
             ->setId($objectDataMessage->getId())
             ->setPathFolder($objectDataMessage->getPathFolder())
             ->setMethod($objectDataMessage->getMethod())
             ->setClassDefinitionId($objectDataMessage->getClassDefinitionId())
-            ->setMethod($objectDataMessage->getMethod());
+            ->setMethod($objectDataMessage->getMethod())
+            ->setClass($objectDataMessage->getClass());
         match ($objectDataMessage->getClass()) {
             Product::class => ProductHandlerFacade::handler($dto),
             default => '',

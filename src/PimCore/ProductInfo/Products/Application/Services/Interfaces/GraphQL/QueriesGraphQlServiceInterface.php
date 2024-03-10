@@ -1,6 +1,6 @@
 <?php
 
-namespace App\PimCore\ProductInfo\Products\Application\Services\Interfaces;
+namespace App\PimCore\ProductInfo\Products\Application\Services\Interfaces\GraphQL;
 
 use React\Promise\PromiseInterface;
 
