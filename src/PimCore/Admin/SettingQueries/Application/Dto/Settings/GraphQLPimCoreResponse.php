@@ -18,14 +18,14 @@ class GraphQLPimCoreResponse
 
     private ?string $endpoint;
 
-    private string $path;
+    private ?string $path;
 
-    public function getPath(): string
+    public function getPath(): ?string
     {
         return $this->path;
     }
 
-    public function setPath(string $path): self
+    public function setPath(?string $path): self
     {
         $this->path = $path;
         return $this;
