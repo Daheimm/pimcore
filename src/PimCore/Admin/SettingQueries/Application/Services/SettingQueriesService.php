@@ -15,7 +15,7 @@ class SettingQueriesService implements SettingQueriesServiceInterface
 {
     public function __construct(
         private readonly GraphqlRequestsPimcoreRepositoryInterface $graphqlRequestsPimcoreRepository,
-        private readonly ClassesPimCoreServiceInterface $classesPimCoreService)
+        private readonly ClassesPimCoreServiceInterface            $classesPimCoreService)
     {
     }
 
@@ -40,7 +40,8 @@ class SettingQueriesService implements SettingQueriesServiceInterface
             ->setQuery($entity->getQuery())
             ->setType($activeCalsses)
             ->setId($entity->getId())
-            ->setEndpoint($entity->getEndpoint());
+            ->setEndpoint($entity->getEndpoint())
+            ->setPath($entity->getPath());
 
         return $prepareEntity;
     }
@@ -65,7 +66,8 @@ class SettingQueriesService implements SettingQueriesServiceInterface
             ->setText($settingsRequestDto->getText())
             ->setXApiKey($settingsRequestDto->getXApiKey())
             ->setTypeId($settingsRequestDto->getType())
-            ->setEndpoint($settingsRequestDto->getEndpoint());
+            ->setEndpoint($settingsRequestDto->getEndpoint())
+            ->setPath($settingsRequestDto->getPath());
 
         return $this->graphqlRequestsPimcoreRepository->update($entity);
 

@@ -19,6 +19,18 @@ class SettingsRequestDto
     private string $type;
     #[Assert\NotBlank]
     private string $endpoint;
+    #[Assert\NotBlank]
+    private string $path;
+
+    public function getPath(): string
+    {
+        return $this->path;
+    }
+
+    public function setPath(string $path): void
+    {
+        $this->path = $path;
+    }
 
     public function getEndpoint(): string
     {

@@ -25,15 +25,30 @@ class GraphqlRequestsPimcore
 
     #[ORM\Column(type: 'string')]
     private ?string $endpoint;
+    #[ORM\Column(type: 'string', name: 'path')]
+    private string $path;
+
+    public function getPath(): string
+    {
+        return $this->path;
+    }
+
+    public function setPath(string $path): self
+    {
+        $this->path = $path;
+        return $this;
+    }
+
 
     public function getEndpoint(): ?string
     {
         return $this->endpoint;
     }
 
-    public function setEndpoint(?string $endpoint): void
+    public function setEndpoint(?string $endpoint): self
     {
         $this->endpoint = $endpoint;
+        return $this;
     }
 
     private $leaf = true;

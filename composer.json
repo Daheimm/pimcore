@@ -13,7 +13,7 @@
   },
   "prefer-stable": true,
   "require": {
-    "doctrine/doctrine-migrations-bundle": "^3.3",
+    "doctrine/doctrine-migrations-bundle": "^3.0",
     "doctrine/orm": "^2.18",
     "guzzlehttp/guzzle": "^7.8",
     "guzzlehttp/promises": "^2.0",
