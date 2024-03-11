@@ -19,14 +19,15 @@ class RecordListener
 
     public function onPostUpdate(ElementEventInterface $event): void
     {
+
         try {
             if ($event instanceof DataObjectEvent) {
-                RabbitMQFacade::dispatch(new ObjectDataMessage('update',
+                RabbitMQFacade::dispatch((new ObjectDataMessage('update',
                     $event->getObject()::class,
                     $event->getObject()->getPath(),
                     $event->getObject()->getId(),
                     $event->getObject()->getClassId(),
-                ),
+                )),
                     [
                         new AmqpStamp(ObjectDataMessage::ROUTE_MESSAGE),
                     ]

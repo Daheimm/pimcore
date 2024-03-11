@@ -1,7 +1,3 @@
-imports:
-    - { resource: messengers/product_info/products/products.yaml }
-    - { resource: messengers/shared/shared.yaml }
-    - { resource: messengers/magento/products.yaml }
 framework:
     messenger:
         serializer:
@@ -12,18 +8,17 @@ framework:
         transports:
             # https://symfony.com/doc/current/messenger.html#transport-configuration
             async: '%env(RABBITMQ_URL)%'
-            pimCore.products.import:
-                dsn: '%env(MESSENGER_EVENTS_DSN)%'
+            magento.products.event:
+                dsn: '%env(MESSENGER_EVENTS_DSN_MAGENTO)%'
                 options:
                     exchange:
                         type: topic
-                        name: pimcore.products
+                        name: ua.goodwine.PIM
                     queues:
-                        pimCore.products.imports:
+                        ua.goodwine.PIM.magento.Product.v1:
                             binding_keys:
-                                - 'products.import.*'
+                                - 'products.event.*'
 
         routing:
             # Route your messages to the transports
-            'App\MessageHandler\SampleMessage': async
-
+            'App\PimCore\ProductInfo\Products\Application\Messages\ProductMessage': magento.products.event

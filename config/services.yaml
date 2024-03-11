@@ -86,11 +86,15 @@ services:
         autowire: true
         autoconfigure: true
 
-    App\Shared\Infrastructure\Http\GraphQL:
+    App\Shared\Infrastructure\Http\GraphQL\GraphQL:
         public: true
         autowire: true
         autoconfigure: true
 
+    App\PimCore\Admin\SettingQueries\Infrastructure\QueueSettings\PimcoreQueueSettings:
+        public: true
+        autowire: true
+        autoconfigure: true
 
     App\PimCore\ProductInfo\Products\Infrastructure\Handlers\ProductHandler:
         public: true

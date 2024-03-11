@@ -76,13 +76,16 @@ class GraphqlRequestsPimcoreRepository extends ServiceEntityRepository implement
 
     public function findByTypeIdAndPath(int $typeId, string $path): array
     {
-        return $this->createQueryBuilder('e')
-            ->where('e.typeId = :typeId')
-            ->andWhere('e.endpoint LIKE :path')
-            ->setParameters([
-                'typeId' => $typeId,
-                'path' =>  $path . '%'
-            ])
+        $queryBuilder = $this->_em->createQueryBuilder();
+
+        return $queryBuilder
+            ->select('g')
+            ->from('App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore', 'g')
+            ->where('g.path IS NOT NULL AND g.path <> \'\'')
+            ->andWhere('g.typeId = :typeId')
+            ->andWhere(':requestPath LIKE CONCAT(g.path, \'%\')')
+            ->setParameter('requestPath', $path)
+            ->setParameter('typeId', $typeId)
             ->getQuery()
             ->getResult();
     }

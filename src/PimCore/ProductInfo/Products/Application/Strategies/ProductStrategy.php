@@ -3,33 +3,36 @@
 namespace App\PimCore\ProductInfo\Products\Application\Strategies;
 
 
-use App\PimCore\Admin\SettingQueries\Application\Facades\PimCoreQueueSettingsFacade;
-use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
-use App\PimCore\Admin\SettingQueries\Domain\Repositories\GraphQl\FetchGraphqlRequestsPimcoreRepositoryInterface;
-use App\PimCore\Admin\SettingQueries\Domain\Repositories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
+use App\PimCore\Admin\SettingQueries\Infrastructure\Facades\QueueSettings\PimcoreQueueSettingsFacade;
 use App\PimCore\ProductInfo\Products\Application\Actions\Prepares\LoadDataToArrayAction;
+use App\PimCore\ProductInfo\Products\Application\Messages\ProductMessage;
 use App\Shared\Application\Dto\ObjectDatas\ObjectDataDto;
-use App\Shared\Application\Facades\GraphQL\GraphQLFacade;
-use App\Shared\Application\Facades\RabbitMQ\RabbitMQFacade;
-use App\Shared\Infrastructure\Http\GraphQL\GraphQLInterface;
 
+
+use App\Shared\Application\Facades\RabbitMQ\RabbitMQFacade;
 use Pimcore\Model\DataObject\Product;
+use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpStamp;
 
 class ProductStrategy implements ProcessingStrategyInterface
 {
     public function process(ObjectDataDto $objectDataDto)
     {
-        $dataForQueue = [];
-        $queriesGeneral = PimCoreQueueSettingsFacade::findByTypeIdWithEmptyEndpoint($objectDataDto->getClassDefinitionId());
-        $queriesSpecific = PimCoreQueueSettingsFacade::findByTypeIdAndPath($objectDataDto->getClassDefinitionId(), $objectDataDto->getPathFolder());
-dd($queriesSpecific);
-        $dataForQueue[] = LoadDataToArrayAction::run($queriesGeneral);
+        $dataSettingsForQueue = PimcoreQueueSettingsFacade::getSettings($objectDataDto);
 
+        $dataForQueue = LoadDataToArrayAction::run($dataSettingsForQueue);
 
-        //RabbitMQFacade::dispatch($requestCustom)
+        RabbitMQFacade::dispatch(new ProductMessage($dataForQueue),
+            [
+                new AmqpStamp(ProductMessage::ROUTE_KEY),
+            ]
+        );
     }
 
-    public function support(string $className)
+    /**
+     * @param string $className
+     * @return bool
+     */
+    public function support(string $className): bool
     {
         return Product::class === $className;
     }
