@@ -8,14 +8,14 @@ use App\PimCore\Admin\SettingQueries\Application\Dto\Settings\SettingsRequestDto
 use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\ClassesPimCoreServiceInterface;
 use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\SettingQueriesServiceInterface;
 use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
-use App\PimCore\Admin\SettingQueries\Domain\Reposutories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
+use App\PimCore\Admin\SettingQueries\Domain\Repositories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 
 class SettingQueriesService implements SettingQueriesServiceInterface
 {
     public function __construct(
         private readonly GraphqlRequestsPimcoreRepositoryInterface $graphqlRequestsPimcoreRepository,
-        private readonly ClassesPimCoreServiceInterface $classesPimCoreService)
+        private readonly ClassesPimCoreServiceInterface            $classesPimCoreService)
     {
     }
 
@@ -40,7 +40,8 @@ class SettingQueriesService implements SettingQueriesServiceInterface
             ->setQuery($entity->getQuery())
             ->setType($activeCalsses)
             ->setId($entity->getId())
-            ->setEndpoint($entity->getEndpoint());
+            ->setEndpoint($entity->getEndpoint())
+            ->setFolderPath($entity->getPath());
 
         return $prepareEntity;
     }
@@ -65,7 +66,8 @@ class SettingQueriesService implements SettingQueriesServiceInterface
             ->setText($settingsRequestDto->getText())
             ->setXApiKey($settingsRequestDto->getXApiKey())
             ->setTypeId($settingsRequestDto->getType())
-            ->setEndpoint($settingsRequestDto->getEndpoint());
+            ->setEndpoint($settingsRequestDto->getEndpoint())
+            ->setPath($settingsRequestDto->getFolderPath());
 
         return $this->graphqlRequestsPimcoreRepository->update($entity);
 

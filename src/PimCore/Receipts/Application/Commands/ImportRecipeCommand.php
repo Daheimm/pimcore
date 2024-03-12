@@ -3,8 +3,8 @@
 namespace App\PimCore\Receipts\Application\Commands;
 
 use App\PimCore\Receipts\Application\Messages\Exports\RecipeExportMessage;
-use App\Shared\Application\Serivces\GraphQl\Interfaces\GraphqlRequestsPimcoreServiceInterface;
-use App\Shared\Application\Serivces\Http\GraphQL\GraphQLInterface;
+use App\Shared\Application\Services\GraphQl\Interfaces\GraphqlRequestsPimcoreServiceInterface;
+use App\Shared\Infrastructure\Http\GraphQL\GraphQLInterface;
 use Pimcore\Console\AbstractCommand;
 use Pimcore\Model\DataObject\Recipe;
 use Psr\Log\LoggerInterface;

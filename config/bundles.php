@@ -18,4 +18,5 @@ return [
     Web2PrintToolsBundle\Web2PrintToolsBundle::class => ['all' => true],
     Pimcore\Bundle\PerspectiveEditorBundle\PimcorePerspectiveEditorBundle::class => ['all' => true],
     //Divante\MagentoIntegrationBundle\DivanteMagentoIntegrationBundle::class => ['all' => true],
+    Lagdo\Symfony\Facades\FacadesBundle::class => ['all' => true]
 ];

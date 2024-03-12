@@ -118,6 +118,7 @@ pimcore.plugin.queue_custom.configuration.graphql.configItem = Class.create(pimc
                     fieldLabel: t("Path"),
                     name: 'folderPath',
                     readOnly: true,
+                    value: this.data.folderPath,
                     fieldCls: "pimcore_property_droptarget", // Додаємо клас для візуалізації приймача перетягування
                     listeners: {
                         afterrender: function (field) {

@@ -4,8 +4,8 @@ namespace App\PimCore\Receipts\Infrastructure\MessageHandler;
 
 use App\PimCore\Receipts\Application\Messages\GraphQl\RecipeInformationMessage;
 use App\PimCore\Receipts\Application\Messages\GraphQl\RecipeUpdateMessage;
-use App\Shared\Application\Serivces\GraphQl\Interfaces\GraphqlRequestsPimcoreServiceInterface;
-use App\Shared\Application\Serivces\Http\GraphQL\GraphQLInterface;
+use App\Shared\Application\Services\GraphQl\Interfaces\GraphqlRequestsPimcoreServiceInterface;
+use App\Shared\Infrastructure\Http\GraphQL\GraphQLInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpStamp;

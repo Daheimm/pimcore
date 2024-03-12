@@ -20,6 +20,18 @@ class SettingsRequestDto
     #[Assert\NotBlank]
     private string $endpoint;
 
+    private ?string $folderPath;
+
+    public function getFolderPath(): ?string
+    {
+        return $this->folderPath;
+    }
+
+    public function setFolderPath(?string $folderPath): void
+    {
+        $this->folderPath = $folderPath;
+    }
+
     public function getEndpoint(): string
     {
         return $this->endpoint;

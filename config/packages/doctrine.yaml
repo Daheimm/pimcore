@@ -1,0 +1,29 @@
+doctrine:
+    dbal:
+        default_connection: postgres
+        connections:
+            postgres:
+                driver: 'pdo_pgsql'
+                host: postgres
+                port: 5432
+                user: pimcore
+                password: pimcore
+                dbname: pimcore
+                charset: UTF8
+
+    orm:
+        auto_generate_proxy_classes: true
+        enable_lazy_ghost_objects: true
+        default_entity_manager: default
+        entity_managers:
+            default:
+                connection: postgres
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                auto_mapping: true
+                mappings:
+                    AppPimCoreAdmin:
+                        is_bundle: false
+                        dir: '%kernel.project_dir%/src/PimCore/Admin/SettingQueries/Domain/Entity'
+                        prefix: 'App\PimCore\Admin\SettingQueries\Domain\Entity'
+                        alias: App
+                        type: attribute

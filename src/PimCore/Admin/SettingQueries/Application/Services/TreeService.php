@@ -4,7 +4,7 @@ namespace App\PimCore\Admin\SettingQueries\Application\Services;
 
 use App\PimCore\Admin\SettingQueries\Application\Services\Interfaces\TreeServiceInterface;
 use App\PimCore\Admin\SettingQueries\Domain\Entity\GraphQl\GraphqlRequestsPimcore;
-use App\PimCore\Admin\SettingQueries\Domain\Reposutories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
+use App\PimCore\Admin\SettingQueries\Domain\Repositories\GraphQl\GraphqlRequestsPimcoreRepositoryInterface;
 
 class TreeService implements TreeServiceInterface
 {

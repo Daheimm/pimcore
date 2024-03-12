@@ -1,0 +1,24 @@
+framework:
+    messenger:
+        serializer:
+            default_serializer: messenger.transport.symfony_serializer
+            symfony_serializer:
+                format: json
+                context: { }
+        transports:
+            # https://symfony.com/doc/current/messenger.html#transport-configuration
+            async: '%env(RABBITMQ_URL)%'
+            magento.products.event:
+                dsn: '%env(MESSENGER_EVENTS_DSN_MAGENTO)%'
+                options:
+                    exchange:
+                        type: topic
+                        name: ua.goodwine.PIM
+                    queues:
+                        ua.goodwine.PIM.magento.Product.v1:
+                            binding_keys:
+                                - 'products.event.*'
+
+        routing:
+            # Route your messages to the transports
+            'App\PimCore\ProductInfo\Products\Application\Messages\ProductMessage': magento.products.event

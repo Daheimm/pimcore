@@ -1,5 +1,7 @@
 parameters:
     secret: gdbRRxrDkB1bakqGe/q45evgFwrtO2qhureuuJvgP6M=
+    LOCALHOST.BASE.URL: "%env(LOCAL_HOST_BASE_URL)%"
+
 
     # customize the full path to external executables
     # normally they are auto-detected by `which program` or auto-discovered in the configured path in
@@ -74,7 +76,32 @@ services:
         resource: '../src/PimCore/Admin/SettingQueries/Infrastructure/Controllers/'
         tags: [ 'controller.service_arguments' ]
 
+    App\Shared\Application\Services\RabbitMQ\RabbitMQService:
+        public: true
+        autowire: true
+        autoconfigure: true
 
+    App\PimCore\Admin\SettingQueries\Infrastructure\Repositories\GraphQl\GraphqlRequestsPimcoreRepository:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+    App\Shared\Infrastructure\Http\GraphQL\GraphQL:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+    App\PimCore\Admin\SettingQueries\Infrastructure\QueueSettings\PimcoreQueueSettings:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+    App\PimCore\ProductInfo\Products\Infrastructure\Handlers\ProductHandler:
+        public: true
+        autowire: true
+        autoconfigure: true
+        arguments:
+            $strategies: !tagged_iterator { tag: 'app.strategy.product' }
     # Example custom templating helper
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they
